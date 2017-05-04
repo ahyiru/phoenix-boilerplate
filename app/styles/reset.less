@@ -1,0 +1,154 @@
+/*
+**	reset.less
+**	20170422 __yiru
+*/
+
+.textarea{
+	/*code{
+		background-color:#f5f5f5 !important;
+    border: 1px solid rgba(0,0,0,.15);
+		.txt-info{
+			color:#000;
+		}
+	}*/
+	p{
+		margin-top:8px;
+		margin-bottom:8px;
+		font-size:14px;
+	}
+	h1{
+		margin-top:15px;
+		margin-bottom:15px;
+		font-size:28px;
+	}
+	h2{
+		margin-top:10px;
+		margin-bottom:10px;
+		font-size:24px;
+	}
+	h3{
+		margin-top:10px;
+		margin-bottom:10px;
+		font-size:20px;
+	}
+	h4{
+		margin-top:10px;
+		margin-bottom:10px;
+		font-size:16px;
+	}
+	h5{
+		margin-top:8px;
+		margin-bottom:8px;
+		font-size:14px;
+	}
+	h6{
+		margin-top:5px;
+		margin-bottom:5px;
+		font-size:12px;
+	}
+	div{
+		padding:15px;
+	}
+	b{
+		font-weight:600;
+	}
+	span{
+		font-size:13px;
+	}
+	i{
+
+	}
+	code{
+		
+	}
+}
+
+body{
+	background-color:#fff;
+	header{
+		.y-header{
+			.y-brand{
+				background-color:#333;
+				span{
+					color:#23b7e5;
+					b{
+						color:#f3565d;
+					}
+				}
+			}
+			.y-nav{
+				background-color:#444;
+				a{
+					color:#eee;
+				}
+			}
+		}
+	}
+	aside{
+		.y-sidebar{
+			background-color:#f7f7f7;
+			border-right:1px solid #f0f0f0;
+			.y-collapse-wrap{
+				background-color:#f7f7f7 !important;
+			}
+			.y-sidebar-list{
+				.y-sidebar-l1{
+					background-color:#f7f7f7 !important;
+					ul{
+						background-color:#fdfdfd !important;
+					}
+					li{
+						border-bottom:1px solid #f0f0f0;
+						&:last-of-type{
+							border:0;
+						}
+					}
+					a{
+						color:#444 !important;
+						&:hover{
+							background-color:transparent!important;
+							// background-color:#f0f0f0!important;
+							color:#f3565d!important;
+						}
+						&.active{
+							background-color:transparent!important;
+							color:#ff7f50!important;
+						}
+					}
+				}
+			}
+		}
+	}
+	main{
+		.y-main{
+			background-color:#fff;
+		}
+	}
+}
+
+@media screen and (max-width:768px){
+	body{
+		header{
+			.y-header{
+				.y-nav{
+			  	>.y-nav-left{
+						
+					}
+					>.y-nav-right{
+						background-color:#444;
+					}
+			  }
+			}
+		}
+		aside{
+			.y-sidebar,.right-bar{
+				
+			}
+		}
+		main{
+			.y-main{
+				
+			}
+		}
+	}
+}
