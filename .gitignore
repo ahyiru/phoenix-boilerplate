@@ -55,5 +55,4 @@ rest
 # file
 .happypack
 *.zip
-*.json
 
