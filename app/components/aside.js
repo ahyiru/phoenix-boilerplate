@@ -10,9 +10,7 @@ export interface AsideProps {
 
 export default class Aside extends React.Component<AsideProps,any> {
   state={auth:'yiru'};
-  static propTypes={
-    sideBarMenu:React.PropTypes.array,
-  };
+
   static defaultProps={
     sideBarMenu:[],
   };

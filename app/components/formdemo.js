@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Form,FormItem,Items,Item,Row,Col,Input,Button,Table,tools} from 'yrui';
+import {Form,FormItem,Items,Item,Row,Col,Input,Button,Table,Code,tools} from 'yrui';
 
 const $fetch=tools.$fetch;
 const $notify=tools.$notify;
@@ -40,7 +40,8 @@ let tbody=[{
   type:'boolean',
   values:'true/false',
   default:'false'
-},{
+}];
+let tbody1=[{
   key:'label',
   expr:'输入框头部',
   type:'string',
@@ -53,12 +54,61 @@ let tbody=[{
   values:'-',
   default:'-'
 },{
-  key:'inputOpt.error',
-  expr:'错误提示内容',
-  type:'string',
+  key:'change',
+  expr:'监听输入框改变',
+  type:'function',
+  values:'-',
+  default:'-'
+},{
+  key:'blur',
+  expr:'失去焦点事件',
+  type:'function',
+  values:'-',
+  default:'-'
+},{
+  key:'focus',
+  expr:'获取焦点事件',
+  type:'function',
   values:'-',
   default:'-'
 }];
+
+const t=`const formData=[];
+  for(let i=0;i<12;i++){
+    let fd={
+      label:\`label\${i+1}\`,
+      inputOpt:{
+        placeholder:\`label\${i+1}\`,
+      },
+    };
+    formData.push(fd);
+  };
+  //
+  <Form horizontal >
+    <Row>
+      <Col span={4}>
+        <FormItem {...formData[0]} />
+        <FormItem {...formData[1]} />
+        <FormItem {...formData[2]} />
+        <FormItem {...formData[3]} />
+      </Col>
+      <Col span={4}>
+        <FormItem {...formData[4]} />
+        <FormItem {...formData[5]} />
+        <FormItem {...formData[6]} />
+        <FormItem {...formData[7]} />
+      </Col>
+      <Col span={4}>
+        <FormItem {...formData[8]} />
+        <FormItem {...formData[9]} />
+        <FormItem {...formData[10]} />
+        <FormItem {...formData[11]} />
+      </Col>
+    </Row>
+    <Button color="info" text="提交" click={this.getFormData} pullRight />
+    <Button color="warning" text="重置" margin="mrs" click={this.resetForm} pullRight />
+  </Form>
+`;
 
 export default class FormDemo extends React.Component<any,any> {
   constructor(props){
@@ -206,6 +256,12 @@ export default class FormDemo extends React.Component<any,any> {
         <div className="">
           <h2>参数说明</h2>
           <Table thead={thead} tbody={tbody} noBorder={true} />
+          <h2>参数说明</h2>
+          <Table thead={thead} tbody={tbody1} noBorder={true} />
+          <div className="textarea">
+            <h4>代码示例</h4>
+            <Code title="demo" code={t} />
+          </div>
         </div>
       </div>
     )

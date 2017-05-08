@@ -10,10 +10,7 @@ export interface FrameProps {
 };
 
 export default class Frame extends React.Component<FrameProps,any> {
-  static propTypes={
-    current:React.PropTypes.array,
-    menu:React.PropTypes.array,
-  };
+
   static defaultProps={
     current:[],
     menu:[],

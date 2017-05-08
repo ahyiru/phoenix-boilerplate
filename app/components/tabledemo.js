@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './layout.less';
 
-import {Row,Col,Table} from 'yrui';
+import {Row,Col,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let tbody1=[{
@@ -307,6 +307,43 @@ let tbody7=[{
   default:'-'
 }];
 
+const t=`<h2>基本表格</h2>
+  <Row gutter={12}>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody1} />
+    </Col>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody2} noBorder={true} />
+    </Col>
+  </Row>
+`;
+const t1=`<h2>可编辑表格</h2>
+  <Row gutter={12}>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody3} noBorder={false} editable={true} deletable={true} />
+    </Col>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody4} noBorder={false} deletable={true} checkable={true} />
+    </Col>
+  </Row>
+`;
+const t2=`<h2>表格头尾工具栏</h2>
+  <Row gutter={12}>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody5} noBorder={false} showHeadbar={true} />
+    </Col>
+    <Col span={6}>
+      <Table thead={thead} tbody={tbody6} noBorder={false} showFootbar={true} />
+    </Col>
+  </Row>
+`;
+const t3=`<h2>表格工具栏</h2>
+  <Row gutter={12}>
+    <Col span={12}>
+      <Table thead={thead} tbody={tbody7} noBorder={false} showHeadbar={true} showFootbar={true} showToolbar={true} editable={true} deletable={true} checkable={true} />
+    </Col>
+  </Row>
+`;
 
 export default class TableDemo extends React.Component<any,any> {
 
@@ -314,6 +351,10 @@ export default class TableDemo extends React.Component<any,any> {
     return (
       <div className="tabledemo">
         <h2>基本表格</h2>
+        <div className="textarea">
+          <h4>代码示例</h4>
+          <Code title="demo" code={t} />
+        </div>
         <Row gutter={12}>
           <Col span={6}>
             <Table thead={thead} tbody={tbody1} />
@@ -323,6 +364,10 @@ export default class TableDemo extends React.Component<any,any> {
           </Col>
         </Row>
         <h2>可编辑表格</h2>
+        <div className="textarea">
+          <h4>代码示例</h4>
+          <Code title="demo" code={t1} />
+        </div>
         <Row gutter={12}>
           <Col span={6}>
             <Table thead={thead} tbody={tbody3} noBorder={false} editable={true} deletable={true} />
@@ -332,6 +377,10 @@ export default class TableDemo extends React.Component<any,any> {
           </Col>
         </Row>
         <h2>表格头尾工具栏</h2>
+        <div className="textarea">
+          <h4>代码示例</h4>
+          <Code title="demo" code={t2} />
+        </div>
         <Row gutter={12}>
           <Col span={6}>
             <Table thead={thead} tbody={tbody5} noBorder={false} showHeadbar={true} />
@@ -341,6 +390,10 @@ export default class TableDemo extends React.Component<any,any> {
           </Col>
         </Row>
         <h2>表格工具栏</h2>
+        <div className="textarea">
+          <h4>代码示例</h4>
+          <Code title="demo" code={t3} />
+        </div>
         <Row gutter={12}>
           <Col span={12}>
             <Table thead={thead} tbody={tbody7} noBorder={false} showHeadbar={true} showFootbar={true} showToolbar={true} editable={true} deletable={true} checkable={true} />

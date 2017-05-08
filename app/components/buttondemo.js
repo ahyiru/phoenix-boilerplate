@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './button.less';
-import {Button,Icon,Table} from 'yrui';
+import {Button,ButtonGroup,Icon,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let tbody=[{
@@ -91,20 +91,58 @@ let tbody1=[{
   default:'-'
 }];
 
+const t=`<h2>Button</h2>
+  <div>
+    <Button color={'default'} margin="ms" text='default' />
+    <Button color={'info'} margin="ms" text='info' />
+    <Button color={'warning'} margin="ms" text='warning' />
+    <Button color={'success'} margin="ms" text='success' />
+    <Button color={'danger'} margin="ms" text='danger' />
+  </div>
+  <div>
+    <Button color={'default'} margin="ms" text='default sm' size={'sm'} />
+    <Button color={'info'} margin="ms" text='info lg' size={'lg'} />
+    <Button color={'warning'} margin="ms" text='warning default' />
+    <Button color={'success'} margin="ms" text='success sm' size={'sm'} />
+    <Button color={'danger'} margin="ms" text='danger lg' size={'lg'} />
+  </div>
+  <div>
+    <Button color={'default'} margin="ms" text='apple' icon={'apple'} />
+    <Button color={'info'} margin="ms" text='html5'icon={'html5'}  />
+    <Button color={'warning'} margin="ms" text='css3'icon={'css3'}  />
+    <Button color={'success'} margin="ms" text='weixin'icon={'weixin'}  />
+    <Button color={'danger'} margin="ms" text='qq'icon={'qq'} />
+    <Button color={'danger'} margin="ms" text='disabled'icon={'qq'} disabled />
+    <Button color={'info'} margin="ms" text='block'icon={'qq'} block />
+  </div>
+  <div>
+    <ButtonGroup>
+      <Button color={'default'} icon={'apple'} />
+      <Button color={'info'} icon={'html5'}  />
+      <Button color={'warning'} icon={'css3'}  />
+    </ButtonGroup>
+  </div>
+`;
+const t1=`<h2>Icon</h2>
+  <div className="icon">
+    <Icon fa="user" />
+    <Icon fa="user" size="lg" />
+    <Icon fa="user" size="2x" />
+    <Icon fa="user" size="3x" />
+    <Icon fa="user" size="4x" />
+    <Icon fa="user" size="5x" color="#f60" />
+    <Icon fa="user" color="#f60" />
+  </div>
+`;
+
 export default class ButtonDemo extends React.Component<any,any> {
-  constructor(props){
-    super(props);
-  };
+
   state={auth:'yiru'};
-  static propTypes={
-    name: React.PropTypes.string,
-  };
+
   static defaultProps={
     auth:'yiru',
   };
-  static contextTypes={
-    router:React.PropTypes.object,
-  };
+
   click=()=>{
     console.log('1');
   };
@@ -144,7 +182,18 @@ export default class ButtonDemo extends React.Component<any,any> {
           <Button color={'danger'} margin="ms" text='disabled'icon={'qq'} disabled />
           <Button color={'info'} margin="ms" text='block'icon={'qq'} block />
         </div>
+        <div>
+          <ButtonGroup>
+            <Button color={'default'} icon={'apple'} />
+            <Button color={'info'} icon={'html5'}  />
+            <Button color={'warning'} icon={'css3'}  />
+          </ButtonGroup>
+        </div>
         <div className="">
+          <div className="textarea">
+            <h4>代码示例</h4>
+            <Code title="demo" code={t} />
+          </div>
           <h2>参数说明</h2>
           <Table thead={thead} tbody={tbody} noBorder={true} />
         </div>
@@ -159,6 +208,10 @@ export default class ButtonDemo extends React.Component<any,any> {
           <Icon fa="user" color="#f60" />
         </div>
         <div className="">
+          <div className="textarea">
+            <h4>代码示例</h4>
+            <Code title="demo" code={t1} />
+          </div>
           <h2>参数说明</h2>
           <Table thead={thead} tbody={tbody1} noBorder={true} />
         </div>

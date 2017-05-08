@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Echarts,Items,Item,Table} from 'yrui';
+import {Echarts,Items,Item,Table,Code} from 'yrui';
 
 import {chart1,chart2} from '../models/echarts';
 
@@ -65,6 +65,14 @@ let tbody=[{
   default:'false'
 }];
 
+const t=`<span>Echarts</span>
+  <Echarts ref='echarts_react' option={this.state.option} style={{height: 300}} />
+`;
+
+const t1=`<span>Echart1</span>
+  <Echarts option={this.state.option2} onChartReady={this.onChartReady} onEvents={onEvents} />
+`;
+
 export default class EchartDemo extends React.Component<ecProps,any> {
   timeTicket:number;
   count:number;
@@ -126,11 +134,19 @@ export default class EchartDemo extends React.Component<ecProps,any> {
     return (
       <Items>
       	<Item>
-	        <span>Echarts</span>
+          <div className="textarea">
+            <h4>代码示例</h4>
+            <Code title="demo" code={t} />
+          </div>
+	        <h4 className="mtl mbl">Echarts</h4>
 	        <Echarts ref='echarts_react' option={this.state.option} style={{height: 300}} />
 	      </Item>
 	      <Item>
-	        <span>Echart1</span>
+          <div className="textarea">
+            <h4>代码示例</h4>
+            <Code title="demo" code={t1} />
+          </div>
+	        <h4 className="mtl mbl">Echart1</h4>
 	        <Echarts option={this.state.option2} style={{height: 300}} onChartReady={this.onChartReady} onEvents={onEvents} />
 	      </Item>
         <Item>

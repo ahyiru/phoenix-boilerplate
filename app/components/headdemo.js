@@ -159,11 +159,8 @@ export default class HeadDemo extends React.Component<any,any> {
       <Items>
         <Item>
           <div className="textarea">
-            <h2>Phoenix UI</h2>
-            <p>Phoenix UI是一套用于快速开发web应用的UI框架。</p>
-            <p>Phoenix UI使用Typescript编写，提供一些简单UI组件及函数库。拓展性强，可配合其它一些组件或插件进行开发，如ant design、jquery等。</p>
-            <h2>路由配置</h2>
-            <p>本框架采用html5的popstate来控制路由切换，配置方便，便于同构。</p>
+            <h2>头部栏配置</h2>
+            <p>用于设置brand、登录信息、提示信息等</p>
             <Code title="demo" code={t} />
           </div>
           <Row gutter={12}>
