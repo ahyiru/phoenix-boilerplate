@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Radio,Checkbox,Items,Item,Row,Col,Table} from 'yrui';
+import {Radio,Checkbox,Items,Item,Row,Col,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let radio=[{
@@ -35,6 +35,28 @@ let radio=[{
   default:'-'
 }];
 
+const t=`<Row gutter={12}>
+    <Col span={6}>
+      <h2>radio</h2>
+      <Radio name="radio1" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} />
+    </Col>
+    <Col span={6}>
+      <h2>radio inline</h2>
+      <Radio name="radio2" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} inline={true} />
+    </Col>
+  </Row>
+`;
+const t1=`<Row gutter={12}>
+    <Col span={6}>
+      <h2>checkbox</h2>
+      <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} />
+    </Col>
+    <Col span={6}>
+      <h2>checkbox inline</h2>
+      <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} inline={true} />
+    </Col>
+  </Row>
+`;
 
 export default class RadiocheckboxDemo extends React.Component<any,any> {
 
@@ -69,6 +91,20 @@ export default class RadiocheckboxDemo extends React.Component<any,any> {
           <Col span={6}>
             <h2>checkbox inline</h2>
             <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} inline={true} />
+          </Col>
+        </Row>
+        <Row gutter={12}>
+          <Col span={6}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Radio" code={t} />
+            </div>
+          </Col>
+          <Col span={6}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Checkbox" code={t1} />
+            </div>
           </Col>
         </Row>
       </div>

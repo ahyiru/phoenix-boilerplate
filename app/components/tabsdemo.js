@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Tabs,Tabpage,Row,Col,Table} from 'yrui';
+import {Tabs,Tabpage,Row,Col,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let tabs=[{
@@ -9,6 +9,12 @@ let tabs=[{
   type:'number',
   values:'-',
   default:'0'
+},{
+  key:'style',
+  expr:'设置tab样式',
+  type:'object',
+  values:'-',
+  default:'-'
 }];
 let tabpage=[{
   key:'icon',
@@ -24,6 +30,23 @@ let tabpage=[{
   default:'-'
 }];
 
+const t=`<Row gutter={12}>
+    <Col span={6}>
+      <h2>tabs配置</h2>
+      <Tabs>
+        <Tabpage name="t1">
+          <div style={{height:'200px',backgroundColor:'#eee'}}>p1</div>
+        </Tabpage>
+        <Tabpage name="t2">
+          <div style={{height:'200px',backgroundColor:'#6f0'}}>p2</div>
+        </Tabpage>
+        <Tabpage name="t3">
+          <div style={{height:'200px',backgroundColor:'#60f'}}>p3</div>
+        </Tabpage>
+      </Tabs>
+    </Col>
+  </Row>`;
+
 export default class TabsDemo extends React.Component<any,any> {
 
   render() {
@@ -31,17 +54,7 @@ export default class TabsDemo extends React.Component<any,any> {
       <div>
         <Row gutter={12}>
           <Col span={6}>
-            <h2>tabs配置</h2>
-            <Table thead={thead} tbody={tabs} />
-          </Col>
-          <Col span={6}>
-            <h2>tabpage配置</h2>
-            <Table thead={thead} tbody={tabpage} />
-          </Col>
-        </Row>
-        <Row gutter={12}>
-          <Col span={6}>
-            <h2>tabs配置</h2>
+            <h2>tabs示例</h2>
             <Tabs>
               <Tabpage name="t1">
                 <div style={{height:'200px',backgroundColor:'#eee'}}>p1</div>
@@ -53,6 +66,20 @@ export default class TabsDemo extends React.Component<any,any> {
                 <div style={{height:'200px',backgroundColor:'#60f'}}>p3</div>
               </Tabpage>
             </Tabs>
+          </Col>
+        </Row>
+        <div className="textarea">
+          <h4>代码示例</h4>
+          <Code title="demo" code={t} />
+        </div>
+        <Row gutter={12}>
+          <Col span={6}>
+            <h2>tabs配置</h2>
+            <Table thead={thead} tbody={tabs} />
+          </Col>
+          <Col span={6}>
+            <h2>tabpage配置</h2>
+            <Table thead={thead} tbody={tabpage} />
           </Col>
         </Row>
       </div>

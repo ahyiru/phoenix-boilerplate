@@ -16,10 +16,15 @@ import FormDemo from '../components/formdemo';
 
 import ItemsDemo from '../components/itemsdemo';
 import ListDemo from '../components/listdemo';
+import ULDemo from '../components/uldemo';
 import TabsDemo from '../components/tabsdemo';
+
+import ProgressDemo from '../components/progressdemo';
+import BadgeDemo from '../components/badgedemo';
+import CodeDemo from '../components/codedemo';
+
 import RadiocheckboxDemo from '../components/radiocheckboxdemo';
 import SelectswitchDemo from '../components/selectswitchdemo';
-import TextareabadgeDemo from '../components/textareabadgedemo';
 
 // import User from './auth/user';
 // import Login from './auth/login';
@@ -38,7 +43,7 @@ export const sidebarMenu=[{
 },{
   url:'javascript:;',
   title:'框架配置',
-  leftIcon:'apple',
+  leftIcon:'cogs',
   rightIcon:'angle-right',
   open:'',
   subMenu:[{
@@ -66,59 +71,154 @@ export const sidebarMenu=[{
   url:'/component/col',
   component:ColDemo,
   title:'栅格',
-  leftIcon:'github-alt',
+  leftIcon:'th',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/color',
   component:Color,
   title:'颜色',
-  leftIcon:'github-alt',
+  leftIcon:'fa',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/button',
   component:ButtonDemo,
   title:'按钮',
-  leftIcon:'github-alt',
+  leftIcon:'hand-o-right',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/panel',
   component:PanelDemo,
   title:'面板',
-  leftIcon:'github-alt',
+  leftIcon:'list',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/table',
   component:TableDemo,
   title:'表格',
-  leftIcon:'github-alt',
+  leftIcon:'table',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/chart',
   component:EchartDemo,
   title:'图表',
-  leftIcon:'github-alt',
+  leftIcon:'pie-chart',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/form',
   component:FormDemo,
   title:'表单',
-  leftIcon:'github-alt',
+  leftIcon:'list-alt',
   rightIcon:'angle-right',
   open:''
 },{
   url:'/component/input',
   component:InputDemo,
   title:'输入框',
-  leftIcon:'github-alt',
+  leftIcon:'keyboard-o',
   rightIcon:'angle-right',
   open:''
+},{
+  url:'/component/tabs',
+  component:TabsDemo,
+  title:'tab页签',
+  leftIcon:'th-large',
+  rightIcon:'angle-right',
+  open:''
+},{
+  url:'javascript:;',
+  title:'列表',
+  leftIcon:'th-list',
+  rightIcon:'angle-right',
+  open:'',
+  subMenu:[{
+    url:'/component/lists/items',
+    component:ItemsDemo,
+    leftIcon:'arrow-right',
+    title:'items'
+  },{
+    url:'/component/lists/list',
+    component:ListDemo,
+    leftIcon:'arrow-right',
+    title:'list'
+  },{
+    url:'/component/lists/ul',
+    component:ULDemo,
+    leftIcon:'arrow-right',
+    title:'ul'
+  }]
+},{
+  url:'javascript:;',
+  title:'文本',
+  leftIcon:'text-height',
+  rightIcon:'angle-right',
+  open:'',
+  subMenu:[{
+    url:'/component/progress',
+    component:ProgressDemo,
+    leftIcon:'arrow-right',
+    title:'进度条'
+  },{
+    url:'/component/code',
+    component:CodeDemo,
+    leftIcon:'arrow-right',
+    title:'code文本'
+  },{
+    url:'/component/badge',
+    component:BadgeDemo,
+    leftIcon:'arrow-right',
+    title:'badge、textarea'
+  }]
+},{
+  url:'javascript:;',
+  title:'选择',
+  leftIcon:'tasks',
+  rightIcon:'angle-right',
+  open:'',
+  subMenu:[{
+    url:'/component/radio',
+    component:RadiocheckboxDemo,
+    leftIcon:'arrow-right',
+    title:'单选、多选'
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    leftIcon:'arrow-right',
+    title:'下拉菜单'
+  }]
 }/*,{
+  url:'javascript:;',
+  title:'工具',
+  leftIcon:'apple',
+  rightIcon:'angle-right',
+  open:'',
+  subMenu:[{
+    url:'/component/dnd',
+    component:DndDemo,
+    leftIcon:'arrow-right',
+    title:'拖拽'
+  },{
+    url:'/component/resize',
+    component:ResizeDemo,
+    leftIcon:'arrow-right',
+    title:'改变窗口大小'
+  },{
+    url:'/component/backtop',
+    component:BacktopDemo,
+    leftIcon:'arrow-right',
+    title:'返回顶部'
+  },{
+    url:'/component/other',
+    component:OtherDemo,
+    leftIcon:'arrow-right',
+    title:'其它'
+  }]
+}*//*,{
   url:'/user',
   component:User,
   title:'用户登录',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Select,Autocomplete,Switch,Row,Col,Table} from 'yrui';
+import {Select,Autocomplete,Switch,Row,Col,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let select=[{
@@ -85,6 +85,13 @@ let autocomplete=[{
   default:'-'
 }];
 
+const t=`<Select data={[1,2,3]} />
+`;
+const t1=`<Autocomplete data={[1,2,3,'aa','bb','cc',11,'22']} />
+`;
+const t2=`<Switch onText={<i className="fa fa-check"></i>} offText={<i className="fa fa-times"></i>} defaultChecked={true} disabled />
+`;
+
 export default class SelectswitchDemo extends React.Component<any,any> {
 
   render() {
@@ -105,11 +112,11 @@ export default class SelectswitchDemo extends React.Component<any,any> {
           </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={4}>
+          <Col span={6}>
             <h2>Select</h2>
             <Select data={[1,2,3]} />
           </Col>
-          <Col span={4}>
+          <Col span={6}>
             <h2>Autocomplete</h2>
             <Autocomplete data={[1,2,3,'aa','bb','cc',11,'22']} />
           </Col>
@@ -121,11 +128,31 @@ export default class SelectswitchDemo extends React.Component<any,any> {
           </Col>
           <Col span={4}>
             <h2>Switch配置</h2>
-            <Switch onText="√" offText="x" defaultChecked={true} />
+            <Switch onText={<i className="fa fa-check"></i>} offText={<i className="fa fa-times"></i>} defaultChecked={true} />
           </Col>
           <Col span={4}>
             <h2>Switch配置</h2>
-            <Switch onText="√" offText="x" defaultChecked={true} disabled />
+            <Switch onText={<i className="fa fa-check"></i>} offText={<i className="fa fa-times"></i>} defaultChecked={true} disabled />
+          </Col>
+        </Row>
+        <Row gutter={12}>
+          <Col span={4}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Select" code={t} />
+            </div>
+          </Col>
+          <Col span={4}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Autocomplete" code={t1} />
+            </div>
+          </Col>
+          <Col span={4}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Switch" code={t2} />
+            </div>
           </Col>
         </Row>
       </div>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table} from 'yrui';
+import {Items,Item,Row,Col,Table,List,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let list=[{
@@ -54,6 +54,28 @@ let listContent=[{
   default:'-'
 }];
 
+let lists=[{
+  pic:'t1',
+  h4:'t1',
+  p:'桃花坞里桃花庵',
+},{
+  pic:'t2',
+  h4:'t2',
+  p:'桃花坞里桃花庵',
+},{
+  pic:'t3',
+  h4:'t3',
+  p:'桃花坞里桃花庵',
+},{
+  pic:'t4',
+  h4:'t4',
+  p:'桃花坞里桃花庵',
+},{
+  pic:'t5',
+  h4:'t5',
+  p:'桃花坞里桃花庵',
+}];
+
 export default class ListDemo extends React.Component<any,any> {
 
   render() {
@@ -66,6 +88,9 @@ export default class ListDemo extends React.Component<any,any> {
         <Item>
           <h2>listContent配置</h2>
           <Table thead={thead} tbody={listContent} />
+        </Item>
+        <Item>
+          <List list={lists} name="test" />
         </Item>
       </Items>
     )
