@@ -47,6 +47,7 @@ Thumbs.db
 __test__
 __mocks__
 doc
+build
 
 # server
 ecosystem.json
