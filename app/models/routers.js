@@ -26,6 +26,8 @@ import CodeDemo from '../components/codedemo';
 import RadiocheckboxDemo from '../components/radiocheckboxdemo';
 import SelectswitchDemo from '../components/selectswitchdemo';
 
+import Tools from '../components/tools';
+
 // import User from './auth/user';
 // import Login from './auth/login';
 // import Signup from './auth/signup';
@@ -39,13 +41,11 @@ export const sidebarMenu=[{
   title:'主页',
   leftIcon:'home',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'javascript:;',
   title:'框架配置',
   leftIcon:'cogs',
   rightIcon:'angle-right',
-  open:'',
   subMenu:[{
     url:'/frame/route',
     component:RouteDemo,
@@ -73,69 +73,59 @@ export const sidebarMenu=[{
   title:'栅格',
   leftIcon:'th',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/color',
   component:Color,
   title:'颜色',
   leftIcon:'fa',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/button',
   component:ButtonDemo,
   title:'按钮',
   leftIcon:'hand-o-right',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/panel',
   component:PanelDemo,
   title:'面板',
   leftIcon:'list',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/table',
   component:TableDemo,
   title:'表格',
   leftIcon:'table',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/chart',
   component:EchartDemo,
   title:'图表',
   leftIcon:'pie-chart',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/form',
   component:FormDemo,
   title:'表单',
   leftIcon:'list-alt',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/input',
   component:InputDemo,
   title:'输入框',
   leftIcon:'keyboard-o',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'/component/tabs',
   component:TabsDemo,
   title:'tab页签',
   leftIcon:'th-large',
   rightIcon:'angle-right',
-  open:''
 },{
   url:'javascript:;',
   title:'列表',
   leftIcon:'th-list',
   rightIcon:'angle-right',
-  open:'',
   subMenu:[{
     url:'/component/lists/items',
     component:ItemsDemo,
@@ -157,7 +147,6 @@ export const sidebarMenu=[{
   title:'文本',
   leftIcon:'text-height',
   rightIcon:'angle-right',
-  open:'',
   subMenu:[{
     url:'/component/progress',
     component:ProgressDemo,
@@ -179,7 +168,6 @@ export const sidebarMenu=[{
   title:'选择',
   leftIcon:'tasks',
   rightIcon:'angle-right',
-  open:'',
   subMenu:[{
     url:'/component/radio',
     component:RadiocheckboxDemo,
@@ -191,13 +179,13 @@ export const sidebarMenu=[{
     leftIcon:'arrow-right',
     title:'下拉菜单'
   }]
-}/*,{
-  url:'javascript:;',
+},{
+  url:'/component/tools',
+  component:Tools,
   title:'工具',
-  leftIcon:'apple',
+  leftIcon:'wrench',
   rightIcon:'angle-right',
-  open:'',
-  subMenu:[{
+  /*subMenu:[{
     url:'/component/dnd',
     component:DndDemo,
     leftIcon:'arrow-right',
@@ -217,8 +205,8 @@ export const sidebarMenu=[{
     component:OtherDemo,
     leftIcon:'arrow-right',
     title:'其它'
-  }]
-}*//*,{
+  }]*/
+}/*,{
   url:'/user',
   component:User,
   title:'用户登录',

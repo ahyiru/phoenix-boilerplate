@@ -20,7 +20,7 @@ let code=[{
   expr:'主题',
   type:'string',
   values:'dark/light',
-  default:'dark'
+  default:'light'
 }];
 
 const t=`

@@ -32,7 +32,7 @@ export const dropList={
   rightList:[{
     name:'API',
     icon:'book',
-    href:'javascript:;',
+    href:'#/',
   },{
     name:'帮助',
     icon:'info',
