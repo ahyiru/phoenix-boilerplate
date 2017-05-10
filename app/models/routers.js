@@ -6,7 +6,6 @@ import AsideDemo from '../components/asidedemo';
 import MainDemo from '../components/maindemo';
 
 import ColDemo from '../components/coldemo';
-import Color from '../components/color';
 import ButtonDemo from '../components/buttondemo';
 import PanelDemo from '../components/paneldemo';
 import TableDemo from '../components/tabledemo';
@@ -72,12 +71,6 @@ export const sidebarMenu=[{
   component:ColDemo,
   title:'栅格',
   leftIcon:'th',
-  rightIcon:'angle-right',
-},{
-  url:'/component/color',
-  component:Color,
-  title:'颜色',
-  leftIcon:'fa',
   rightIcon:'angle-right',
 },{
   url:'/component/button',

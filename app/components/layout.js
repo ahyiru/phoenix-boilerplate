@@ -2,21 +2,7 @@ import * as React from 'react';
 
 import {Items,Item,Row,Col,Table,Code} from 'yrui';
 
-
-let thead=['ID','参数','说明','类型','可选值','默认值'];
-let routers=[{
-  key:'routers',
-  expr:'路由表',
-  type:'array',
-  values:'-',
-  default:'-'
-},{
-  key:'frame',
-  expr:'框架主体',
-  type:'object',
-  values:'-',
-  default:'-'
-}];
+import './color.less';
 
 const font=`
   body{
