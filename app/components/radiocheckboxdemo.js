@@ -64,43 +64,43 @@ export default class RadiocheckboxDemo extends React.Component<any,any> {
     return (
       <div>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>radio配置</h2>
             <Table thead={thead} tbody={radio} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>checkbox配置</h2>
             <Table thead={thead} tbody={radio} />
           </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>radio</h2>
             <Radio name="radio1" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>radio inline</h2>
             <Radio name="radio2" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>checkbox</h2>
             <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>checkbox inline</h2>
             <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <div className="textarea">
               <h4>代码示例</h4>
               <Code title="Radio" code={t} />
             </div>
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <div className="textarea">
               <h4>代码示例</h4>
               <Code title="Checkbox" code={t1} />

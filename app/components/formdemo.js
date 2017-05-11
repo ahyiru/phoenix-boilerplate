@@ -223,19 +223,19 @@ export default class FormDemo extends React.Component<any,any> {
                 </Row>*/}
         <Form horizontal >
           <Row>
-            <Col span={4}>
+            <Col span={4} sm={6} xs={12}>
               <FormItem {...formData[0]} />
               <FormItem {...formData[1]} />
               <FormItem {...formData[2]} />
               <FormItem {...formData[3]} />
             </Col>
-            <Col span={4}>
+            <Col span={4} sm={6} xs={12}>
               <FormItem {...formData[4]} />
               <FormItem {...formData[5]} />
               <FormItem {...formData[6]} />
               <FormItem {...formData[7]} />
             </Col>
-            <Col span={4}>
+            <Col span={4} sm={6} xs={12}>
               <FormItem {...formData[8]} />
               <FormItem {...formData[9]} />
               <FormItem {...formData[10]} />

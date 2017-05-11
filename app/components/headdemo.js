@@ -164,11 +164,11 @@ export default class HeadDemo extends React.Component<any,any> {
             <Code title="demo" code={t} />
           </div>
           <Row gutter={12}>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <h2>barnd配置</h2>
               <Table thead={thead} tbody={brand} />
             </Col>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <h2>nav配置</h2>
               <Table thead={thead} tbody={nav} />
             </Col>

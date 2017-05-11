@@ -73,11 +73,11 @@ export default class TabsDemo extends React.Component<any,any> {
           <Code title="demo" code={t} />
         </div>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>tabs配置</h2>
             <Table thead={thead} tbody={tabs} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <h2>tabpage配置</h2>
             <Table thead={thead} tbody={tabpage} />
           </Col>

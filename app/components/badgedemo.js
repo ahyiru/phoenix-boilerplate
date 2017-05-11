@@ -48,46 +48,48 @@ export default class CodeDemo extends React.Component<any,any> {
 
   render() {
     return (
-      <div>
-        <Row gutter={12}>
-          <Col span={6}>
-            <Items>
-              <Item>
-                <Badge text="3">
-                  <Button color="info" text="测试" />
-                </Badge>
-              </Item>
-              <Item>
-                <div className="textarea">
-                  <h4>代码示例</h4>
-                  <Code title="demo" code={t} />
-                </div>
-              </Item>
-              <Item>
-                <h2>badge配置</h2>
-                <Table thead={thead} tbody={badge} />
-              </Item>
-            </Items>
-          </Col>
-          <Col span={6}>
-            <Items>
-              <Item>
-                <Textarea placeholder="test" />
-              </Item>
-              <Item>
-                <div className="textarea">
-                  <h4>代码示例</h4>
-                  <Code title="demo" code={t1} />
-                </div>
-              </Item>
-              <Item>
-                <h2>textarea配置</h2>
-                <Table thead={thead} tbody={textarea} />
-              </Item>
-            </Items>
-          </Col>
-        </Row>
-      </div>
+      <Items>
+        <Item>
+          <Row gutter={12}>
+            <Col span={6} sm={12}>
+              <Badge text="3">
+                <Button color="info" text="测试" />
+              </Badge>
+            </Col>
+            <Col span={6} sm={12}>
+              <Textarea placeholder="test" />
+            </Col>
+          </Row>
+        </Item>
+        <Item>
+          <Row gutter={12}>
+            <Col span={6} sm={12}>
+              <div className="textarea">
+                <h4>代码示例</h4>
+                <Code title="demo" code={t} />
+              </div>
+            </Col>
+            <Col span={6} sm={12}>
+              <div className="textarea">
+                <h4>代码示例</h4>
+                <Code title="demo" code={t1} />
+              </div>
+            </Col>
+          </Row>
+        </Item>
+        <Item>
+          <Row gutter={12}>
+            <Col span={6} sm={12}>
+              <h2>badge配置</h2>
+              <Table thead={thead} tbody={badge} />
+            </Col>
+            <Col span={6} sm={12}>
+              <h2>textarea配置</h2>
+              <Table thead={thead} tbody={textarea} />
+            </Col>
+          </Row>
+        </Item>
+      </Items>
     )
   };
 }

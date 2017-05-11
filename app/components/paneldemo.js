@@ -116,14 +116,14 @@ export default class PanelDemo extends React.Component<any,any> {
         <Item>
           <h2>panel</h2>
           <Row gutter={12}>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <Dnd>
                 <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins}>
                   <div style={{height:'220px'}}></div>
                 </Panel>
               </Dnd>
             </Col>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <Dnd>
                 <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins}>
                   <div style={{height:'220px'}}></div>
@@ -135,14 +135,14 @@ export default class PanelDemo extends React.Component<any,any> {
         <Item>
           <h2>可拖放panel</h2>
           <Row gutter={12}>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <Dnd>
                 <Panel canDrag canDrop panelTitle={dragPanel.title1} headColor={dragPanel.defaultTheme} ricon={dragPanel.ricon}>
                   <div style={{height:'220px'}}></div>
                 </Panel>
               </Dnd>
             </Col>
-            <Col span={6}>
+            <Col span={6} sm={12}>
               <Dnd>
                 <Panel canDrag canDrop panelTitle={dragPanel.title2} headColor={dragPanel.defaultTheme} ricon={dragPanel.ricon}>
                   <div style={{height:'220px'}}></div>

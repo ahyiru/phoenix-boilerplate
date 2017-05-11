@@ -356,10 +356,10 @@ export default class TableDemo extends React.Component<any,any> {
           <Code title="demo" code={t} />
         </div>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody1} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody2} noBorder={true} />
           </Col>
         </Row>
@@ -369,10 +369,10 @@ export default class TableDemo extends React.Component<any,any> {
           <Code title="demo" code={t1} />
         </div>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody3} noBorder={false} editable={true} deletable={true} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody4} noBorder={false} deletable={true} checkable={true} />
           </Col>
         </Row>
@@ -382,10 +382,10 @@ export default class TableDemo extends React.Component<any,any> {
           <Code title="demo" code={t2} />
         </div>
         <Row gutter={12}>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody5} noBorder={false} showHeadbar={true} />
           </Col>
-          <Col span={6}>
+          <Col span={6} sm={12}>
             <Table thead={thead} tbody={tbody6} noBorder={false} showFootbar={true} />
           </Col>
         </Row>

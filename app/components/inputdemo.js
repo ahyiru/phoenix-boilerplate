@@ -158,19 +158,19 @@ export default class InputDemo extends React.Component<any,any> {
     return (
       <div className="input">
         <Row gutter={12}>
-          <Col span={4}>
+          <Col span={4} sm={6} xs={12}>
             <Input placeholder="default" />
             <Input placeholder="noBorder" noBorder={true} />
             <Input placeholder="hasError" error={true} />
             <Input disabled={true} value="disabled" />
           </Col>
-          <Col span={4}>
+          <Col span={4} sm={6} xs={12}>
             <Input placeholder="pleft" pleft="@" />
             <Input placeholder="pright" pright="哈哈" />
             <Input placeholder="ileft" ileft="lock" iright="user" />
             <Input placeholder="iright" iright="user" />
           </Col>
-          <Col span={4}>
+          <Col span={4} sm={6} xs={12}>
             <Input placeholder="pleft,pright" pleft="@" pright="**" />
             <Input placeholder="pleft,iright" pleft="@" iright="user" />
             <Input placeholder="change" change={this.change} />

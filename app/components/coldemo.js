@@ -23,6 +23,18 @@ let tbody=[{
   type:'number',
   values:'1-12',
   default:'0'
+},{
+  key:'sm',
+  expr:'屏幕宽度小于992px时,栅格占据的列数或栅格左侧的间隔格数',
+  type:'number|object',
+  values:'1-12|{span:1-12,offset:1-12}',
+  default:'-'
+},{
+  key:'xs',
+  expr:'屏幕宽度小于768px时,栅格占据的列数或栅格左侧的间隔格数',
+  type:'number|object',
+  values:'1-12|{span:1-12,offset:1-12}',
+  default:'-'
 }];
 
 const t=`<h2>基本布局</h2>
@@ -95,6 +107,17 @@ const t=`<h2>基本布局</h2>
     </Col>
     <Col span={2}>
       <div className="l-block">span=2</div>
+    </Col>
+  </Row>
+  <Row gutter={12}>
+    <Col span={4} sm={6} xs={12}>
+      <div className="l-block">span=4 sm=6 xs=12</div>
+    </Col>
+    <Col span={4} sm={6} xs={12}>
+      <div className="l-block">span=4 sm=6 xs=12</div>
+    </Col>
+    <Col span={4} sm={6} xs={12}>
+      <div className="l-block">span=4 sm=6 xs=12</div>
     </Col>
   </Row>
 `;
@@ -174,6 +197,18 @@ export default class ColDemo extends React.Component<any,any> {
           </Col>
           <Col span={2}>
             <div className="l-block">span=2</div>
+          </Col>
+        </Row>
+        <h2>多屏适应sm(&lt;992px)、xs(&lt;768px)</h2>
+        <Row gutter={12}>
+          <Col span={4} sm={6} xs={12}>
+            <div className="l-block">span=4 sm=6 xs=12</div>
+          </Col>
+          <Col span={4} sm={6} xs={12}>
+            <div className="l-block">span=4 sm=6 xs=12</div>
+          </Col>
+          <Col span={4} sm={6} xs={12}>
+            <div className="l-block">span=4 sm=6 xs=12</div>
           </Col>
         </Row>
         <div className="">
