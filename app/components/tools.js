@@ -211,6 +211,16 @@ const t=`
         用法:$trim(str)
         str: 字符串文本
 
+    12. 时间格式化 $formatTime
+
+        用法: $formatTime(str,date);
+        str: 时间连接字符串,默认为年月日'yMd';
+            'y'-年,'M'-月,'d'-日,'h'-时,'m'-分,'s'-秒,'w'-周;
+        date:要格式化的时间戳,默认为当前时间 new Date();
+
+      eg:$formatTime('y-M-d'),//2017-05-12
+      eg:$formatTime('y年M月d日 h:m:s w'),//2017年05月12日 10:14:26 星期五
+
 `;
 
 export default class Tools extends React.Component<any,any> {
