@@ -117,10 +117,10 @@ export default class FormDemo extends React.Component<any,any> {
       show:false
     });
   };
-  componentDidMount=()=>{
+  componentDidMount(){
     window.addEventListener('click',this.hide,false);
   };
-  componentWillUnmount=()=>{
+  componentWillUnmount(){
     window.removeEventListener('click',this.hide,false);
   };
   clkEvent=()=>{

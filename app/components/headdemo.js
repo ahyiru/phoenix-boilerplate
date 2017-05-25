@@ -22,6 +22,12 @@ let brand=[{
   type:'string',
   values:'-',
   default:'-'
+},{
+  key:'url',
+  expr:'点击跳转路径',
+  type:'string',
+  values:'-',
+  default:'-'
 }];
 let nav=[{
   key:'login',

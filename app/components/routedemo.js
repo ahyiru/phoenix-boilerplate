@@ -16,6 +16,12 @@ let routers=[{
   type:'object',
   values:'-',
   default:'-'
+},{
+  key:'browserRouter',
+  expr:'是否是真实路径',
+  type:'boolean',
+  values:'true/false',
+  default:'false'
 }];
 
 const t=`import {App,Demo1,Demo2} from './component';
@@ -45,14 +51,12 @@ const t=`import {App,Demo1,Demo2} from './component';
   // 页面配置
   import Frame from './components/base/';
   import {routers} from './routers';
-  render(<Router routers={routers} frame={Frame} />, document.getElementById('app'));
+  render(<Router routers={sidebarMenu} browserRouter={false} frame={Frame} />, document.getElementById('app'));
+  
+  browserRouter默认为false使用hash路径.
 `;
 
 export default class RouteDemo extends React.Component<any,any> {
-  componentDidMount=()=>{
-    // const txt=this.refs.p1;
-    // txt.innerText=t;
-  };
 
   render() {
     return (

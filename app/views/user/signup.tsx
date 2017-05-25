@@ -21,7 +21,7 @@ export default class Signup extends React.Component<any,any> {
       rpasswdType:'password'
     })
 	};
-	componentDidMount=()=>{
+	componentDidMount(){
 
 	};
 	signup=()=>{

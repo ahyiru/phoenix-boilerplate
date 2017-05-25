@@ -48,7 +48,7 @@ export default class API extends React.Component<any,any> {
     })
   };
 
-  componentDidMount=()=>{
+  componentDidMount(){
 
     // encodeURI编码，decodeURI解码
     // var url=decodeURI('/api/UI设计.md');
@@ -82,7 +82,7 @@ export default class API extends React.Component<any,any> {
       });
   };
 
-  componentWillUnmount=()=>{
+  componentWillUnmount(){
     window.removeEventListener('hashchange',this.hashChg,false);
   };
 

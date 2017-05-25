@@ -65,9 +65,9 @@ const t=`
       再次执行一次推出全屏,fullScreen(document.body);
     
     4. loading
-      loading(ele,pos);eg:loading(document.body);
-      默认pos='fix'，相对于浏览器，可设值'abs',相对于当前element;
-      再次执行一次推出loading,loading(document.body);
+      loading(ele,part);eg:loading(document.body);
+      默认part=false，相对于浏览器，可设值true,相对于当前element;
+      再次执行一次退出loading,loading(document.body);
     
     5. 消息提示
       $notify.start(opt);
@@ -198,8 +198,8 @@ const t=`
 
     9. 在min和max间生成随机数
 
-        用法:$rand(a,b)
-        a: 数值a，b:数值b
+        用法:$rand(a,b,int)
+        a: 数值a；b:数值b，默认0；int:返回值是否为整数，默认为false；
 
     10. 生成一个n位数随机的数字字母字符串
 
@@ -220,6 +220,12 @@ const t=`
 
       eg:$formatTime('y-M-d'),//2017-05-12
       eg:$formatTime('y年M月d日 h:m:s w'),//2017年05月12日 10:14:26 星期五
+
+    13. 动画 requestAnimationFrame，raf
+
+      用法: raf.start(func),raf.cancel(id)
+      func:执行的函数
+      id:raf名
 
 `;
 

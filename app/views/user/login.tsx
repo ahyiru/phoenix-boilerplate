@@ -18,9 +18,7 @@ export default class Login extends React.Component<any,any> {
       passwdType:'password'
     })
 	};
-	componentDidMount=()=>{
 
-	};
 	login=()=>{
     var data={
       email:this.state.mval,

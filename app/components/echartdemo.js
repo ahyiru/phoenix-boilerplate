@@ -102,13 +102,13 @@ export default class EchartDemo extends React.Component<ecProps,any> {
     option.xAxis[1].data.push(this.count++);
     this.setState({option:option});
   };
-  componentDidMount=()=>{
+  componentDidMount(){
     if (this.timeTicket) {
       clearInterval(this.timeTicket);
     }
     this.timeTicket = setInterval(this.fetchNewDate, 1000);
   };
-  componentWillUnmount=()=>{
+  componentWillUnmount(){
     if (this.timeTicket) {
       clearInterval(this.timeTicket);
     }

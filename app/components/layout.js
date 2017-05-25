@@ -101,10 +101,6 @@ const cls=`
 `;
 
 export default class Layout extends React.Component<any,any> {
-  componentDidMount=()=>{
-    // const txt=this.refs.p1;
-    // txt.innerText=t;
-  };
 
   render() {
     return (
