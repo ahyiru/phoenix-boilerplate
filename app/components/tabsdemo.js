@@ -8,26 +8,26 @@ let tabs=[{
   expr:'默认显示的tab',
   type:'number',
   values:'-',
-  default:'0'
+  default:'0',
 },{
   key:'style',
   expr:'设置tab样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 let tabpage=[{
   key:'icon',
   expr:'tab图标',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'name',
   expr:'tab名字',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<Row gutter={12}>
@@ -47,7 +47,7 @@ const t=`<Row gutter={12}>
     </Col>
   </Row>`;
 
-export default class TabsDemo extends React.Component<any,any> {
+export default class TabsDemo extends React.Component {
 
   render() {
     return (
@@ -83,6 +83,6 @@ export default class TabsDemo extends React.Component<any,any> {
           </Col>
         </Row>
       </div>
-    )
-  };
+    );
+  }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table,UL,Code} from 'yrui';
+import {Items,Item,Table,Ul,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let ul=[{
@@ -8,19 +8,19 @@ let ul=[{
   expr:'列表集',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'click',
   expr:'点击事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'alignRight',
   expr:'文本右对齐',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 }];
 
 let uls=[{
@@ -51,16 +51,16 @@ const t=`let uls=[{
     right:'22',
   }];
   //
-  <UL uls={uls} />
+  <Ul uls={uls} />
 `;
 
-export default class ULDemo extends React.Component<any,any> {
+export default class ULDemo extends React.Component {
 
   render() {
     return (
       <Items>
         <Item>
-          <UL uls={uls} />
+          <Ul uls={uls} />
         </Item>
         <Item>
           <div className="textarea">
@@ -73,6 +73,6 @@ export default class ULDemo extends React.Component<any,any> {
           <Table thead={thead} tbody={ul} />
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

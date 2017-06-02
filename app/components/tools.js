@@ -1,41 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table,UL,Code} from 'yrui';
-
-let thead=['ID','参数','说明','类型','可选值','默认值'];
-let ul=[{
-  key:'uls',
-  expr:'列表集',
-  type:'array',
-  values:'-',
-  default:'-'
-},{
-  key:'click',
-  expr:'点击事件',
-  type:'function',
-  values:'-',
-  default:'-'
-},{
-  key:'alignRight',
-  expr:'文本右对齐',
-  type:'boolean',
-  values:'true/false',
-  default:'false'
-}];
-
-let uls=[{
-  left:'11',
-  right:'22',
-},{
-  left:'11',
-  right:'22',
-},{
-  left:'11',
-  right:'22',
-},{
-  left:'11',
-  right:'22',
-}];
+import {Items,Item,Code} from 'yrui';
 
 const t=`
   
@@ -229,7 +194,7 @@ const t=`
 
 `;
 
-export default class Tools extends React.Component<any,any> {
+export default class Tools extends React.Component {
 
   render() {
     return (
@@ -241,6 +206,6 @@ export default class Tools extends React.Component<any,any> {
           </div>
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

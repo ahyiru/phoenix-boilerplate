@@ -1,19 +1,12 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import {SideBar,RightBar,Tabs,Tabpage,List} from 'yrui';
 
 import {rightbarTabs,rightbarTabLists} from '../models/models';
 
-export interface AsideProps {
-  sideBarMenu?:any;
-};
+export default class Aside extends React.Component {
 
-export default class Aside extends React.Component<AsideProps,any> {
-  state={auth:'yiru'};
-
-  static defaultProps={
-    sideBarMenu:[],
-  };
   render() {
     // let user=getUser();
     // user&&(user.logo=require('../../styles/images/usr.jpg'));
@@ -28,7 +21,7 @@ export default class Aside extends React.Component<AsideProps,any> {
                   <Tabpage key={`tabs-${k}`} icon={v.icon}>
                     <List list={rightbarTabLists} name={v.name} />
                   </Tabpage>
-                )
+                );
               })
             }
           </Tabs>
@@ -37,3 +30,10 @@ export default class Aside extends React.Component<AsideProps,any> {
     );
   }
 }
+
+Aside.PropTypes={
+  sideBarMenu:PropTypes.array,
+};
+Aside.defaultProps={
+  sideBarMenu:[],
+};

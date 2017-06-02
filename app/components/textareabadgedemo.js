@@ -8,35 +8,35 @@ let textarea=[{
   expr:'样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'placeholder',
   expr:'提示文本',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 let badge=[{
   key:'style',
   expr:'样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'text',
   expr:'显示的数值',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'showBadge',
   expr:'是否显示',
   type:'boolean',
   values:'true/false',
-  default:'true'
+  default:'true',
 }];
 
-export default class TextareabadgeDemo extends React.Component<any,any> {
+export default class TextareabadgeDemo extends React.Component {
 
   render() {
     return (
@@ -64,6 +64,6 @@ export default class TextareabadgeDemo extends React.Component<any,any> {
           </Col>
         </Row>
       </div>
-    )
-  };
+    );
+  }
 }

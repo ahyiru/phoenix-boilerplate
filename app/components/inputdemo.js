@@ -8,121 +8,121 @@ let tbody=[{
   expr:'输入框类型',
   type:'string',
   values:'text/textarea',
-  default:'text'
+  default:'text',
 },{
   key:'disabled',
   expr:'是否禁用输入',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'readOnly',
   expr:'是否是只读',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'placeholder',
   expr:'提示消息',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'value',
   expr:'输入值',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'defaultValue',
   expr:'默认值',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'ileft',
   expr:'输入框左侧图标',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'iright',
   expr:'输入框右侧图标',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'pleft',
   expr:'左边显示提示信息',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'pright',
   expr:'右边显示提示信息',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'error',
   expr:'输入是否有错误',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'noBorder',
   expr:'输入框是否有边框',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'change',
   expr:'监视输入事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'focus',
   expr:'取得焦点事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'blur',
   expr:'失去焦点事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'mouserenter',
   expr:'鼠标移入事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'mouseleave',
   expr:'鼠标离开事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'keydown',
   expr:'按下按钮事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'keyup',
   expr:'松开按钮事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'click',
   expr:'点击事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<Row gutter={12}>
@@ -147,13 +147,13 @@ const t=`<Row gutter={12}>
   </Row>
 `;
 
-export default class InputDemo extends React.Component<any,any> {
+export default class InputDemo extends React.Component {
   constructor(props){
     super(props);
-  };
-  change=(e)=>{
+  }
+  change(e){
     console.log(e.target.value);
-  };
+  }
   render() {
     return (
       <div className="input">
@@ -186,6 +186,6 @@ export default class InputDemo extends React.Component<any,any> {
           </div>
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

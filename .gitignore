@@ -56,4 +56,5 @@ rest
 # file
 .happypack
 *.zip
+*.bk
 

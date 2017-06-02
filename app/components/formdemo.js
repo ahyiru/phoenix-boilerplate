@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import {Form,FormItem,Items,Item,Row,Col,Input,Button,Table,Code,tools} from 'yrui';
+import {Form,FormItem,Row,Col,Button,Table,Code,tools} from 'yrui';
 
-const $fetch=tools.$fetch;
-const $notify=tools.$notify;
-const $timer=tools.$timer;
+// const $fetch=tools.$fetch;
+// const $notify=tools.$notify;
+// const $timer=tools.$timer;
 const $validate=tools.$validate;
 
 // $timer(document.body);
@@ -31,7 +31,7 @@ for(let i=0;i<12;i++){
     },
   };
   formData.push(fd);
-};
+}
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let tbody=[{
@@ -39,38 +39,38 @@ let tbody=[{
   expr:'label和input是否在同一行',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 }];
 let tbody1=[{
   key:'label',
   expr:'输入框头部',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'inputOpt',
   expr:'输入框配置，见Input组件',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'change',
   expr:'监听输入框改变',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'blur',
   expr:'失去焦点事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'focus',
   expr:'获取焦点事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`const formData=[];
@@ -110,23 +110,23 @@ const t=`const formData=[];
   </Form>
 `;
 
-export default class FormDemo extends React.Component<any,any> {
+export default class FormDemo extends React.Component {
   constructor(props){
     super(props);
     this.state=({
-      show:false
+      show:false,
     });
-  };
+  }
   componentDidMount(){
     window.addEventListener('click',this.hide,false);
-  };
+  }
   componentWillUnmount(){
     window.removeEventListener('click',this.hide,false);
-  };
-  clkEvent=()=>{
+  }
+  clkEvent(){
     console.log('clicked');
-  };
-  getFormData=()=>{
+  }
+  getFormData(){
     let form=document.getElementsByTagName('form')[0];
     let input=form.getElementsByTagName('input'),data=[];
     for(let i=0,l=input.length;i<l;i++){
@@ -134,45 +134,45 @@ export default class FormDemo extends React.Component<any,any> {
       if(!validate.ok){
         formData[i].inputOpt.error=validate.info;
         this.setState({
-          formData:formData
+          formData:formData,
         });
         return false;
       }
       data.push(input[i].value);
     }
     // console.log(data);
-  };
+  }
 
-  resetForm=()=>{
+  resetForm(){
     let form=document.getElementsByTagName('form')[0];
-    let input=form.getElementsByTagName('input'),data=[];
+    let input=form.getElementsByTagName('input');
     for(let i=0,l=input.length;i<l;i++){
       formData[i].inputOpt.value='';
     }
-  };
+  }
 
-  show=(e)=>{
+  show(e){
     this.setState({
-      show:true
-    })
-  };
-  hide=(e)=>{
+      show:true,
+    });
+  }
+  hide(e){
     // e.preventDefault();
     // e.stopPropagation();
     this.setState({
-      show:false
+      show:false,
     });
-  };
-  test=(e)=>{
+  }
+  test(e){
     e.stopPropagation();
-  };
+  }
 
-  getVal=(e)=>{
+  getVal(e){
     console.log(e.target.value);
-  };
+  }
 
   render() {
-    const {error}=this.props;
+    // const {error}=this.props;
     return (
       <div className="form">
         <h2>基本布局</h2>
@@ -264,6 +264,6 @@ export default class FormDemo extends React.Component<any,any> {
           </div>
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

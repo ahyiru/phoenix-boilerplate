@@ -9,99 +9,99 @@ let brand=[{
   expr:'是否在brand上显示logo',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'title',
   expr:'标题',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'subtitle',
   expr:'副标题',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'url',
   expr:'点击跳转路径',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 let nav=[{
   key:'login',
   expr:'用户登录信息',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'hideRightTogbar',
   expr:'是否显示右侧边栏切换按钮',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'dropList',
   expr:'头部显示内容',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'dropList.leftList',
   expr:'头部左侧内容',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'dropList.rightList',
   expr:'头部右侧内容',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'dropList.searchFlag',
   expr:'是否显示搜索框',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 }];
 let droplist=[{
   key:'name',
   expr:'下拉菜单名',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'icon',
   expr:'下拉菜单图标',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'img',
   expr:'下拉菜单图标',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'animate',
   expr:'下拉菜单动画',
   type:'string',
   values:'up/down/left/right',
-  default:'up'
+  default:'up',
 },{
   key:'msg',
   expr:'下拉菜单消息提示',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'items',
   expr:'下拉菜单内容',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`import {Head,Nav,Brand} from 'yrui';
@@ -153,12 +153,12 @@ const t=`import {Head,Nav,Brand} from 'yrui';
         p:'',
         url:'user/login',
         icon:'weixin',
-      }]
-    }]
+      }],
+    }],
   };
 `;
 
-export default class HeadDemo extends React.Component<any,any> {
+export default class HeadDemo extends React.Component {
 
   render() {
     return (
@@ -187,6 +187,6 @@ export default class HeadDemo extends React.Component<any,any> {
           </Row>
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

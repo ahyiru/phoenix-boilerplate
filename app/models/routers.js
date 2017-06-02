@@ -49,23 +49,23 @@ export const sidebarMenu=[{
     url:'/frame/route',
     component:RouteDemo,
     leftIcon:'arrow-right',
-    title:'路由配置'
+    title:'路由配置',
   },{
     url:'/frame/head',
     component:HeadDemo,
     leftIcon:'arrow-right',
-    title:'头部配置'
+    title:'头部配置',
   },{
     url:'/frame/aside',
     component:AsideDemo,
     leftIcon:'arrow-right',
-    title:'侧边栏配置'
+    title:'侧边栏配置',
   },{
     url:'/frame/main',
     component:MainDemo,
     leftIcon:'arrow-right',
     title:'主页配置',
-  }]
+  }],
 },{
   url:'/component/col',
   component:ColDemo,
@@ -123,18 +123,18 @@ export const sidebarMenu=[{
     url:'/component/lists/items',
     component:ItemsDemo,
     leftIcon:'arrow-right',
-    title:'items'
+    title:'items',
   },{
     url:'/component/lists/list',
     component:ListDemo,
     leftIcon:'arrow-right',
-    title:'list'
+    title:'list',
   },{
     url:'/component/lists/ul',
     component:ULDemo,
     leftIcon:'arrow-right',
-    title:'ul'
-  }]
+    title:'ul',
+  }],
 },{
   url:'javascript:;',
   title:'文本',
@@ -144,18 +144,18 @@ export const sidebarMenu=[{
     url:'/component/progress',
     component:ProgressDemo,
     leftIcon:'arrow-right',
-    title:'进度条'
+    title:'进度条',
   },{
     url:'/component/code',
     component:CodeDemo,
     leftIcon:'arrow-right',
-    title:'code文本'
+    title:'code文本',
   },{
     url:'/component/badge',
     component:BadgeDemo,
     leftIcon:'arrow-right',
-    title:'badge、textarea'
-  }]
+    title:'badge、textarea',
+  }],
 },{
   url:'javascript:;',
   title:'选择',
@@ -165,13 +165,13 @@ export const sidebarMenu=[{
     url:'/component/radio',
     component:RadiocheckboxDemo,
     leftIcon:'arrow-right',
-    title:'单选、多选'
+    title:'单选、多选',
   },{
     url:'/component/select',
     component:SelectswitchDemo,
     leftIcon:'arrow-right',
-    title:'下拉菜单'
-  }]
+    title:'下拉菜单',
+  }],
 },{
   url:'/component/tools',
   component:Tools,
@@ -199,7 +199,7 @@ export const sidebarMenu=[{
     leftIcon:'arrow-right',
     title:'其它'
   }]*/
-}/*,{
+},/*{
   url:'/user',
   component:User,
   title:'用户登录',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table,Code} from 'yrui';
+import {Items,Item,Row,Col,Code} from 'yrui';
 
 import './color.less';
 
@@ -100,7 +100,7 @@ const cls=`
 
 `;
 
-export default class Layout extends React.Component<any,any> {
+export default class Layout extends React.Component {
 
   render() {
     return (
@@ -191,6 +191,6 @@ export default class Layout extends React.Component<any,any> {
           </div>
         </Item>
       </Items>
-    )
+    );
   }
 }

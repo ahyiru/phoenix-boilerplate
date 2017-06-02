@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Radio,Checkbox,Items,Item,Row,Col,Table,Code} from 'yrui';
+import {Radio,Checkbox,Row,Col,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let radio=[{
@@ -8,31 +8,31 @@ let radio=[{
   expr:'名字',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'inline',
   expr:'是否在一行显示',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'opt',
   expr:'radio/checkbox集合',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'checked',
   expr:'选中的表值',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'change',
   expr:'切换选项事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<Row gutter={12}>
@@ -58,7 +58,7 @@ const t1=`<Row gutter={12}>
   </Row>
 `;
 
-export default class RadiocheckboxDemo extends React.Component<any,any> {
+export default class RadiocheckboxDemo extends React.Component {
 
   render() {
     return (
@@ -108,6 +108,6 @@ export default class RadiocheckboxDemo extends React.Component<any,any> {
           </Col>
         </Row>
       </div>
-    )
-  };
+    );
+  }
 }

@@ -8,19 +8,19 @@ let main=[{
   expr:'面包屑配置',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'hidePageHead',
   expr:'是否隐藏头部内容',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'hidePagetitle',
   expr:'是否显示面包屑上面标题',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 }];
 
 const t=`<Main breadcrumb={current} hidePageHead={true} /*hidePagetitle={false}*/>
@@ -28,7 +28,7 @@ const t=`<Main breadcrumb={current} hidePageHead={true} /*hidePagetitle={false}*
   </Main>
 `;
 
-export default class MainDemo extends React.Component<any,any> {
+export default class MainDemo extends React.Component {
 
   render() {
     return (
@@ -45,6 +45,6 @@ export default class MainDemo extends React.Component<any,any> {
           </Row>
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

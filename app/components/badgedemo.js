@@ -8,19 +8,19 @@ let badge=[{
   expr:'badge样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'text',
   expr:'badge文本',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'showBadge',
   expr:'是否显示Badge',
   type:'boolean',
   values:'true/false',
-  default:'true'
+  default:'true',
 }];
 
 let textarea=[{
@@ -28,13 +28,13 @@ let textarea=[{
   expr:'样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'placeholder',
   expr:'提示文本',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<Badge text="3">
@@ -44,7 +44,7 @@ const t=`<Badge text="3">
 const t1=`<Textarea placeholder="test" />
 `;
 
-export default class CodeDemo extends React.Component<any,any> {
+export default class CodeDemo extends React.Component {
 
   render() {
     return (
@@ -90,6 +90,6 @@ export default class CodeDemo extends React.Component<any,any> {
           </Row>
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

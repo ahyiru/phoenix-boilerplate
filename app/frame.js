@@ -1,20 +1,12 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from './components/head';
 import Aside from './components/aside';
-import {PageHeader,Main,Notify} from 'yrui';
+import {Main} from 'yrui';
 
-export interface FrameProps {
-  current?:any;
-  menu?:any;
-};
+export default class Frame extends React.Component {
 
-export default class Frame extends React.Component<FrameProps,any> {
-
-  static defaultProps={
-    current:[],
-    menu:[],
-  };
   render() {
     const {current,menu}=this.props;
     return (
@@ -30,3 +22,12 @@ export default class Frame extends React.Component<FrameProps,any> {
     );
   }
 }
+
+Frame.PropTypes={
+  current:PropTypes.array,
+  menu:PropTypes.array,
+};
+Frame.defaultProps={
+  current:[],
+  menu:[],
+};

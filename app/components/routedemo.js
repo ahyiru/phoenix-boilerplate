@@ -9,19 +9,19 @@ let routers=[{
   expr:'路由表',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'frame',
   expr:'框架主体',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'browserRouter',
   expr:'是否是真实路径',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 }];
 
 const t=`import {App,Demo1,Demo2} from './component';
@@ -40,12 +40,12 @@ const t=`import {App,Demo1,Demo2} from './component';
       url:'/demo/demo1',
       component:Demo1,
       leftIcon:'arrow-right',
-      title:'demo1'
+      title:'demo1',
     },{
       url:'/demo/demo2',
       component:Demo2,
       leftIcon:'arrow-right',
-      title:'deno2'
+      title:'deno2',
     }]
   }];
   // 页面配置
@@ -56,7 +56,7 @@ const t=`import {App,Demo1,Demo2} from './component';
   browserRouter默认为false使用hash路径.
 `;
 
-export default class RouteDemo extends React.Component<any,any> {
+export default class RouteDemo extends React.Component {
 
   render() {
     return (
@@ -77,6 +77,6 @@ export default class RouteDemo extends React.Component<any,any> {
           </Row>
         </Item>
       </Items>
-    )
+    );
   }
 }

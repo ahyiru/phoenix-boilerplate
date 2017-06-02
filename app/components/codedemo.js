@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table,Code} from 'yrui';
+import {Items,Item,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let code=[{
@@ -8,19 +8,19 @@ let code=[{
   expr:'code标题',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'code',
   expr:'code文本',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'theme',
   expr:'主题',
   type:'string',
   values:'dark/light',
-  default:'light'
+  default:'light',
 }];
 
 const t=`
@@ -29,7 +29,7 @@ const t=`
   <Code title="demo" code={t} />
 `;
 
-export default class CodeDemo extends React.Component<any,any> {
+export default class CodeDemo extends React.Component {
 
   render() {
     return (
@@ -45,6 +45,6 @@ export default class CodeDemo extends React.Component<any,any> {
           <Table thead={thead} tbody={code} />
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

@@ -37,7 +37,7 @@ fetch('/test/post',{
 
 // end test post
 
-export default class API extends React.Component<any,any> {
+export default class API extends React.Component {
 
 	constructor(props){
     super(props);

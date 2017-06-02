@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './layout.less';
 
-import {Row,Col,Table,Code} from 'yrui';
+import {Table,Row,Col,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let tbody=[{
@@ -10,31 +10,31 @@ let tbody=[{
   expr:'在Row上设置栅格间距参数值',
   type:'number',
   values:'8/12/16/20',
-  default:'0'
+  default:'0',
 },{
   key:'span',
   expr:'栅格占据的列数',
   type:'number',
   values:'1-12',
-  default:'-'
+  default:'-',
 },{
   key:'offset',
   expr:'栅格左侧的间隔格数',
   type:'number',
   values:'1-12',
-  default:'0'
+  default:'0',
 },{
   key:'sm',
   expr:'屏幕宽度小于992px时,栅格占据的列数或栅格左侧的间隔格数',
   type:'number|object',
   values:'1-12|{span:1-12,offset:1-12}',
-  default:'-'
+  default:'-',
 },{
   key:'xs',
   expr:'屏幕宽度小于768px时,栅格占据的列数或栅格左侧的间隔格数',
   type:'number|object',
   values:'1-12|{span:1-12,offset:1-12}',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<h2>基本布局</h2>
@@ -122,7 +122,7 @@ const t=`<h2>基本布局</h2>
   </Row>
 `;
 
-export default class ColDemo extends React.Component<any,any> {
+export default class ColDemo extends React.Component {
 
   render() {
     return (
@@ -220,6 +220,6 @@ export default class ColDemo extends React.Component<any,any> {
           <Table thead={thead} tbody={tbody} noBorder={true} />
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

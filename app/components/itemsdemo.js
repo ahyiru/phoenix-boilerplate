@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Table,Code} from 'yrui';
+import {Items,Item,Table,Code} from 'yrui';
 
 let thead=['ID','参数','说明','类型','可选值','默认值'];
 let items=[{
@@ -8,14 +8,14 @@ let items=[{
   expr:'设置items样式',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 let item=[{
   key:'border',
   expr:'设置border样式',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<Items>
@@ -29,7 +29,7 @@ const t=`<Items>
     </Item>
   </Items>`;
 
-export default class ItemsDemo extends React.Component<any,any> {
+export default class ItemsDemo extends React.Component {
 
   render() {
     return (
@@ -47,6 +47,6 @@ export default class ItemsDemo extends React.Component<any,any> {
           <Table thead={thead} tbody={item} />
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

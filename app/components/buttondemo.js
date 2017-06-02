@@ -8,61 +8,61 @@ let tbody=[{
   expr:'按钮颜色',
   type:'string',
   values:'-',
-  default:'default'
+  default:'default',
 },{
   key:'block',
   expr:'是否是块状按钮',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'size',
   expr:'按钮大小',
   type:'string',
   values:'lg/sm/default',
-  default:'-'
+  default:'-',
 },{
   key:'icon',
   expr:'带icon按钮',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'text',
   expr:'按钮文本',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'margin',
   expr:'按钮间距',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'pullRight',
   expr:'按钮右对齐',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'click',
   expr:'按钮事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'disabled',
   expr:'禁用按钮事件',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'type',
   expr:'按钮类型',
   type:'string',
   values:'button/submit',
-  default:'button'
+  default:'button',
 }];
 
 let tbody1=[{
@@ -70,25 +70,25 @@ let tbody1=[{
   expr:'图标颜色',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'size',
   expr:'图标大小',
   type:'string',
   values:'lg/2x/3x/4x/5x',
-  default:'-'
+  default:'-',
 },{
   key:'fa',
   expr:'图标icon',
   type:'string',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'click',
   expr:'按钮事件',
   type:'function',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`<h2>Button</h2>
@@ -135,52 +135,46 @@ const t1=`<h2>Icon</h2>
   </div>
 `;
 
-export default class ButtonDemo extends React.Component<any,any> {
+export default class ButtonDemo extends React.Component {
 
-  state={auth:'yiru'};
-
-  static defaultProps={
-    auth:'yiru',
-  };
-
-  click=()=>{
+  click(){
     console.log('1');
-  };
+  }
   render() {
-  	const b1={
-			color:'info',
-			block:false,
+    /*const b1={
+      color:'info',
+      block:false,
       size:'sm',
-			icon:'user',
-			text:'test',
+      icon:'user',
+      text:'test',
       margin:true,
       click:this.click,
-		}
+    };*/
     return (
       <div className="button">
         <h2>Button</h2>
         <div>
-          <Button color={'default'} margin="ms" text='default' />
-          <Button color={'info'} margin="ms" text='info' />
-          <Button color={'warning'} margin="ms" text='warning' />
-          <Button color={'success'} margin="ms" text='success' />
-          <Button color={'danger'} margin="ms" text='danger' />
+          <Button color={'default'} margin="ms" text="default" />
+          <Button color={'info'} margin="ms" text="info" />
+          <Button color={'warning'} margin="ms" text="warning" />
+          <Button color={'success'} margin="ms" text="success" />
+          <Button color={'danger'} margin="ms" text="danger" />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text='default sm' size={'sm'} />
-          <Button color={'info'} margin="ms" text='info lg' size={'lg'} />
-          <Button color={'warning'} margin="ms" text='warning default' />
-          <Button color={'success'} margin="ms" text='success sm' size={'sm'} />
-          <Button color={'danger'} margin="ms" text='danger lg' size={'lg'} />
+          <Button color={'default'} margin="ms" text="default sm" size={'sm'} />
+          <Button color={'info'} margin="ms" text="info lg" size={'lg'} />
+          <Button color={'warning'} margin="ms" text="warning default" />
+          <Button color={'success'} margin="ms" text="success sm" size={'sm'} />
+          <Button color={'danger'} margin="ms" text="danger lg" size={'lg'} />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text='apple' icon={'apple'} />
-          <Button color={'info'} margin="ms" text='html5'icon={'html5'}  />
-          <Button color={'warning'} margin="ms" text='css3'icon={'css3'}  />
-          <Button color={'success'} margin="ms" text='weixin'icon={'weixin'}  />
-          <Button color={'danger'} margin="ms" text='qq'icon={'qq'} />
-          <Button color={'danger'} margin="ms" text='disabled'icon={'qq'} disabled />
-          <Button color={'info'} margin="ms" text='block'icon={'qq'} block />
+          <Button color={'default'} margin="ms" text="apple" icon={'apple'} />
+          <Button color={'info'} margin="ms" text="html5" icon={'html5'}  />
+          <Button color={'warning'} margin="ms" text="css3" icon={'css3'}  />
+          <Button color={'success'} margin="ms" text="weixin" icon={'weixin'}  />
+          <Button color={'danger'} margin="ms" text="qq" icon={'qq'} />
+          <Button color={'danger'} margin="ms" text="disabled" icon={'qq'} disabled />
+          <Button color={'info'} margin="ms" text="block" icon={'qq'} block />
         </div>
         <div>
           <ButtonGroup>
@@ -216,6 +210,6 @@ export default class ButtonDemo extends React.Component<any,any> {
           <Table thead={thead} tbody={tbody1} noBorder={true} />
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

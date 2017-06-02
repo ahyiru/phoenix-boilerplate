@@ -3,19 +3,19 @@
 export const notifyList=[{
   class:'top-left success',
   icon:'check-square-o',
-  txt:'更新成功！'
+  txt:'更新成功！',
 },{
   class:'top-middle warning',
   icon:'exclamation-triangle',
-  txt:'数据格式不规范！'
+  txt:'数据格式不规范！',
 },{
   class:'top-right danger',
   icon:'times-circle',
-  txt:'更新出错！'
+  txt:'更新出错！',
 },{
   class:'bottom-right info',
   icon:'info-circle',
-  txt:'请升级版本！'
+  txt:'请升级版本！',
 }];
 
 //dropList
@@ -64,7 +64,7 @@ export const dropList={
       h4:'你有一条新信息',
       p:'请注意查收 ',
       icon:'weixin',
-    }]
+    }],
   },{
     name:'tips',
     icon:'bell',
@@ -96,7 +96,7 @@ export const dropList={
       h4:'你的系统有更新',
       p:'请升级到最新版本',
       icon:'weixin',
-    }]
+    }],
   },{
     name:'language',
     icon:'html5',
@@ -118,7 +118,7 @@ export const dropList={
       h4:'Japanese',
       p:'japan',
       icon:'weixin',
-    }]
+    }],
   },{
     name:'profile',
     img:require('../styles/images/usr.jpg'),
@@ -147,8 +147,8 @@ export const dropList={
       p:'',
       url:'user/login',
       icon:'weixin',
-    }]
-  }]
+    }],
+  }],
 };
 
 //rightbarTabs
@@ -156,22 +156,22 @@ export const rightbarTabs=[{
   id:'0',
   name:'tab1',
   icon:'weibo',
-  active:''
+  active:'',
 },{
   id:'1',
   name:'tab2',
   icon:'weixin',
-  active:''
+  active:'',
 },{
   id:'2',
   name:'tab3',
   icon:'qq',
-  active:''
+  active:'',
 },{
   id:'3',
   name:'tab4',
   icon:'apple',
-  active:''
+  active:'',
 }];
 //rightbarTabLists
 export const rightbarTabLists=[{
@@ -179,25 +179,25 @@ export const rightbarTabLists=[{
   pic:'l1',
   h4:'我想起那天夕阳下的奔跑1111111',
   p:'那是我们逝去的青春',
-  icon:'hand-o-left'
+  icon:'hand-o-left',
 },{
   num:'l2',
   pic:'l2',
   h4:'我想起那天夕阳下的奔跑',
   p:'那是我们逝去的青春',
-  icon:'hand-o-left'
+  icon:'hand-o-left',
 },{
   num:'l3',
   pic:'l3',
   h4:'我想起那天夕阳下的奔跑',
   p:'那是我们逝去的青春',
-  icon:'hand-o-left'
+  icon:'hand-o-left',
 },{
   num:'l4',
   pic:'l4',
   h4:'我想起那天夕阳下的奔跑',
   p:'那是我们逝去的青春',
-  icon:'hand-o-left'
+  icon:'hand-o-left',
 }];
 
 //tables
@@ -209,31 +209,31 @@ export const tableData={
     [3,'r31','r32','r33','r34'],
     [4,'r41','r42','r43','r44'],
     [5,'r51','r52','r53','r54'],
-    [6,'r61','r62','r63','r64']
-  ]
+    [6,'r61','r62','r63','r64'],
+  ],
 };
 
 //projectList
 export const projectList=[{
   url:'http://localhost:8001/',
   title:'project1',
-  icon:'user'
+  icon:'user',
 },{
   url:'http://localhost:8002/',
   title:'project2',
-  icon:'user'
+  icon:'user',
 },{
   url:'http://localhost:8003/',
   title:'project3',
-  icon:'user'
+  icon:'user',
 },{
   url:'http://localhost:8004/',
   title:'project4',
-  icon:'user'
+  icon:'user',
 },{
   url:'http://localhost:8005/',
   title:'project5',
-  icon:'user'
+  icon:'user',
 }];
 
 

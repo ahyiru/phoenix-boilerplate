@@ -8,25 +8,25 @@ let sidebar=[{
   expr:'侧边栏菜单',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'projectList',
   expr:'项目列表',
   type:'array',
   values:'-',
-  default:'-'
+  default:'-',
 },{
   key:'hideSidebarTitle',
   expr:'是否隐藏侧边栏title',
   type:'boolean',
   values:'true/false',
-  default:'false'
+  default:'false',
 },{
   key:'userInfo',
   expr:'用户信息展示',
   type:'object',
   values:'-',
-  default:'-'
+  default:'-',
 }];
 
 const t=`import {SideBar,RightBar} from 'yrui';
@@ -61,7 +61,7 @@ const t=`import {SideBar,RightBar} from 'yrui';
   }];
 `;
 
-export default class AsideDemo extends React.Component<any,any> {
+export default class AsideDemo extends React.Component {
 
   render() {
     return (
@@ -80,6 +80,6 @@ export default class AsideDemo extends React.Component<any,any> {
           </Row>
         </Item>
       </Items>
-    )
-  };
+    );
+  }
 }

@@ -39,10 +39,10 @@ module.exports = {
       loader: 'file-loader?name=img/img_[hash:8].[ext]',
     },{
       test: /\.(ttf|eot|svg|woff|woff2)/,
-      loader: 'file-loader',
+      loader: 'file-loader?name=font/[hash].[ext]',
     }, {
       test: /\.(pdf)/,
-      loader: 'file-loader',
+      loader: 'file-loader?name=pdf/[hash].[ext]',
     }, {
       test: /\.(swf|xap)/,
       loader: 'file-loader',
