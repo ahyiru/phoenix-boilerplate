@@ -79,7 +79,7 @@ export default class EchartDemo extends React.Component {
       option2:chart2,
     });
   }
-  fetchNewDate(){
+  fetchNewDate=()=>{
     let axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
     let option = this.state.option;
     let data0 = option.series[0].data;
@@ -95,7 +95,7 @@ export default class EchartDemo extends React.Component {
     option.xAxis[1].data.shift();
     option.xAxis[1].data.push(this.count++);
     this.setState({option:option});
-  }
+  };
   componentDidMount(){
     if (this.timeTicket) {
       clearInterval(this.timeTicket);
@@ -108,17 +108,17 @@ export default class EchartDemo extends React.Component {
     }
   }
 
-  onChartClick(param,echart){
+  onChartClick=(param,echart)=>{
     console.log(param, echart);
     alert('图表点击!');
-  }
-  onChartLegendselectchanged(param,echart){
+  };
+  onChartLegendselectchanged=(param,echart)=>{
     console.log(param, echart);
     alert('改变选中项!');
-  }
-  onChartReady(echart){
+  };
+  onChartReady=(echart)=>{
     console.log('图表已加载!', echart);
-  }
+  };
 
   render() {
     let onEvents={

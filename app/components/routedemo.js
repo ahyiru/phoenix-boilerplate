@@ -47,6 +47,11 @@ const t=`import {App,Demo1,Demo2} from './component';
       leftIcon:'arrow-right',
       title:'deno2',
     }]
+  },{
+    url:'/404',
+    component:ErrorPage,
+    title:'404',
+    noMenu:true, //noMenu为true时，页面不包含frame框架
   }];
   // 页面配置
   import Frame from './components/base/';

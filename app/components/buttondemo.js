@@ -137,9 +137,9 @@ const t1=`<h2>Icon</h2>
 
 export default class ButtonDemo extends React.Component {
 
-  click(){
+  click=()=>{
     console.log('1');
-  }
+  };
   render() {
     /*const b1={
       color:'info',

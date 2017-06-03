@@ -151,9 +151,9 @@ export default class InputDemo extends React.Component {
   constructor(props){
     super(props);
   }
-  change(e){
+  change=(e)=>{
     console.log(e.target.value);
-  }
+  };
   render() {
     return (
       <div className="input">

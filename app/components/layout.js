@@ -100,6 +100,34 @@ const cls=`
 
 `;
 
+const standard=`
+
+1.引号使用:js代码使用单引号，html里使用双引号。
+
+2.使用严格相等号,即===或!==。
+
+3.所有语句使用一致的括号风格。
+
+4.使用一致的缩进，2个空格。
+
+5.变量先定义再使用，尽量避免使用全局变量。
+
+6.代码注释保持一致的风格。
+
+7.尽量使用const或let定义变量，避免使用var。
+
+8.每个语句结尾使用分号。
+
+9.条件判断语句必须放入{}中。
+
+10.jsx里没有子元素的标签使用反斜杠自闭合。
+
+11.对象元素单行时最后一个元素后面不要逗号，多行时最后元素后要加逗号。
+
+12.使用一致的命名风格,驼峰式(Camel-Case)。
+
+`;
+
 export default class Layout extends React.Component {
 
   render() {
@@ -110,6 +138,13 @@ export default class Layout extends React.Component {
             <h2>Phoenix UI</h2>
             <p>Phoenix UI是一套用于快速开发web应用的UI框架。</p>
             <p>Phoenix UI使用Typescript编写，提供一些简单UI组件及函数库。拓展性强，可配合其它一些组件或插件进行开发，如ant design、jquery等。</p>
+          </div>
+        </Item>
+        <Item>
+          <div className="textarea">
+            <h2>代码书写规范</h2>
+            <h4>团队协作中代码规范非常重要，希望大家严格遵守代码约束，避免不必要的bug。</h4>
+            <h3><Code title="代码规范" code={standard} /></h3>
           </div>
         </Item>
         <Item>

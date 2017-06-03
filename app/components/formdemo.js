@@ -123,10 +123,10 @@ export default class FormDemo extends React.Component {
   componentWillUnmount(){
     window.removeEventListener('click',this.hide,false);
   }
-  clkEvent(){
+  clkEvent=()=>{
     console.log('clicked');
-  }
-  getFormData(){
+  };
+  getFormData=()=>{
     let form=document.getElementsByTagName('form')[0];
     let input=form.getElementsByTagName('input'),data=[];
     for(let i=0,l=input.length;i<l;i++){
@@ -141,35 +141,35 @@ export default class FormDemo extends React.Component {
       data.push(input[i].value);
     }
     // console.log(data);
-  }
+  };
 
-  resetForm(){
+  resetForm=()=>{
     let form=document.getElementsByTagName('form')[0];
     let input=form.getElementsByTagName('input');
     for(let i=0,l=input.length;i<l;i++){
       formData[i].inputOpt.value='';
     }
-  }
+  };
 
-  show(e){
+  show=(e)=>{
     this.setState({
       show:true,
     });
-  }
-  hide(e){
+  };
+  hide=(e)=>{
     // e.preventDefault();
     // e.stopPropagation();
     this.setState({
       show:false,
     });
-  }
-  test(e){
+  };
+  test=(e)=>{
     e.stopPropagation();
-  }
+  };
 
-  getVal(e){
+  getVal=(e)=>{
     console.log(e.target.value);
-  }
+  };
 
   render() {
     // const {error}=this.props;
