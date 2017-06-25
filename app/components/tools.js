@@ -81,24 +81,24 @@ const t=`
       
     (1)get:$fetch.get(url,opt)
       url:数据地址,
-      opt.header:{'Content-Type':'application/json'},
-      opt.mode:'cors',
-      opt.credentials:'omit',
-      opt.cache:'default',
+      opt.header:默认{'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'},
+      opt.mode:默认'cors',
+      opt.credentials:默认'include',
+      opt.cache:默认'default',
     
     (2)post:$fetch.post(url,opt)
       url:数据地址,
-      opt.data:传递数据,
-      opt.header:默认{'Content-Type':'application/json'},
+      opt.data:传递数据,默认{},
+      opt.header:默认{'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'},
       opt.mode:默认'cors',
-      opt.credentials:默认'omit',
+      opt.credentials:默认'include',
       opt.cache:默认'default',
     
     (3)put:$fetch.put(url,opt)
       url:数据地址,
       opt.header:默认{'Content-Type':'application/json'},
       opt.mode:默认'cors',
-      opt.credentials:默认'omit',
+      opt.credentials:默认'include',
       opt.cache:默认'default',
 
     7. 验证器 validate

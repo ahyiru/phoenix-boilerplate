@@ -27,6 +27,12 @@ let list=[{
   type:'string',
   values:'-',
   default:'-',
+},{
+  key:'url',
+  expr:'跳转地址',
+  type:'string',
+  values:'-',
+  default:'-',
 }];
 let listContent=[{
   key:'pic',

@@ -7,18 +7,23 @@ const $notify=tools.$notify;
 import {dropList} from '../models/models';
 
 export default class Header extends React.Component {
+  t=0;
   noty=()=>{
     $notify.destroy();
     $notify.start({txt:'联系我：ah.yiru@gmail.com'});
-    setTimeout(function(){
+    this.t=setTimeout(function(){
       $notify.destroy();
     },3000);
   };
   handleClick=(v)=>{
     if(v.name==='帮助'){
+      clearTimeout(this.t);
       this.noty();
     }
   };
+  componentWillUnmount(){
+
+  }
   render() {
     return (
       <Head>

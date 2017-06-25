@@ -85,6 +85,12 @@ let droplist=[{
   values:'-',
   default:'-',
 },{
+  key:'showName',
+  expr:'显示名称',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
+},{
   key:'animate',
   expr:'下拉菜单动画',
   type:'string',
@@ -107,8 +113,8 @@ let droplist=[{
 const t=`import {Head,Nav,Brand} from 'yrui';
   
   <Head>
-    <Brand title="React" subtitle="UI Demo" logo={require('../../styles/images/usr.jpg')} />
-    <Nav dropList={dropList} hideRightTogbar={false} login={login} />
+    <Brand title="Phoenix" subtitle="UI" logo={require('../styles/images/usr.jpg')} />
+    <Nav dropList={dropList} hideRightTogbar={true} login={null} click={this.handleClick} listClick={this.listClick} />
   </Head>
   
   // dropList

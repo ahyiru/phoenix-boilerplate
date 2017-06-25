@@ -37,6 +37,29 @@ export const dropList={
     name:'帮助',
     icon:'info',
     href:'javascript:;',
+  },{
+    name:'language',
+    icon:'html5',
+    animate:'down',
+    msg:'',
+    open:'',
+    showName:true,
+    items:[{
+      pic:'中',
+      h4:'中文',
+      p:'简体',
+      icon:'weixin',
+    },{
+      pic:'英',
+      h4:'English',
+      p:'en',
+      icon:'weixin',
+    },{
+      pic:'日',
+      h4:'Japanese',
+      p:'japan',
+      icon:'weixin',
+    }],
   }],
   rightList1:[{
     name:'msg',
@@ -103,6 +126,7 @@ export const dropList={
     animate:'down',
     msg:'',
     open:'',
+    showName:true,
     items:[{
       pic:'中',
       h4:'中文',
