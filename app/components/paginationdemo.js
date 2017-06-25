@@ -34,7 +34,7 @@ export default class PaginationDemo extends React.Component {
   curPage=(cur)=>{
     this.setState({
       cur:cur,
-    })
+    });
   };
 
   render() {
@@ -42,10 +42,10 @@ export default class PaginationDemo extends React.Component {
       <Items>
         <Item>
           <Row gutter={12}>
-            <Col span={8}>
+            <Col span={9}>
               <Pagination lists={20} curPage={this.curPage} />
             </Col>
-            <Col span={4}>
+            <Col span={3}>
               <p>当前选中页数：{this.state.cur}</p>
             </Col>
           </Row>
@@ -57,7 +57,7 @@ export default class PaginationDemo extends React.Component {
           </div>
         </Item>
         <Item>
-          <h2>tree配置</h2>
+          <h2>pagination配置</h2>
           <Table thead={thead} tbody={pagination} />
         </Item>
       </Items>

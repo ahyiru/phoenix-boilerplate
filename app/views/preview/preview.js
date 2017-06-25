@@ -8,7 +8,7 @@ import Footer from './footer';
 export default class Preview extends React.Component {
 
   componentDidMount(){
-  	
+    
   }
 
   state={
@@ -19,15 +19,15 @@ export default class Preview extends React.Component {
     e.stopPropagation();
     this.setState({
       hcls:this.state.hcls?'':' close',
-    })
+    });
   };
 
   render() {
     const {hcls}=this.state;
     const ico=hcls?'commenting':'close';
     return(
-    	<div className="preview">
-    		<Header />
+      <div className="preview">
+        <Header />
         <Footer />
         <div className="f1" />
         <div className="f2" />
@@ -38,7 +38,7 @@ export default class Preview extends React.Component {
         <div className={`bottom-noty${hcls}`}>
           <i className={`fa fa-${ico}`} onClick={this.close} />
         </div>
-    	</div>
-    )
+      </div>
+    );
   }
 }

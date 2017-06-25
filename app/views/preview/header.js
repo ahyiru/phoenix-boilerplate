@@ -7,7 +7,7 @@ export default class Header extends React.Component {
     stHead:false,
   };
   componentDidMount(){
-  	window.addEventListener('scroll',this.$scroll,false);
+    window.addEventListener('scroll',this.$scroll,false);
   }
   componentWillUnmount(){
     window.removeEventListener('scroll',this.$scroll,false);
@@ -35,13 +35,14 @@ export default class Header extends React.Component {
     const stm=stMenu?' st-menu':'';
     const h=stMenu?' y-hide':'';
     return(
-    	<div className="head-area">
-    		<div className={`header${st}`}>
+      <div className="head-area">
+        <div className={`header${st}`}>
           <div className="logo">
             <a href="javascript:;">Phoenix UI</a>
           </div>
           {
-            !stMenu&&<div className="header-right">
+            !stMenu&&
+            <div className="header-right">
               <ul>
                 <li><a href="javascript:;">登录</a></li>
                 <li><a href="javascript:;">注册</a></li>
@@ -64,7 +65,7 @@ export default class Header extends React.Component {
         <div className="bg-img">
           <img src={require('./1.jpg')} alt="背景图片" />
         </div>
-    	</div>
-    )
+      </div>
+    );
   }
 }

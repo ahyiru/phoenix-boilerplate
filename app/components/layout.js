@@ -197,7 +197,7 @@ export default class Layout extends React.Component {
                 <div className="c-block bg-tip">tip,<b>#ff9655</b></div>
               </Col>
               <Col span={4} sm={6} xs={12}>
-              <div className="c-block bg-default">default,<b>#999</b></div>
+                <div className="c-block bg-default">default,<b>#999</b></div>
               </Col>
             </Row>
           </div>
