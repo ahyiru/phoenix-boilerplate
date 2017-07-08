@@ -65,6 +65,18 @@ let nav=[{
   type:'boolean',
   values:'true/false',
   default:'false',
+},{
+  key:'click',
+  expr:'无dropdown情况下，返回点击nav的名称(click(v))',
+  type:'function',
+  values:'-',
+  default:'-',
+},{
+  key:'listClick',
+  expr:'有dropdown情况下，返回点击nav的名称以及点击列表的内容(listClick(name,v))',
+  type:'function',
+  values:'-',
+  default:'-',
 }];
 let droplist=[{
   key:'name',
@@ -177,7 +189,7 @@ export default class HeadDemo extends React.Component {
           </div>
           <Row gutter={12}>
             <Col span={6} sm={12}>
-              <h2>barnd配置</h2>
+              <h2>brand配置</h2>
               <Table thead={thead} tbody={brand} />
             </Col>
             <Col span={6} sm={12}>

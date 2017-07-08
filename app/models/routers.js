@@ -32,6 +32,12 @@ import Tools from '../components/tools';
 import Preview from '../views/preview/preview';
 
 import Test from '../views/test/test';
+import Hello from '../views/test/hello';
+import Waimai from '../views/test/waimai';
+
+/*const comp={
+  layout:Layout,
+};*/
 
 // import User from './auth/user';
 // import Login from './auth/login';
@@ -217,6 +223,18 @@ export const sidebarMenu=[{
   url:'/test',
   component:Test,
   title:'test',
+  noMenu:false,
+  leftIcon:'address-book',
+},{
+  url:'/hello',
+  component:Hello,
+  title:'hello world',
+  noMenu:false,
+  leftIcon:'address-book',
+},{
+  url:'/waimai',
+  component:Waimai,
+  title:'外卖',
   noMenu:false,
   leftIcon:'address-book',
 }];

@@ -21,6 +21,16 @@ export default class Header extends React.Component {
       this.noty();
     }
   };
+  listClick=(name,v)=>{
+    console.log(name+':'+JSON.stringify(v));
+    /*if(name=='profile'){
+      // localStorage.removeItem('login');  // 删除login缓存
+      // localStorage.clear();  // 删除所有缓存
+      // rmUser();
+      // rmToken();
+      // location.href=v.url;
+    }*/
+  };
   componentWillUnmount(){
 
   }
@@ -28,7 +38,7 @@ export default class Header extends React.Component {
     return (
       <Head>
         <Brand title="Phoenix" subtitle="UI" logo={require('../styles/images/usr.jpg')} />
-        <Nav dropList={dropList} hideRightTogbar={true} login={null} click={this.handleClick} />
+        <Nav dropList={dropList} hideRightTogbar={true} login={null} click={this.handleClick} listClick={this.listClick} />
       </Head>
     );
   }
