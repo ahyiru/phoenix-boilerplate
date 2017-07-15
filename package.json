@@ -5,7 +5,7 @@
   "description": "phoenix-boilerplate",
   "scripts": {
     "start": "nodemon --watch scripts/start.js",
-    "build": "webpack --config scripts/webpack.production.js --progress && npm run clean && mv _dist build",
+    "build": "NODE_ENV=production webpack --config scripts/webpack.production.js --progress && npm run clean && mv _dist build",
     "clean": "rimraf build",
     "test": "npm run lint && jest",
     "lint": "eslint 'app/**/*.{js,jsx}'",
