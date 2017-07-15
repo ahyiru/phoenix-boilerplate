@@ -70,5 +70,6 @@ module.exports = {
       minimize: true,
       // debug: true
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 };

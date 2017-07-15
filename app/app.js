@@ -5,7 +5,7 @@ import {Router} from 'yrui';
 
 import Frame from './frame';
 // import {sidebarMenu} from './models/routers';
-import {dispatchMenu,subscribeMenu,getMenu} from './models/updateMenu';
+import {dispatchMenu,subscribeMenu,unSubscribeMenu,getMenu} from './models/updateMenu';
 
 import 'font-awesome/css/font-awesome.css';
 import 'yrui/lib/yrui.css';
@@ -17,17 +17,17 @@ export default class App extends React.Component {
     menu:getMenu(),
   };
   componentDidMount(){
-  	const {menu}=this.state;
+    const {menu}=this.state;
     subscribeMenu((v)=>{
-    	console.log(v);
+      // console.log(v);
       this.setState({
         menu:v,
       });
     });
     setTimeout(()=>{
-      const menu=this.state.menu.slice(0,2);
-			dispatchMenu(menu);
-		},2000);
+      const menu=this.state.menu.slice();
+      dispatchMenu(menu);
+    },2000);
   }
   componentWillUnmount(){
     unSubscribeMenu();

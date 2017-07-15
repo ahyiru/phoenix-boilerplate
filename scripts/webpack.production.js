@@ -4,23 +4,21 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpackConfig = require('./webpack.config');
 
-process.env.NODE_ENV = 'production';
-
 module.exports = merge(webpackConfig, {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   cache: false,
   module: {
     rules: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader:'style-loader',
+        fallback:'style-loader',
         use:'css-loader',
       }),
       // exclude: /components/,
     },{
       test: /\.less$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader:'style-loader',
+        fallback:'style-loader',
         use:['css-loader','less-loader'],
         // publicPath:'',
       }),

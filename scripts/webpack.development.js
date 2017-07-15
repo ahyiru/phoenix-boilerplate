@@ -3,8 +3,6 @@ var merge = require('@ersinfotech/merge');
 
 var webpackConfig = require('./webpack.config');
 
-process.env.NODE_ENV = 'development';
-
 module.exports = merge(webpackConfig, {
   devtool: 'eval',
   // devtool: 'cheap-module-source-map',
@@ -28,8 +26,6 @@ module.exports = merge(webpackConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(/*{multiStep: true}*/),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),

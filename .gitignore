@@ -48,6 +48,7 @@ __test__
 __mocks__
 doc
 build
+rest
 
 # server
 ecosystem.json

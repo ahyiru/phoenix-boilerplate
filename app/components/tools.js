@@ -30,18 +30,19 @@ const t=`
       再次执行一次推出全屏,fullScreen(document.body);
     
     4. loading
-      loading(ele,part);eg:loading(document.body);
-      默认part=false，相对于浏览器，可设值true,相对于当前element;
+      loading(ele=undefined);eg:loading(document.body);
+      ele:相对于当前element显示加载;
+      默认ele=document.body，相对于浏览器;
       再次执行一次退出loading,loading(document.body);
     
     5. 消息提示
-      $notify.start(opt);
+      $notify.start(opt={});
         opt.pos=opt.pos||'top-middle';//方位
         opt.color=opt.color||'success';//颜色
         opt.icon=opt.icon||'check-square-o';//图标
         opt.txt=opt.txt||'test';//文本
-        opt.id=opt.id||0;//id
-      销毁提示:$notify.distroy(id);
+        opt.id=opt.id||new Date().getTime();//id
+      销毁提示:$notify.distroy(id=undefined);
   
   ####################################################################
   
@@ -79,27 +80,33 @@ const t=`
 
     6. fetch前后端数据交互
       
-    (1)get:$fetch.get(url,opt)
-      url:数据地址,
-      opt.header:默认{'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'},
-      opt.mode:默认'cors',
-      opt.credentials:默认'include',
-      opt.cache:默认'default',
-    
-    (2)post:$fetch.post(url,opt)
-      url:数据地址,
-      opt.data:传递数据,默认{},
-      opt.header:默认{'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'},
-      opt.mode:默认'cors',
-      opt.credentials:默认'include',
-      opt.cache:默认'default',
-    
-    (3)put:$fetch.put(url,opt)
+    (1)get:$fetch.get(url,opt,ele=undefined,noty=undefined)
       url:数据地址,
       opt.header:默认{'Content-Type':'application/json'},
       opt.mode:默认'cors',
       opt.credentials:默认'include',
       opt.cache:默认'default',
+      ele:相对于当前element显示加载,默认不显示,
+      noty:请求返回提示,默认不显示,
+    
+    (2)post:$fetch.post(url,opt,ele=undefined,noty=undefined)
+      url:数据地址,
+      opt.data:传递数据,默认{},
+      opt.header:默认{'Content-Type':'application/json'},
+      opt.mode:默认'cors',
+      opt.credentials:默认'include',
+      opt.cache:默认'default',
+      ele:相对于当前element显示加载,默认不显示,
+      noty:请求返回提示,默认不显示,
+    
+    (3)put:$fetch.put(url,opt,ele=undefined,noty=undefined)
+      url:数据地址,
+      opt.header:默认{'Content-Type':'application/json'},
+      opt.mode:默认'cors',
+      opt.credentials:默认'include',
+      opt.cache:默认'default',
+      ele:相对于当前element显示加载,默认不显示,
+      noty:请求返回提示,默认不显示,
 
     7. 验证器 validate
 
