@@ -125,6 +125,6 @@
     "react-dom": "^15.6.1",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
-    "yrui": "^1.1.10"
+    "yrui": "^1.1.12"
   }
 }

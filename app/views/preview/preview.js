@@ -5,6 +5,12 @@ import './preview.less';
 import Header from './header';
 import Footer from './footer';
 
+import F1 from './f1';
+import F2 from './f2';
+import F3 from './f3';
+import F4 from './f4';
+import F5 from './f5';
+
 export default class Preview extends React.Component {
 
   componentDidMount(){
@@ -29,11 +35,11 @@ export default class Preview extends React.Component {
       <div className="preview">
         <Header />
         <Footer />
-        <div className="f1" />
-        <div className="f2" />
-        <div className="f3" />
-        <div className="f4" />
-        <div className="f5" />
+        <F1 />
+        <F2 />
+        <F3 />
+        <F4 />
+        <F5 />
         
         <div className={`bottom-noty${hcls}`}>
           <i className={`fa fa-${ico}`} onClick={this.close} />

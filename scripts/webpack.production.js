@@ -4,6 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpackConfig = require('./webpack.config');
 
+// process.env.NODE_ENV = 'production';
+
 module.exports = merge(webpackConfig, {
   devtool: 'cheap-module-source-map',
   cache: false,

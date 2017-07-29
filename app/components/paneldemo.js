@@ -66,6 +66,12 @@ let tbody=[{
   type:'boolean',
   values:'true/false',
   default:'false',
+},{
+  key:'refrash',
+  expr:'刷新事件',
+  type:'function',
+  values:'-',
+  default:'-',
 }];
 
 const t=`<Item>

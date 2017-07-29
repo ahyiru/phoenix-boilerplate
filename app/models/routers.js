@@ -34,6 +34,7 @@ import Preview from '../views/preview/preview';
 import Test from '../views/test/test';
 import Hello from '../views/test/hello';
 import Waimai from '../views/test/waimai';
+import Rpi from '../views/rpi/rpi';
 
 /*const comp={
   layout:Layout,
@@ -220,6 +221,12 @@ export const sidebarMenu=[{
   component:Preview,
   noMenu:true,
 },{
+  url:'/rpi',
+  component:Rpi,
+  title:'树莓派',
+  noMenu:false,
+  leftIcon:'linux',
+},{
   url:'/test',
   component:Test,
   title:'test',
@@ -235,7 +242,7 @@ export const sidebarMenu=[{
   url:'/waimai',
   component:Waimai,
   title:'外卖',
-  noMenu:false,
+  noMenu:true,
   leftIcon:'address-book',
 }];
 

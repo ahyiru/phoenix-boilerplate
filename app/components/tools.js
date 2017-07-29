@@ -110,6 +110,10 @@ const t=`
 
     7. 验证器 validate
 
+        $validate.validate(reg,val);
+        reg:正则匹配；
+        val:验证的值;
+
         验证不为空用法:$validate.isRequired(val)
         val:验证的值
 
