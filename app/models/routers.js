@@ -26,6 +26,7 @@ import CodeDemo from '../components/codedemo';
 
 import RadiocheckboxDemo from '../components/radiocheckboxdemo';
 import SelectswitchDemo from '../components/selectswitchdemo';
+import ModalDemo from '../components/modaldemo';
 
 import Tools from '../components/tools';
 
@@ -159,7 +160,7 @@ export const sidebarMenu=[{
     url:'/component/select',
     component:SelectswitchDemo,
     title:'下拉菜单',
-  }/*,{
+  },/*{
     url:'/component/select',
     component:SelectswitchDemo,
     title:'下拉菜单',
@@ -208,6 +209,12 @@ export const sidebarMenu=[{
     component:SelectswitchDemo,
     title:'下拉菜单',
   }*/],
+},{
+  url:'/component/modal',
+  component:ModalDemo,
+  title:'模态窗',
+  noMenu:false,
+  leftIcon:'linux',
 },{
   url:'/component/tree',
   component:TreeDemo,
