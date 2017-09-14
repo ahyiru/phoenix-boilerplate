@@ -2,7 +2,22 @@ import * as React from 'react';
 
 import {Select,Autocomplete,Switch,Row,Col,Table,Code} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let select=[{
   key:'style',
   expr:'设置样式',
@@ -59,8 +74,8 @@ let switch1=[{
   values:'true/false',
   default:'false',
 },{
-  key:'defaultChecked',
-  expr:'默认状态',
+  key:'isOn',
+  expr:'开关状态',
   type:'boolean',
   values:'true/false',
   default:'false',

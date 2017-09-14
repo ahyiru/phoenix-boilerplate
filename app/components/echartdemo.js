@@ -4,7 +4,22 @@ import {Echarts,Items,Item,Table,Code} from 'yrui';
 
 import {chart1,chart2} from '../models/echarts';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let tbody=[{
   key:'option',
   expr:'图表数据，见ecarts',
@@ -62,7 +77,7 @@ let tbody=[{
 }];
 
 const t=`<span>Echarts</span>
-  <Echarts ref='echarts_react' option={this.state.option} style={{height: 300}} />
+  <Echarts option={this.state.option} />
 `;
 
 const t1=`<span>Echart1</span>
@@ -133,7 +148,7 @@ export default class EchartDemo extends React.Component {
             <Code title="demo" code={t} />
           </div>
           <h4 className="mtl mbl">Echarts</h4>
-          <Echarts ref="echarts_react" option={this.state.option} style={{height: 300}} />
+          <Echarts option={this.state.option} />
         </Item>
         <Item>
           <div className="textarea">
@@ -141,7 +156,7 @@ export default class EchartDemo extends React.Component {
             <Code title="demo" code={t1} />
           </div>
           <h4 className="mtl mbl">Echart1</h4>
-          <Echarts option={this.state.option2} style={{height: 300}} onChartReady={this.onChartReady} onEvents={onEvents} />
+          <Echarts option={this.state.option2} onChartReady={this.onChartReady} onEvents={onEvents} />
         </Item>
         <Item>
           <h2>参数说明</h2>

@@ -12,11 +12,14 @@ import 'yrui/lib/yrui.css';
 
 import 'styles/reset.less';
 
+
+
+
 export default class App extends React.Component {
   state={
     menu:getMenu(),
   };
-  componentDidMount(){
+  /*componentDidMount(){
     const {menu}=this.state;
     subscribeMenu((v)=>{
       // console.log(v);
@@ -31,7 +34,7 @@ export default class App extends React.Component {
   }
   componentWillUnmount(){
     unSubscribeMenu();
-  }
+  }*/
   render(){
     const {menu}=this.state;
     return (

@@ -2,7 +2,22 @@ import * as React from 'react';
 
 import {Radio,Checkbox,Row,Col,Table,Code} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let radio=[{
   key:'name',
   expr:'名字',
@@ -38,7 +53,7 @@ let radio=[{
 const t=`<Row gutter={12}>
     <Col span={6}>
       <h2>radio</h2>
-      <Radio name="radio1" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} />
+      <Radio name="radio1" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3'}]} />
     </Col>
     <Col span={6}>
       <h2>radio inline</h2>
@@ -76,21 +91,21 @@ export default class RadiocheckboxDemo extends React.Component {
         <Row gutter={12}>
           <Col span={6} sm={12}>
             <h2>radio</h2>
-            <Radio name="radio1" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} />
+            <Radio name="radio1" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3',value:3}]} />
           </Col>
           <Col span={6} sm={12}>
             <h2>radio inline</h2>
-            <Radio name="radio2" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} inline={true} />
+            <Radio name="radio2" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3',value:3}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>
           <Col span={6} sm={12}>
             <h2>checkbox</h2>
-            <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} />
+            <Checkbox opt={[{label:'checkbox1',value:1},{label:'checkbox2',value:2},{label:'checkbox3',value:3}]} />
           </Col>
           <Col span={6} sm={12}>
             <h2>checkbox inline</h2>
-            <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} inline={true} />
+            <Checkbox opt={[{label:'checkbox1',value:1},{label:'checkbox2',value:2},{label:'checkbox3',value:3}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>

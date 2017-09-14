@@ -2,7 +2,22 @@ import * as React from 'react';
 import './button.less';
 import {Button,ButtonGroup,Icon,Table,Code} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let tbody=[{
   key:'color',
   expr:'按钮颜色',
@@ -21,6 +36,12 @@ let tbody=[{
   type:'string',
   values:'lg/sm/default',
   default:'-',
+},{
+  key:'outline',
+  expr:'边框线按钮',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
 },{
   key:'icon',
   expr:'带icon按钮',
@@ -181,6 +202,37 @@ export default class ButtonDemo extends React.Component {
             <Button color={'default'} icon={'apple'} />
             <Button color={'info'} icon={'html5'}  />
             <Button color={'warning'} icon={'css3'}  />
+          </ButtonGroup>
+        </div>
+        <h2>Button outline</h2>
+        <div>
+          <Button color={'default'} margin="ms" text="default" outline={true} />
+          <Button color={'info'} margin="ms" text="info" outline={true} />
+          <Button color={'warning'} margin="ms" text="warning" outline={true} />
+          <Button color={'success'} margin="ms" text="success" outline={true} />
+          <Button color={'danger'} margin="ms" text="danger" outline={true} />
+        </div>
+        <div>
+          <Button color={'default'} margin="ms" text="default sm" size={'sm'} outline={true} />
+          <Button color={'info'} margin="ms" text="info lg" size={'lg'} outline={true} />
+          <Button color={'warning'} margin="ms" text="warning default" outline={true} />
+          <Button color={'success'} margin="ms" text="success sm" size={'sm'} outline={true} />
+          <Button color={'danger'} margin="ms" text="danger lg" size={'lg'} outline={true} />
+        </div>
+        <div>
+          <Button color={'default'} margin="ms" text="apple" icon={'apple'} outline={true} />
+          <Button color={'info'} margin="ms" text="html5" icon={'html5'} outline={true} />
+          <Button color={'warning'} margin="ms" text="css3" icon={'css3'} outline={true} />
+          <Button color={'success'} margin="ms" text="weixin" icon={'weixin'} outline={true} />
+          <Button color={'danger'} margin="ms" text="qq" icon={'qq'} outline={true} />
+          <Button color={'danger'} margin="ms" text="disabled" icon={'qq'} disabled outline={true} />
+          <Button color={'info'} margin="ms" text="block" icon={'qq'} block outline={true} />
+        </div>
+        <div>
+          <ButtonGroup>
+            <Button color={'default'} icon={'apple'} outline={true} />
+            <Button color={'info'} icon={'html5'} outline={true} />
+            <Button color={'warning'} icon={'css3'} outline={true} />
           </ButtonGroup>
         </div>
         <div className="">

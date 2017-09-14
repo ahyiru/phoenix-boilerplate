@@ -2,7 +2,22 @@ import * as React from 'react';
 
 import {Items,Item,Table,Tree,Code,Row,Col} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let tree=[{
   key:'data',
   expr:'树数据',

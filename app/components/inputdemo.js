@@ -2,7 +2,22 @@ import * as React from 'react';
 
 import {Row,Col,Input,Table,Code} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let tbody=[{
   key:'type',
   expr:'输入框类型',
@@ -152,7 +167,7 @@ export default class InputDemo extends React.Component {
     super(props);
   }
   change=(e)=>{
-    console.log(e.target.value);
+    console.log(e);
   };
   render() {
     return (

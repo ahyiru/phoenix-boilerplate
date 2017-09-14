@@ -2,9 +2,24 @@ import * as React from 'react';
 
 import {Tabs,Tabpage,Row,Col,Table,Code} from 'yrui';
 
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let tabs=[{
-  key:'active',
+  key:'activeKey',
   expr:'默认显示的tab',
   type:'number',
   values:'-',
@@ -12,6 +27,30 @@ let tabs=[{
 },{
   key:'style',
   expr:'设置tab样式',
+  type:'object',
+  values:'-',
+  default:'-',
+},{
+  key:'closeable',
+  expr:'是否显示关闭按钮',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
+},{
+  key:'vertical',
+  expr:'是否为竖排展示',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
+},{
+  key:'border',
+  expr:'是否显示边框',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
+},{
+  key:'currentPage',
+  expr:'获取当前显示页面信息',
   type:'object',
   values:'-',
   default:'-',
@@ -28,42 +67,56 @@ let tabpage=[{
   type:'string',
   values:'-',
   default:'-',
+},{
+  key:'disabled',
+  expr:'是否禁止点击',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
 }];
 
 const t=`<Row gutter={12}>
     <Col span={6}>
       <h2>tabs配置</h2>
-      <Tabs>
-        <Tabpage name="t1">
-          <div style={{height:'200px',backgroundColor:'#eee'}}>p1</div>
+      <Tabs activeKey={activeKey} currentPage={this.getCurrent}>
+        <Tabpage name="t1111111111111" icon="user">
+          <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p1</div>
         </Tabpage>
-        <Tabpage name="t2">
-          <div style={{height:'200px',backgroundColor:'#6f0'}}>p2</div>
+        <Tabpage name="t2" disabled>
+          <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p2</div>
         </Tabpage>
         <Tabpage name="t3">
-          <div style={{height:'200px',backgroundColor:'#60f'}}>p3</div>
+          <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p3</div>
         </Tabpage>
       </Tabs>
     </Col>
   </Row>`;
 
 export default class TabsDemo extends React.Component {
-
+  state={
+    activeKey:1,
+  };
+  getCurrent=(k)=>{
+    this.setState({
+      activeKey:k,
+    });
+  };
   render() {
+    const {activeKey}=this.state;
     return (
       <div>
         <Row gutter={12}>
           <Col span={6}>
             <h2>tabs示例</h2>
-            <Tabs>
-              <Tabpage name="t1">
-                <div style={{height:'200px',backgroundColor:'#eee'}}>p1</div>
+            <Tabs activeKey={activeKey} currentPage={this.getCurrent}>
+              <Tabpage name="t1111111111111" icon="user">
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p1</div>
               </Tabpage>
-              <Tabpage name="t2">
-                <div style={{height:'200px',backgroundColor:'#6f0'}}>p2</div>
+              <Tabpage name="t2" disabled>
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p2</div>
               </Tabpage>
               <Tabpage name="t3">
-                <div style={{height:'200px',backgroundColor:'#60f'}}>p3</div>
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p3</div>
               </Tabpage>
             </Tabs>
           </Col>

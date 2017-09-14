@@ -159,7 +159,55 @@ export const sidebarMenu=[{
     url:'/component/select',
     component:SelectswitchDemo,
     title:'下拉菜单',
-  }],
+  }/*,{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  },{
+    url:'/component/select',
+    component:SelectswitchDemo,
+    title:'下拉菜单',
+  }*/],
 },{
   url:'/component/tree',
   component:TreeDemo,

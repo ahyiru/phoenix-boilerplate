@@ -2,8 +2,22 @@ import * as React from 'react';
 
 import {Items,Item,Row,Col,Table,Code} from 'yrui';
 
-
-let thead=['ID','参数','说明','类型','可选值','默认值'];
+let thead=[{
+  key:'key',
+  value:'参数',
+},{
+  key:'expr',
+  value:'说明',
+},{
+  key:'type',
+  value:'类型',
+},{
+  key:'values',
+  value:'可选值',
+},{
+  key:'default',
+  value:'默认值',
+}];
 let routers=[{
   key:'routers',
   expr:'路由表',
@@ -22,6 +36,18 @@ let routers=[{
   type:'boolean',
   values:'true/false',
   default:'false',
+},{
+  key:'routeAnimate',
+  expr:'路由切换动画',
+  type:'string',
+  values:'scale/down/right/no',
+  default:'scale',
+},{
+  key:'scroll',
+  expr:'使用自定义滚动条',
+  type:'boolean',
+  values:'true/false',
+  default:'true',
 }];
 
 const t=`import {App,Demo1,Demo2} from './component';

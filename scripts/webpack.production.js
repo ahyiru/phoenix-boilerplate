@@ -9,6 +9,9 @@ var webpackConfig = require('./webpack.config');
 module.exports = merge(webpackConfig, {
   devtool: 'cheap-module-source-map',
   cache: false,
+  entry: {
+    commons:['react','react-dom'],
+  },
   module: {
     rules: [{
       test: /\.css$/,
@@ -39,6 +42,10 @@ module.exports = merge(webpackConfig, {
       compress: {
         warnings: false,
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({ //合并公共代码
+      name:'commons',
+      filename:'js/[name]_[hash:8].js',
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')

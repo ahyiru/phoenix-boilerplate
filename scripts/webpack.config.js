@@ -10,7 +10,7 @@ const nodeModules = path.resolve(process.cwd(), 'node_modules');
 module.exports = {
   context: src,
   entry: {
-    app: [ path.resolve(app, 'index.js')]
+    app: [ path.resolve(app, 'index.js')],
   },
   output: {
     path: path.resolve(src, '_dist'),
