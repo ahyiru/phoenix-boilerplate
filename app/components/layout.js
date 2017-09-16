@@ -200,6 +200,73 @@ export default class Layout extends React.Component {
                 <div className="c-block bg-default">default,<b>#999</b></div>
               </Col>
             </Row>
+
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#0c72e6'}}><b>#0c72e6</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#318ffa'}}><b>#318ffa</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#1681fb'}}><b>#1681fb</b></div>
+              </Col>
+            </Row>
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#3abf52'}}><b>#3abf52</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#3c3'}}><b>#6ce581</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#50d768'}}><b>#50d768</b></div>
+              </Col>
+            </Row>
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#e92f29'}}><b>#e92f29</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#ff7470'}}><b>#ff7470</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#ff3e38'}}><b>#ff3e38</b></div>
+              </Col>
+            </Row>
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#edbb20'}}><b>#edbb20</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#ffcd70'}}><b>#ffcd70</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#fecb2e'}}><b>#fecb2e</b></div>
+              </Col>
+            </Row>
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#43b0e2'}}><b>#43b0e2</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#a7e3ff'}}><b>#a7e3ff</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#60c9f9'}}><b>#60c9f9</b></div>
+              </Col>
+            </Row>
+            <Row gutter={12}>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#e7e7e7'}}><b>#e7e7e7</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#fff'}}><b>#fff</b></div>
+              </Col>
+              <Col span={4} sm={6} xs={12}>
+                <div className="c-block" style={{backgroundColor:'#f6f6f6'}}><b>#f6f6f6</b></div>
+              </Col>
+            </Row>
           </div>
         </Item>
         <Item>

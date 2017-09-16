@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var merge = require('@ersinfotech/merge');
+var merge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var webpackConfig = require('./webpack.config');
@@ -31,7 +31,7 @@ module.exports = merge(webpackConfig, {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename:'[name]_[contenthash].css',
+      filename:'style/[name]_[contenthash].css',
       allChunks: true,
       disable:false,
     }),

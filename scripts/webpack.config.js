@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(src, '_dist'),
-    filename: '[name]_[hash:8].js',
+    filename: 'js/[name]_[hash:8].js',
     libraryTarget:'umd',
   },
   resolve: {
@@ -56,7 +56,7 @@ module.exports = {
       title:appName,
       template: path.resolve(src, 'public/index.html'),
       favicon: path.resolve(src, 'public/favicon.ico'),
-      inject: false,
+      inject: true,
       minify: {
         html5: true,
         collapseWhitespace: true,

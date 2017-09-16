@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var merge = require('@ersinfotech/merge');
+var merge = require('webpack-merge');
 
 var webpackConfig = require('./webpack.config');
 
