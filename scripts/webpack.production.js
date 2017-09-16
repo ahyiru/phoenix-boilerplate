@@ -31,7 +31,7 @@ module.exports = merge(webpackConfig, {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename:'style/[name]_[contenthash].css',
+      filename:'[name]_[contenthash].css',
       allChunks: true,
       disable:false,
     }),
