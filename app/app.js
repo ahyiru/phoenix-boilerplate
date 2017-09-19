@@ -23,7 +23,7 @@ const app={
   navbar:{
     dropList:dropList,//头部菜单
     showSearchbar:true,//显示搜索框
-    showRightTogbar:true,//显示右侧面板切换按钮
+    showRightTogbar:false,//显示右侧面板切换按钮
     login:null,//用户登录信息
     click:(v)=>{console.log(v);},//点击头部菜单事件
     listClick:(v)=>{console.log(v);},//点击头部dropdown子菜单事件
