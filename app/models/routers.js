@@ -1,5 +1,7 @@
 import Layout from '../components/layout';
 
+import Frame from '../components/frame';
+
 import RouteDemo from '../components/routedemo';
 import HeadDemo from '../components/headdemo';
 import AsideDemo from '../components/asidedemo';
@@ -54,10 +56,11 @@ export const sidebarMenu=[{
   title:'主页',
   leftIcon:'home',
 },{
-  url:'javascript:;',
+  url:'frame',
+  component:Frame,
   title:'框架配置',
   leftIcon:'cogs',
-  subMenu:[{
+  /*subMenu:[{
     url:'/frame/route',
     component:RouteDemo,
     title:'路由配置',
@@ -73,7 +76,7 @@ export const sidebarMenu=[{
     url:'/frame/main',
     component:MainDemo,
     title:'主页配置',
-  }],
+  }],*/
 },{
   url:'/component/col',
   component:ColDemo,
