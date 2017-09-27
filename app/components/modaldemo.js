@@ -22,8 +22,8 @@ let modal=[{
   key:'visible',
   expr:'是否显示',
   type:'boolean',
-  values:'false',
-  default:'true/false',
+  values:'true/false',
+  default:'true',
 },{
   key:'title',
   expr:'标题',
@@ -34,20 +34,26 @@ let modal=[{
   key:'footer',
   expr:'是否显示底部栏',
   type:'boolean',
-  values:'true',
-  default:'true/false',
+  values:'true/false',
+  default:'true',
 },{
   key:'closeable',
   expr:'是否显示关闭按钮',
   type:'boolean',
-  values:'true',
-  default:'true/false',
+  values:'true/false',
+  default:'true',
+},{
+  key:'dragable',
+  expr:'是否可拖动',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
 },{
   key:'maskClosable',
   expr:'是否点击蒙蔽层关闭窗口',
   type:'boolean',
-  values:'true',
-  default:'true/false',
+  values:'true/false',
+  default:'true',
 },{
   key:'size',
   expr:'窗口大小',
@@ -91,7 +97,7 @@ const t=`<Button text="open1" color="info" click={this.show1} />
   <Modal visible={show1} cancel={this.cancel1} title="11">
     <h2>111</h2>
   </Modal>
-  <Modal visible={show2} cancel={this.cancel2} title="12">
+  <Modal visible={show2} cancel={this.cancel2} title="12" dragable>
     <h2>222</h2>
   </Modal>`;
 
@@ -126,11 +132,11 @@ export default class ModalDemo extends React.Component {
     return (
       <div className="">
         <Button text="open1" color="info" click={this.show1} />
-        <Button text="open2" color="info" click={this.show2} />
+        <Button text="可拖动" color="info" click={this.show2} />
         <Modal visible={show1} cancel={this.cancel1} title="11">
           <h2>111</h2>
         </Modal>
-        <Modal visible={show2} cancel={this.cancel2} title="12">
+        <Modal visible={show2} cancel={this.cancel2} title="12" dragable>
           <h2>222</h2>
         </Modal>
         <Row gutter={12}>

@@ -8,7 +8,7 @@ import './test.less';
 
 // const config=require('../../../../node/config');
 const URI=`localhost:9000`;
-var socket = require('socket.io-client')(URI);
+// var socket = require('socket.io-client')(URI);
 
 /*const $fetch=tools.$fetch;
 
@@ -31,7 +31,7 @@ export default class Test extends React.Component {
     val:'',
   };
   componentWillMount(){
-    socket.emit('new user','');
+    /*socket.emit('new user','');
     socket.on('user joined',(data)=>{
       // console.log(data);
       this.setState({
@@ -45,10 +45,10 @@ export default class Test extends React.Component {
       this.setState({
         msgs:this.messages,
       });
-      /*this.setState({
-        username:data.username,
-        msg:data.msg,
-      });*/
+      // this.setState({
+      //   username:data.username,
+      //   msg:data.msg,
+      // });
     });
     socket.on('user left',(data)=>{
       // console.log(data);
@@ -56,7 +56,7 @@ export default class Test extends React.Component {
         left:data.username,
         onlineUsers:data.users,
       });
-    });
+    });*/
     // socket.emit('typing','string');
   }
   componentDidMount(){
@@ -71,7 +71,7 @@ export default class Test extends React.Component {
     });
   };
   submit=()=>{
-    socket.emit('new message',this.state.val);
+    // socket.emit('new message',this.state.val);
   }
 
   render() {

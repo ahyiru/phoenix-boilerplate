@@ -100,11 +100,11 @@ let autocomplete=[{
   default:'-',
 }];
 
-const t=`<Select data={[1,2,3]} />
+const t=`<Select data={[{value:'1'},{value:'2'},{value:'3'}]} />
 `;
-const t1=`<Autocomplete data={[1,2,3,'aa','bb','cc',11,'22']} />
+const t1=`<<Autocomplete data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} />
 `;
-const t2=`<Switch onText={<i className="fa fa-check"></i>} offText={<i className="fa fa-times"></i>} defaultChecked={true} disabled />
+const t2=`<Switch onText={<i className="fa fa-check"/>} offText={<i className="fa fa-times"/>} defaultChecked={true} disabled />
 `;
 
 export default class SelectswitchDemo extends React.Component {
@@ -129,11 +129,11 @@ export default class SelectswitchDemo extends React.Component {
         <Row gutter={12}>
           <Col span={6} xs={12}>
             <h2>Select</h2>
-            <Select data={[1,2,3]} />
+            <Select data={[{value:'1'},{value:'2'},{value:'3'}]} />
           </Col>
           <Col span={6} xs={12}>
             <h2>Autocomplete</h2>
-            <Autocomplete data={[1,2,3,'aa','bb','cc',11,'22']} />
+            <Autocomplete data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} />
           </Col>
         </Row>
         <Row gutter={12}>

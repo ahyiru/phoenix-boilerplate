@@ -13,6 +13,19 @@ import 'yrui/lib/yrui.css';
 
 import 'styles/reset.less';
 
+/*const sleep=(time)=>{
+  return new Promise(function (resolve, reject) {
+    setTimeout(()=>{
+      resolve('ok');
+    },time);
+  });
+};
+const start=async ()=>{
+  let result=await sleep(3000);
+  console.log(result);
+  return result;
+};*/
+
 const app={
   brand:{
     title:'React',//

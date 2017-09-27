@@ -37,12 +37,6 @@ let brand=[{
   type:'string',
   values:'-',
   default:'-',
-},{
-  key:'url',
-  expr:'点击跳转路径',
-  type:'string',
-  values:'-',
-  default:'-',
 }];
 //
 let navbar=[{
@@ -180,9 +174,33 @@ let routers=[{
   values:'-',
   default:'-',
 },{
-  key:'frame',
-  expr:'框架主体',
+  key:'brand',
+  expr:'头部brand配置',
   type:'object',
+  values:'-',
+  default:'-',
+},{
+  key:'navbar',
+  expr:'头部nav配置',
+  type:'object',
+  values:'-',
+  default:'-',
+},{
+  key:'sidebar',
+  expr:'左侧边栏配置',
+  type:'object',
+  values:'-',
+  default:'-',
+},{
+  key:'rightbar',
+  expr:'右侧边栏配置',
+  type:'object|string',
+  values:'-',
+  default:'-',
+},{
+  key:'footer',
+  expr:'底部栏配置',
+  type:'object|string',
   values:'-',
   default:'-',
 },{
@@ -199,7 +217,13 @@ let routers=[{
   default:'scale',
 },{
   key:'scroll',
-  expr:'使用自定义滚动条',
+  expr:'主页使用自定义滚动条',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
+},{
+  key:'sidebarScroll',
+  expr:'侧边栏使用自定义滚动条',
   type:'boolean',
   values:'true/false',
   default:'true',
@@ -212,6 +236,12 @@ let others=[{
   values:'-',
   default:'-',
 },{
+  key:'footer',
+  expr:'底部栏配置',
+  type:'object|string',
+  values:'-',
+  default:'-',
+},{
   key:'browserRouter',
   expr:'是否是真实路径',
   type:'boolean',
@@ -229,39 +259,47 @@ let others=[{
   type:'boolean',
   values:'true/false',
   default:'true',
+},{
+  key:'sidebarScroll',
+  expr:'侧边栏使用自定义滚动条',
+  type:'boolean',
+  values:'true/false',
+  default:'true',
 }];
 
 const t=`const app={
-  brand:{
-    title:'React',//
-    subtitle:'UI Demo',//
-    logo:require('./styles/images/usr.jpg'),//
-    url:'#/',//
-  },
-  navbar:{
-    dropList:dropList,//头部菜单
-    showSearchbar:true,//显示搜索框
-    showRightTogbar:true,//显示右侧面板切换按钮
-    login:null,//用户登录信息
-    click:(v)=>{console.log(v);},//点击头部菜单事件
-    listClick:(v)=>{console.log(v);},//点击头部dropdown子菜单事件
-  },
-  sidebar:{
-    projectList:null,//菜单项目列表，可忽略
-    showSidebarTitle:false,//显示侧边栏标题
-    userInfo:null,//用户信息
-  },
-  rightbar:'<h2>111</h2>',//右侧边栏component
-  main:{
-    showPagehead:true,//显示main头部
-    showPagetitle:false,//显示头部标题
-  },
-  routers:sidebarMenu,//侧边栏，路由
-  scroll:true,//自定义滚动条，默认不使用
-  browserRouter:false,//
-};
+    brand:{
+      title:'React',//
+      subtitle:'UI Demo',//
+      logo:require('./styles/images/usr.jpg'),//
+    },
+    navbar:{
+      dropList:dropList,//头部菜单
+      showSearchbar:true,//显示搜索框
+      showRightTogbar:true,//显示右侧面板切换按钮
+      login:null,//用户登录信息
+      click:(v)=>{console.log(v);},//点击头部菜单事件
+      listClick:(v)=>{console.log(v);},//点击头部dropdown子菜单事件
+    },
+    sidebar:{
+      projectList:null,//菜单项目列表，可忽略
+      showSidebarTitle:false,//显示侧边栏标题
+      userInfo:null,//用户信息
+    },
+    rightbar:'<h2>111</h2>',//右侧边栏component
+    footer:'<p>版权所有 &copy; 2017-2020 云创大前端</p>',//底部栏component
+    main:{
+      showPagehead:true,//显示main头部
+      showPagetitle:false,//显示头部标题
+    },
+    routers:sidebarMenu,//侧边栏，路由
+    routeAnimate:'scale',//路由切换动画,设置为'no'取消动画效果
+    scroll:false,//自定义主页滚动条，默认不使用
+    sidebarScroll:true,//自定义侧边栏滚动条，默认使用
+    browserRouter:false,//
+  };
 
-<Router {...app} />
+  <Router {...app} />
 `;
 
 export default class Frame extends React.Component {
@@ -270,15 +308,21 @@ export default class Frame extends React.Component {
     return (
       <Items>
         <Item>
+          <Row>
+            <Col span={12}>
+              <h2>routers配置</h2>
+              <Table thead={thead} tbody={routers} />
+            </Col>
+          </Row>
           <Row gutter={8}>
-            <Col span={6}>
+            <Col span={12}>
               <div className="textarea">
                 <h2>配置</h2>
                 {/*<p>brand navbar sidebar rightbar main</p>*/}
                 <Code title="demo" code={t} />
               </div>
             </Col>
-            <Col span={6}>
+            <Col span={12}>
               <Row>
                 <Col span={12}>
                   <h2>brand配置</h2>
@@ -301,12 +345,6 @@ export default class Frame extends React.Component {
                 <Col span={12}>
                   <h2>main配置</h2>
                   <Table thead={thead} tbody={main} />
-                </Col>
-              </Row>
-              <Row>
-                <Col span={12}>
-                  <h2>routers配置</h2>
-                  <Table thead={thead} tbody={routers} />
                 </Col>
               </Row>
               <Row>

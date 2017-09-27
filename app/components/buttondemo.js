@@ -55,8 +55,8 @@ let tbody=[{
   values:'-',
   default:'-',
 },{
-  key:'margin',
-  expr:'按钮间距',
+  key:'customClass',
+  expr:'自定义class样式',
   type:'string',
   values:'-',
   default:'-',
@@ -114,27 +114,27 @@ let tbody1=[{
 
 const t=`<h2>Button</h2>
   <div>
-    <Button color={'default'} margin="ms" text='default' />
-    <Button color={'info'} margin="ms" text='info' />
-    <Button color={'warning'} margin="ms" text='warning' />
-    <Button color={'success'} margin="ms" text='success' />
-    <Button color={'danger'} margin="ms" text='danger' />
+    <Button color={'default'} customClass="ms" text='default' />
+    <Button color={'info'} customClass="ms" text='info' />
+    <Button color={'warning'} customClass="ms" text='warning' />
+    <Button color={'success'} customClass="ms" text='success' />
+    <Button color={'danger'} customClass="ms" text='danger' />
   </div>
   <div>
-    <Button color={'default'} margin="ms" text='default sm' size={'sm'} />
-    <Button color={'info'} margin="ms" text='info lg' size={'lg'} />
-    <Button color={'warning'} margin="ms" text='warning default' />
-    <Button color={'success'} margin="ms" text='success sm' size={'sm'} />
-    <Button color={'danger'} margin="ms" text='danger lg' size={'lg'} />
+    <Button color={'default'} customClass="ms" text='default sm' size={'sm'} />
+    <Button color={'info'} customClass="ms" text='info lg' size={'lg'} />
+    <Button color={'warning'} customClass="ms" text='warning default' />
+    <Button color={'success'} customClass="ms" text='success sm' size={'sm'} />
+    <Button color={'danger'} customClass="ms" text='danger lg' size={'lg'} />
   </div>
   <div>
-    <Button color={'default'} margin="ms" text='apple' icon={'apple'} />
-    <Button color={'info'} margin="ms" text='html5'icon={'html5'}  />
-    <Button color={'warning'} margin="ms" text='css3'icon={'css3'}  />
-    <Button color={'success'} margin="ms" text='weixin'icon={'weixin'}  />
-    <Button color={'danger'} margin="ms" text='qq'icon={'qq'} />
-    <Button color={'danger'} margin="ms" text='disabled'icon={'qq'} disabled />
-    <Button color={'info'} margin="ms" text='block'icon={'qq'} block />
+    <Button color={'default'} customClass="ms" text='apple' icon={'apple'} />
+    <Button color={'info'} customClass="ms" text='html5'icon={'html5'}  />
+    <Button color={'warning'} customClass="ms" text='css3'icon={'css3'}  />
+    <Button color={'success'} customClass="ms" text='weixin'icon={'weixin'}  />
+    <Button color={'danger'} customClass="ms" text='qq'icon={'qq'} />
+    <Button color={'danger'} customClass="ms" text='disabled'icon={'qq'} disabled />
+    <Button color={'info'} customClass="ms" text='block'icon={'qq'} block />
   </div>
   <div>
     <ButtonGroup>
@@ -175,27 +175,27 @@ export default class ButtonDemo extends React.Component {
       <div className="button">
         <h2>Button</h2>
         <div>
-          <Button color={'default'} margin="ms" text="default" />
-          <Button color={'info'} margin="ms" text="info" />
-          <Button color={'warning'} margin="ms" text="warning" />
-          <Button color={'success'} margin="ms" text="success" />
-          <Button color={'danger'} margin="ms" text="danger" />
+          <Button color={'default'} customClass="ms" text="default" />
+          <Button color={'info'} customClass="ms" text="info" />
+          <Button color={'warning'} customClass="ms" text="warning" />
+          <Button color={'success'} customClass="ms" text="success" />
+          <Button color={'danger'} customClass="ms" text="danger" />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text="default sm" size={'sm'} />
-          <Button color={'info'} margin="ms" text="info lg" size={'lg'} />
-          <Button color={'warning'} margin="ms" text="warning default" />
-          <Button color={'success'} margin="ms" text="success sm" size={'sm'} />
-          <Button color={'danger'} margin="ms" text="danger lg" size={'lg'} />
+          <Button color={'default'} customClass="ms" text="default sm" size={'sm'} />
+          <Button color={'info'} customClass="ms" text="info lg" size={'lg'} />
+          <Button color={'warning'} customClass="ms" text="warning default" />
+          <Button color={'success'} customClass="ms" text="success sm" size={'sm'} />
+          <Button color={'danger'} customClass="ms" text="danger lg" size={'lg'} />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text="apple" icon={'apple'} />
-          <Button color={'info'} margin="ms" text="html5" icon={'html5'}  />
-          <Button color={'warning'} margin="ms" text="css3" icon={'css3'}  />
-          <Button color={'success'} margin="ms" text="weixin" icon={'weixin'}  />
-          <Button color={'danger'} margin="ms" text="qq" icon={'qq'} />
-          <Button color={'danger'} margin="ms" text="disabled" icon={'qq'} disabled />
-          <Button color={'info'} margin="ms" text="block" icon={'qq'} block />
+          <Button color={'default'} customClass="ms" text="apple" icon={'apple'} />
+          <Button color={'info'} customClass="ms" text="html5" icon={'html5'}  />
+          <Button color={'warning'} customClass="ms" text="css3" icon={'css3'}  />
+          <Button color={'success'} customClass="ms" text="weixin" icon={'weixin'}  />
+          <Button color={'danger'} customClass="ms" text="qq" icon={'qq'} />
+          <Button color={'danger'} customClass="ms" text="disabled" icon={'qq'} disabled />
+          <Button color={'info'} customClass="ms" text="block" icon={'qq'} block />
         </div>
         <div>
           <ButtonGroup>
@@ -206,27 +206,27 @@ export default class ButtonDemo extends React.Component {
         </div>
         <h2>Button outline</h2>
         <div>
-          <Button color={'default'} margin="ms" text="default" outline={true} />
-          <Button color={'info'} margin="ms" text="info" outline={true} />
-          <Button color={'warning'} margin="ms" text="warning" outline={true} />
-          <Button color={'success'} margin="ms" text="success" outline={true} />
-          <Button color={'danger'} margin="ms" text="danger" outline={true} />
+          <Button color={'default'} customClass="ms" text="default" outline={true} />
+          <Button color={'info'} customClass="ms" text="info" outline={true} />
+          <Button color={'warning'} customClass="ms" text="warning" outline={true} />
+          <Button color={'success'} customClass="ms" text="success" outline={true} />
+          <Button color={'danger'} customClass="ms" text="danger" outline={true} />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text="default sm" size={'sm'} outline={true} />
-          <Button color={'info'} margin="ms" text="info lg" size={'lg'} outline={true} />
-          <Button color={'warning'} margin="ms" text="warning default" outline={true} />
-          <Button color={'success'} margin="ms" text="success sm" size={'sm'} outline={true} />
-          <Button color={'danger'} margin="ms" text="danger lg" size={'lg'} outline={true} />
+          <Button color={'default'} customClass="ms" text="default sm" size={'sm'} outline={true} />
+          <Button color={'info'} customClass="ms" text="info lg" size={'lg'} outline={true} />
+          <Button color={'warning'} customClass="ms" text="warning default" outline={true} />
+          <Button color={'success'} customClass="ms" text="success sm" size={'sm'} outline={true} />
+          <Button color={'danger'} customClass="ms" text="danger lg" size={'lg'} outline={true} />
         </div>
         <div>
-          <Button color={'default'} margin="ms" text="apple" icon={'apple'} outline={true} />
-          <Button color={'info'} margin="ms" text="html5" icon={'html5'} outline={true} />
-          <Button color={'warning'} margin="ms" text="css3" icon={'css3'} outline={true} />
-          <Button color={'success'} margin="ms" text="weixin" icon={'weixin'} outline={true} />
-          <Button color={'danger'} margin="ms" text="qq" icon={'qq'} outline={true} />
-          <Button color={'danger'} margin="ms" text="disabled" icon={'qq'} disabled outline={true} />
-          <Button color={'info'} margin="ms" text="block" icon={'qq'} block outline={true} />
+          <Button color={'default'} customClass="ms" text="apple" icon={'apple'} outline={true} />
+          <Button color={'info'} customClass="ms" text="html5" icon={'html5'} outline={true} />
+          <Button color={'warning'} customClass="ms" text="css3" icon={'css3'} outline={true} />
+          <Button color={'success'} customClass="ms" text="weixin" icon={'weixin'} outline={true} />
+          <Button color={'danger'} customClass="ms" text="qq" icon={'qq'} outline={true} />
+          <Button color={'danger'} customClass="ms" text="disabled" icon={'qq'} disabled outline={true} />
+          <Button color={'info'} customClass="ms" text="block" icon={'qq'} block outline={true} />
         </div>
         <div>
           <ButtonGroup>

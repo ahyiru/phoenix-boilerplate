@@ -51,24 +51,24 @@ let radio=[{
 }];
 
 const t=`<Row gutter={12}>
-    <Col span={6}>
+    <Col span={6} sm={12}>
       <h2>radio</h2>
-      <Radio name="radio1" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3'}]} />
+      <Radio name="radio1" opt={[{value:'radio1',key:1},{value:'radio2',key:2},{value:'radio3',key:3}]} />
     </Col>
-    <Col span={6}>
+    <Col span={6} sm={12}>
       <h2>radio inline</h2>
-      <Radio name="radio2" opt={[{label:'radio1'},{label:'radio2'},{label:'radio3'}]} inline={true} />
+      <Radio name="radio2" opt={[{value:'radio1',key:1},{value:'radio2',key:2},{value:'radio3',key:3}]} inline={true} />
     </Col>
   </Row>
 `;
 const t1=`<Row gutter={12}>
-    <Col span={6}>
+    <Col span={6} sm={12}>
       <h2>checkbox</h2>
-      <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} />
+      <Checkbox opt={[{value:'checkbox1',key:1},{value:'checkbox2',key:2},{value:'checkbox3',key:3}]} />
     </Col>
-    <Col span={6}>
+    <Col span={6} sm={12}>
       <h2>checkbox inline</h2>
-      <Checkbox opt={[{label:'checkbox1'},{label:'checkbox2'},{label:'checkbox3'}]} inline={true} />
+      <Checkbox opt={[{value:'checkbox1',key:1},{value:'checkbox2',key:2},{value:'checkbox3',key:3}]} inline={true} />
     </Col>
   </Row>
 `;
@@ -91,21 +91,21 @@ export default class RadiocheckboxDemo extends React.Component {
         <Row gutter={12}>
           <Col span={6} sm={12}>
             <h2>radio</h2>
-            <Radio name="radio1" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3',value:3}]} />
+            <Radio name="radio1" opt={[{value:'radio1',key:1},{value:'radio2',key:2},{value:'radio3',key:3}]} />
           </Col>
           <Col span={6} sm={12}>
             <h2>radio inline</h2>
-            <Radio name="radio2" opt={[{label:'radio1',value:1},{label:'radio2',value:2},{label:'radio3',value:3}]} inline={true} />
+            <Radio name="radio2" opt={[{value:'radio1',key:1},{value:'radio2',key:2},{value:'radio3',key:3}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>
           <Col span={6} sm={12}>
             <h2>checkbox</h2>
-            <Checkbox opt={[{label:'checkbox1',value:1},{label:'checkbox2',value:2},{label:'checkbox3',value:3}]} />
+            <Checkbox opt={[{value:'checkbox1',key:1},{value:'checkbox2',key:2},{value:'checkbox3',key:3}]} />
           </Col>
           <Col span={6} sm={12}>
             <h2>checkbox inline</h2>
-            <Checkbox opt={[{label:'checkbox1',value:1},{label:'checkbox2',value:2},{label:'checkbox3',value:3}]} inline={true} />
+            <Checkbox opt={[{value:'checkbox1',key:1},{value:'checkbox2',key:2},{value:'checkbox3',key:3}]} inline={true} />
           </Col>
         </Row>
         <Row gutter={12}>

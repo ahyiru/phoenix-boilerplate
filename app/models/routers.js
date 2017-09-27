@@ -35,6 +35,7 @@ import Tools from '../components/tools';
 import Preview from '../views/preview/preview';
 
 import Test from '../views/test/test';
+import Log from '../views/log/log';
 import Hello from '../views/test/hello';
 import Waimai from '../views/test/waimai';
 import Rpi from '../views/rpi/rpi';
@@ -282,19 +283,25 @@ export const sidebarMenu=[{
   url:'/rpi',
   component:Rpi,
   title:'树莓派',
-  noMenu:false,
+  noMenu:true,
   leftIcon:'linux',
+},{
+  url:'/log',
+  component:Log,
+  title:'更新日志',
+  noMenu:false,
+  leftIcon:'address-book',
 },{
   url:'/test',
   component:Test,
   title:'test',
-  noMenu:false,
+  noMenu:true,
   leftIcon:'address-book',
 },{
   url:'/hello',
   component:Hello,
   title:'hello world',
-  noMenu:false,
+  noMenu:true,
   leftIcon:'address-book',
 },{
   url:'/waimai',
