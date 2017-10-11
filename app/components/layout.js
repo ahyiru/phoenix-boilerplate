@@ -60,10 +60,10 @@ const font=`
   .pl{padding:20px !important;}
 
   /*margin*/
-  .mxs{margin:5px !important;}
-  .ms{margin:10px !important;}
-  .m{margin:15px !important;}
-  .ml{margin:20px !important;}
+  .mgxs{margin:5px !important;}
+  .mgs{margin:10px !important;}
+  .mg{margin:15px !important;}
+  .mgl{margin:20px !important;}
 
   .mlxs{margin-left:5px !important;}
   .mls{margin-left:10px !important;}

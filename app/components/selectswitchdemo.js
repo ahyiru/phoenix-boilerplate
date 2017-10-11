@@ -25,7 +25,7 @@ let select=[{
   values:'-',
   default:'-',
 },{
-  key:'data',
+  key:'opt',
   expr:'数据',
   type:'array',
   values:'-',
@@ -49,7 +49,7 @@ let select=[{
   values:'true/false',
   default:'false',
 },{
-  key:'getSelectVal',
+  key:'change',
   expr:'获取选中值',
   type:'function',
   values:'-',
@@ -74,7 +74,7 @@ let switch1=[{
   values:'true/false',
   default:'false',
 },{
-  key:'isOn',
+  key:'value',
   expr:'开关状态',
   type:'boolean',
   values:'true/false',
@@ -96,6 +96,12 @@ let autocomplete=[{
   key:'placeholder',
   expr:'提示文本',
   type:'string',
+  values:'-',
+  default:'-',
+},{
+  key:'getSelectVal',
+  expr:'获取选中值',
+  type:'function',
   values:'-',
   default:'-',
 }];
@@ -129,7 +135,7 @@ export default class SelectswitchDemo extends React.Component {
         <Row gutter={12}>
           <Col span={6} xs={12}>
             <h2>Select</h2>
-            <Select data={[{value:'1'},{value:'2'},{value:'3'}]} />
+            <Select opt={[{value:'1'},{value:'2'},{value:'3'}]} />
           </Col>
           <Col span={6} xs={12}>
             <h2>Autocomplete</h2>

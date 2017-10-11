@@ -18,7 +18,7 @@ let thead=[{
   value:'默认值',
 }];
 let pagination=[{
-  key:'lists',
+  key:'total',
   expr:'页数',
   type:'number',
   values:'-',
@@ -33,7 +33,7 @@ let pagination=[{
 
 const t=`<Row gutter={12}>
     <Col span={8}>
-      <Pagination lists={20} curPage={this.curPage} />
+      <Pagination total={20} curPage={this.curPage} />
     </Col>
     <Col span={4}>
       <p>当前选中页数：{this.state.cur}</p>
@@ -58,7 +58,7 @@ export default class PaginationDemo extends React.Component {
         <Item>
           <Row gutter={12}>
             <Col span={9}>
-              <Pagination lists={20} curPage={this.curPage} />
+              <Pagination total={20} curPage={this.curPage} />
             </Col>
             <Col span={3}>
               <p>当前选中页数：{this.state.cur}</p>

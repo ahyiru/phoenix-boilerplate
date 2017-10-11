@@ -174,6 +174,12 @@ let routers=[{
   values:'-',
   default:'-',
 },{
+  key:'horizontal',
+  expr:'是否为水平菜单栏',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
+},{
   key:'brand',
   expr:'头部brand配置',
   type:'object',
@@ -185,6 +191,12 @@ let routers=[{
   type:'object',
   values:'-',
   default:'-',
+},{
+  key:'main',
+  expr:'主页面头部配置',
+  type:'object',
+  values:'showPagehead/showPagetitle',
+  default:'false/false',
 },{
   key:'sidebar',
   expr:'左侧边栏配置',
@@ -265,11 +277,17 @@ let others=[{
   type:'boolean',
   values:'true/false',
   default:'true',
+},{
+  key:'horizontal',
+  expr:'是否为水平菜单栏',
+  type:'boolean',
+  values:'true/false',
+  default:'false',
 }];
 
 const t=`const app={
     brand:{
-      title:'React',//
+      title:'Phoenix',//
       subtitle:'UI Demo',//
       logo:require('./styles/images/usr.jpg'),//
     },
@@ -287,16 +305,17 @@ const t=`const app={
       userInfo:null,//用户信息
     },
     rightbar:'<h2>111</h2>',//右侧边栏component
-    footer:'<p>版权所有 &copy; 2017-2020 云创大前端</p>',//底部栏component
     main:{
       showPagehead:true,//显示main头部
       showPagetitle:false,//显示头部标题
     },
+    footer:'<p>版权所有 &copy; 2017-2020 Phoenix 团队</p>',//底部栏component
     routers:sidebarMenu,//侧边栏，路由
     routeAnimate:'scale',//路由切换动画,设置为'no'取消动画效果
     scroll:false,//自定义主页滚动条，默认不使用
     sidebarScroll:true,//自定义侧边栏滚动条，默认使用
-    browserRouter:false,//
+    browserRouter:false,//是否使用真实路径
+    horizontal:false,//是否为水平菜单栏
   };
 
   <Router {...app} />

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Form,FormItem,Row,Col,Button,Table,Code,tools} from 'yrui';
+import {Form,FormItem,Input,Row,Col,Button,Table,Code,tools} from 'yrui';
 
 // const $fetch=tools.$fetch;
 // const $notify=tools.$notify;
@@ -20,18 +20,6 @@ $fetch.post('/test2',{hhh:'h111111'}).then((data)=>{
 }).catch((error)=>{
   console.log(error);
 });*/
-
-
-const formData=[];
-for(let i=0;i<12;i++){
-  let fd={
-    label:`label${i+1}`,
-    inputOpt:{
-      placeholder:`label${i+1}`,
-    },
-  };
-  formData.push(fd);
-}
 
 let thead=[{
   key:'key',
@@ -55,6 +43,30 @@ let tbody=[{
   type:'boolean',
   values:'true/false',
   default:'false',
+},{
+  key:'getFormData',
+  expr:'获取表单内容',
+  type:'function',
+  values:'-',
+  default:'-',
+},{
+  key:'leftCol',
+  expr:'label和input在同一行时label所占比例,1-12',
+  type:'number',
+  values:'1-12',
+  default:'3',
+},{
+  key:'rightCol',
+  expr:'label和input在同一行时input所占比例,1-12',
+  type:'number',
+  values:'1-12',
+  default:'12-leftCol',
+},{
+  key:'formBtn',
+  expr:'form表单提交、取消等按钮',
+  type:'object',
+  values:'-',
+  default:'-',
 }];
 let tbody1=[{
   key:'label',
@@ -63,12 +75,24 @@ let tbody1=[{
   values:'-',
   default:'-',
 },{
-  key:'inputOpt',
-  expr:'输入框配置，见Input组件',
+  key:'type',
+  expr:'组件类型',
+  type:'string',
+  values:'radio/checkbox/switch/select/textarea/input',
+  default:'input',
+},{
+  key:'rules',
+  expr:'校验规则及提示信息',
   type:'object',
   values:'-',
   default:'-',
 },{
+  key:'opts',
+  expr:'组件配置',
+  type:'object',
+  values:'-',
+  default:'-',
+}/*,{
   key:'change',
   expr:'监听输入框改变',
   type:'function',
@@ -86,198 +110,64 @@ let tbody1=[{
   type:'function',
   values:'-',
   default:'-',
-}];
+}*/];
 
-const t=`const formData=[];
-  for(let i=0;i<12;i++){
-    let fd={
-      label:\`label\${i+1}\`,
-      inputOpt:{
-        placeholder:\`label\${i+1}\`,
-      },
-    };
-    formData.push(fd);
-  };
-  //
-  <Form horizontal >
-    <Row>
-      <Col span={4}>
-        <FormItem {...formData[0]} />
-        <FormItem {...formData[1]} />
-        <FormItem {...formData[2]} />
-        <FormItem {...formData[3]} />
-      </Col>
-      <Col span={4}>
-        <FormItem {...formData[4]} />
-        <FormItem {...formData[5]} />
-        <FormItem {...formData[6]} />
-        <FormItem {...formData[7]} />
-      </Col>
-      <Col span={4}>
-        <FormItem {...formData[8]} />
-        <FormItem {...formData[9]} />
-        <FormItem {...formData[10]} />
-        <FormItem {...formData[11]} />
-      </Col>
-    </Row>
-    <Button color="info" text="提交" click={this.getFormData} pullRight />
-    <Button color="warning" text="重置" margin="mrs" click={this.resetForm} pullRight />
+const t=`<Form horizontal getFormData={this.getFD}>
+    <FormItem type="radio" label="单选" opts={{opt:[{value:'11'},{value:'22'}],value:'11'}} />
+    <FormItem type="checkbox" label="多选" opts={{opt:[{value:'11'},{value:'22'}],value:['11','22']}} />
+    <FormItem type="select" label="下拉选择" opts={{opt:[{value:'11'},{value:'22'}]}} />
+    <FormItem type="switch" label="切换" opts={{value:true}} />
+    <FormItem type="text" label="input" opts={{text:'button',color:'info'}} />
+    <FormItem type="textarea" label="textarea" opts={{placeholder:'邮箱',value:''}} />
+    <FormItem type="" label="密码" opts={{placeholder:'密码',value:'',type:'password'}} />
+    <FormItem type="" label="等级" opts={{placeholder:'等级',value:'0',disabled:true}} />
+    <FormItem type="" label="等级">
+      <Input placeholder="ttt" />
+    </FormItem>
   </Form>
 `;
 
 export default class FormDemo extends React.Component {
-  constructor(props){
-    super(props);
-    this.state=({
-      show:false,
-    });
-  }
-  componentDidMount(){
-    window.addEventListener('click',this.hide,false);
-  }
-  componentWillUnmount(){
-    window.removeEventListener('click',this.hide,false);
-  }
-  clkEvent=()=>{
-    console.log('clicked');
+  getFD=(d)=>{
+    console.log(d);
   };
-  getFormData=()=>{
-    let form=document.getElementsByTagName('form')[0];
-    let input=form.getElementsByTagName('input'),data=[];
-    for(let i=0,l=input.length;i<l;i++){
-      let validate=$validate.isRequired(input[i].value);
-      if(!validate.ok){
-        formData[i].inputOpt.error=validate.info;
-        this.setState({
-          formData:formData,
-        });
-        return false;
-      }
-      data.push(input[i].value);
-    }
-    // console.log(data);
-  };
-
-  resetForm=()=>{
-    let form=document.getElementsByTagName('form')[0];
-    let input=form.getElementsByTagName('input');
-    for(let i=0,l=input.length;i<l;i++){
-      formData[i].inputOpt.value='';
-    }
-  };
-
-  show=(e)=>{
-    this.setState({
-      show:true,
-    });
-  };
-  hide=(e)=>{
-    // e.preventDefault();
-    // e.stopPropagation();
-    this.setState({
-      show:false,
-    });
-  };
-  test=(e)=>{
-    e.stopPropagation();
-  };
-
-  getVal=(e)=>{
-    console.log(e.target.value);
-  };
-
   render() {
-    // const {error}=this.props;
     return (
       <div className="form">
-        <h2>基本布局</h2>
-        {/*<Row>
-                  <Col span={4}>
-                    <form className="y-form">
-                      <div className="yform-group">
-                        <label>邮箱</label>
-                        <Input type="text" placeholder="必填" />
-                      </div>
-                      <div className="yform-group">
-                        <label>密码</label>
-                        <Input type="text" />
-                        <span>qqqq</span>
-                      </div>
-                      <Button color="success" text="登录" click={this.getFormData} pullRight margin="mls" />
-                      <Button color="info" text="取消" click={this.getFormData} pullRight margin />
-                    </form>
-                  </Col>
-                  <Col span={4}>
-                    <form className="y-form">
-                      <div className="yform-group">
-                        <label>邮箱</label>
-                        <Input type="text" icon="user" noBorder={true} />
-                        <span className="error">qqqq</span>
-                      </div>
-                      <div className="yform-group">
-                        <label>密码</label>
-                        <Input type="text" icon="lock" noBorder={true} />
-                      </div>
-                      <button type="button" className="ybtn ybtn-info y-right">登录</button>
-                    </form>
-                  </Col>
-                  <Col span={4}>
-                    <form className="y-form yfv">
-                      <div className="yform-group">
-                        <label>邮箱</label>
-                        <Input type="text" />
-                        <span>qqqq</span>
-                      </div>
-                      <div className="yform-group">
-                        <label>密码</label>
-                        <Input type="text" />
-                      </div>
-                      <button type="button" className="ybtn ybtn-info ybtn-block y-right">登录</button>
-                    </form>
-                  </Col>
-                </Row>*/}
-        <Form horizontal >
-          <Row>
-            <Col span={4} sm={6} xs={12}>
-              <FormItem {...formData[0]} />
-              <FormItem {...formData[1]} />
-              <FormItem {...formData[2]} />
-              <FormItem {...formData[3]} />
-            </Col>
-            <Col span={4} sm={6} xs={12}>
-              <FormItem {...formData[4]} />
-              <FormItem {...formData[5]} />
-              <FormItem {...formData[6]} />
-              <FormItem {...formData[7]} />
-            </Col>
-            <Col span={4} sm={6} xs={12}>
-              <FormItem {...formData[8]} />
-              <FormItem {...formData[9]} />
-              <FormItem {...formData[10]} />
-              <FormItem {...formData[11]} />
-            </Col>
-          </Row>
-          <Button color="info" text="提交" click={this.getFormData} pullRight />
-          <Button color="warning" text="重置" margin="mrs" click={this.resetForm} pullRight />
-        </Form>
-        {/*<Row>
-                  <Col span={4}>
-                    <div onClick={this.test}>
-                      <Input focus={this.show} />
-                      {this.state.show&&<div style={{'height':'300px','backgroundColor':'#eee'}}></div>}
-                    </div>
-                  </Col>
-                </Row>*/}
-        <div className="">
-          <h2>参数说明</h2>
-          <Table thead={thead} tbody={tbody} noBorder={true} />
-          <h2>参数说明</h2>
-          <Table thead={thead} tbody={tbody1} noBorder={true} />
-          <div className="textarea">
-            <h4>代码示例</h4>
-            <Code title="demo" code={t} />
-          </div>
-        </div>
+        <h2>表单示例</h2>
+        <Row gutter={8}>
+          <Col offset={1} span={8}>
+            <Form horizontal getFormData={this.getFD}>
+              <FormItem type="radio" label="单选" opts={{opt:[{value:'11'},{value:'22'}],inline:true,value:'11'}} />
+              <FormItem type="checkbox" label="多选" opts={{opt:[{value:'11'},{value:'22'}],inline:true,value:['11','22']}} />
+              <FormItem type="select" label="下拉选择" opts={{opt:[{value:'11'},{value:'22'}]}} />
+              <FormItem type="switch" label="切换" opts={{value:true}} />
+              <FormItem type="text" label="input" opts={{text:'button',color:'info'}} />
+              <FormItem type="textarea" label="textarea" opts={{placeholder:'邮箱',value:''}} />
+              <FormItem type="" label="密码" opts={{placeholder:'密码',value:'',type:'password'}} />
+              <FormItem type="" label="等级" opts={{placeholder:'等级',value:'0',disabled:true}} />
+              <FormItem type="" label="测试">
+                <Input placeholder="ttt" />
+              </FormItem>
+            </Form>
+          </Col>
+          <Col span={12}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="demo" code={t} />
+            </div>
+          </Col>
+        </Row>
+        <Row gutter={8}>
+          <Col span={6}>
+            <h2>Form参数说明</h2>
+            <Table thead={thead} tbody={tbody} noBorder={true} />
+          </Col>
+          <Col span={6}>
+            <h2>FormItem参数说明</h2>
+            <Table thead={thead} tbody={tbody1} noBorder={true} />
+          </Col>
+        </Row>
       </div>
     );
   }

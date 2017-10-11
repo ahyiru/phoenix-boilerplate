@@ -50,6 +50,30 @@ let textarea=[{
   type:'string',
   values:'-',
   default:'-',
+},{
+  key:'value',
+  expr:'文本',
+  type:'string',
+  values:'-',
+  default:'-',
+},{
+  key:'change',
+  expr:'change事件',
+  type:'function',
+  values:'-',
+  default:'function(){}',
+},{
+  key:'focus',
+  expr:'focus事件',
+  type:'function',
+  values:'-',
+  default:'function(){}',
+},{
+  key:'blur',
+  expr:'blur事件',
+  type:'function',
+  values:'-',
+  default:'function(){}',
 }];
 
 const t=`<Badge text="3">

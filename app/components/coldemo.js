@@ -55,24 +55,24 @@ let tbody=[{
 const t=`<h2>基本布局</h2>
   <Row>
     <Col span={2}>
-      <div className="l-block">span=2</div>
+      <div className="l-block bg-info">span=2</div>
     </Col>
     <Col span={4}>
-      <div className="l-block">span=4</div>
+      <div className="l-block bg-purple">span=4</div>
     </Col>
     <Col span={6}>
-      <div className="l-block">span=6</div>
+      <div className="l-block bg-danger">span=6</div>
     </Col>
   </Row>
   <Row>
     <Col span={3}>
-      <div className="l-block">span=3</div>
+      <div className="l-block bg-blue">span=3</div>
     </Col>
     <Col span={7}>
-      <div className="l-block">span=7</div>
+      <div className="l-block bg-primary">span=7</div>
     </Col>
     <Col span={2}>
-      <div className="l-block">span=2</div>
+      <div className="l-block bg-red">span=2</div>
     </Col>
   </Row>
   <h2>分栏偏移</h2>
@@ -97,33 +97,22 @@ const t=`<h2>基本布局</h2>
   </Row>
   <h2>分栏间隔</h2>
   <Row gutter={8}>
-    <Col span={1}>
-      <div className="l-block">span=1</div>
-    </Col>
-    <Col span={2}>
-      <div className="l-block">span=2</div>
+    <Col span={6}>
+      <div className="l-block">gutter=8 span=6</div>
     </Col>
     <Col span={6}>
-      <div className="l-block">span=6</div>
-    </Col>
-    <Col span={3}>
-      <div className="l-block">span=3</div>
+      <div className="l-block">gutter=8 span=6</div>
     </Col>
   </Row>
-  <Row gutter={8}>
-    <Col span={2}>
-      <div className="l-block">span=2</div>
+  <Row gutter={12}>
+    <Col span={6}>
+      <div className="l-block">gutter=12 span=6</div>
     </Col>
-    <Col span={5}>
-      <div className="l-block">span=5</div>
-    </Col>
-    <Col span={3}>
-      <div className="l-block">span=3</div>
-    </Col>
-    <Col span={2}>
-      <div className="l-block">span=2</div>
+    <Col span={6}>
+      <div className="l-block">gutter=12 span=6</div>
     </Col>
   </Row>
+  <h2>多屏适应sm(&lt;992px)、xs(&lt;768px)</h2>
   <Row gutter={12}>
     <Col span={4} sm={6} xs={12}>
       <div className="l-block">span=4 sm=6 xs=12</div>
@@ -145,24 +134,24 @@ export default class ColDemo extends React.Component {
         <h2>基本布局</h2>
         <Row>
           <Col span={2}>
-            <div className="l-block">span=2</div>
+            <div className="l-block bg-info">span=2</div>
           </Col>
           <Col span={4}>
-            <div className="l-block">span=4</div>
+            <div className="l-block bg-purple">span=4</div>
           </Col>
           <Col span={6}>
-            <div className="l-block">span=6</div>
+            <div className="l-block bg-danger">span=6</div>
           </Col>
         </Row>
         <Row>
           <Col span={3}>
-            <div className="l-block">span=3</div>
+            <div className="l-block bg-blue">span=3</div>
           </Col>
           <Col span={7}>
-            <div className="l-block">span=7</div>
+            <div className="l-block bg-primary">span=7</div>
           </Col>
           <Col span={2}>
-            <div className="l-block">span=2</div>
+            <div className="l-block bg-red">span=2</div>
           </Col>
         </Row>
         <h2>分栏偏移</h2>
@@ -187,31 +176,19 @@ export default class ColDemo extends React.Component {
         </Row>
         <h2>分栏间隔</h2>
         <Row gutter={8}>
-          <Col span={1}>
-            <div className="l-block">span=1</div>
-          </Col>
-          <Col span={2}>
-            <div className="l-block">span=2</div>
+          <Col span={6}>
+            <div className="l-block">gutter=8 span=6</div>
           </Col>
           <Col span={6}>
-            <div className="l-block">span=6</div>
-          </Col>
-          <Col span={3}>
-            <div className="l-block">span=3</div>
+            <div className="l-block">gutter=8 span=6</div>
           </Col>
         </Row>
-        <Row gutter={8}>
-          <Col span={2}>
-            <div className="l-block">span=2</div>
+        <Row gutter={12}>
+          <Col span={6}>
+            <div className="l-block">gutter=12 span=6</div>
           </Col>
-          <Col span={5}>
-            <div className="l-block">span=5</div>
-          </Col>
-          <Col span={3}>
-            <div className="l-block">span=3</div>
-          </Col>
-          <Col span={2}>
-            <div className="l-block">span=2</div>
+          <Col span={6}>
+            <div className="l-block">gutter=12 span=6</div>
           </Col>
         </Row>
         <h2>多屏适应sm(&lt;992px)、xs(&lt;768px)</h2>

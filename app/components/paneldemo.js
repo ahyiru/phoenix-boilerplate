@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-import {Items,Item,Row,Col,Panel,Table,Dnd,Code} from 'yrui';
+import {Items,Item,Row,Col,Panel,Table,Dnd,Code,tools} from 'yrui';
+
+const {loading}=tools;
 
 let panel={
   title:'panel标题栏',
@@ -94,7 +96,7 @@ const t=`<Item>
     <Row gutter={12}>
       <Col span={6}>
         <Dnd>
-          <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins}>
+          <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins} refrash={this.refrash}>
             <div style={{height:'220px'}}></div>
           </Panel>
         </Dnd>
@@ -130,7 +132,14 @@ const t=`<Item>
 `;
 
 export default class PanelDemo extends React.Component {
-
+  refrash=(ele)=>{
+    let load=0;
+    clearTimeout(load);
+    loading(ele);
+    load=setTimeout(()=>{
+      loading(ele);
+    },3000);
+  };
   render() {
     return (
       <Items>
@@ -139,7 +148,7 @@ export default class PanelDemo extends React.Component {
           <Row gutter={12}>
             <Col span={6} sm={12}>
               <Dnd>
-                <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins}>
+                <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins} refrash={this.refrash}>
                   <div style={{height:'220px'}}/>
                 </Panel>
               </Dnd>
