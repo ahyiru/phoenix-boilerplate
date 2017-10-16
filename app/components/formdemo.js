@@ -92,7 +92,7 @@ let tbody1=[{
   type:'object',
   values:'-',
   default:'-',
-}/*,{
+},/*{
   key:'change',
   expr:'监听输入框改变',
   type:'function',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Select,Autocomplete,Switch,Row,Col,Table,Code} from 'yrui';
+import {Select,Autocomplete,Switch,Row,Col,Table,Code,Muiltselect} from 'yrui';
 
 let thead=[{
   key:'key',
@@ -93,9 +93,28 @@ let autocomplete=[{
   values:'-',
   default:'-',
 },{
-  key:'placeholder',
-  expr:'提示文本',
-  type:'string',
+  key:'value',
+  expr:'默认值',
+  type:'string|number',
+  values:'-',
+  default:'-',
+},{
+  key:'getSelectVal',
+  expr:'获取选中值',
+  type:'function',
+  values:'-',
+  default:'-',
+}];
+let muiltselect=[{
+  key:'data',
+  expr:'所有数据',
+  type:'array',
+  values:'-',
+  default:'-',
+},{
+  key:'value',
+  expr:'默认值',
+  type:'string|number',
   values:'-',
   default:'-',
 },{
@@ -108,9 +127,11 @@ let autocomplete=[{
 
 const t=`<Select data={[{value:'1'},{value:'2'},{value:'3'}]} />
 `;
-const t1=`<<Autocomplete data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} />
+const t1=`<Autocomplete data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} />
 `;
 const t2=`<Switch onText={<i className="fa fa-check"/>} offText={<i className="fa fa-times"/>} defaultChecked={true} disabled />
+`;
+const t3=`<Muiltselect data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} value={['1','3']} />
 `;
 
 export default class SelectswitchDemo extends React.Component {
@@ -119,27 +140,37 @@ export default class SelectswitchDemo extends React.Component {
     return (
       <div>
         <Row gutter={12}>
-          <Col span={4} sm={6} xs={12}>
+          <Col span={6} sm={6} xs={12}>
             <h2>Select配置</h2>
             <Table thead={thead} tbody={select} />
           </Col>
-          <Col span={4} sm={6} xs={12}>
+          <Col span={6} sm={6} xs={12}>
             <h2>switch配置</h2>
             <Table thead={thead} tbody={switch1} />
           </Col>
-          <Col span={4} sm={6} xs={12}>
+        </Row>
+        <Row gutter={12}>
+          <Col span={6} sm={6} xs={12}>
             <h2>autocomplete配置</h2>
             <Table thead={thead} tbody={autocomplete} />
           </Col>
+          <Col span={6} sm={6} xs={12}>
+            <h2>muiltselect配置</h2>
+            <Table thead={thead} tbody={muiltselect} />
+          </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={6} xs={12}>
+          <Col span={4} sm={6} xs={12}>
             <h2>Select</h2>
             <Select opt={[{value:'1'},{value:'2'},{value:'3'}]} />
           </Col>
-          <Col span={6} xs={12}>
+          <Col span={4} sm={6} xs={12}>
             <h2>Autocomplete</h2>
             <Autocomplete data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} />
+          </Col>
+          <Col span={4} sm={6} xs={12}>
+            <h2>Muiltselect</h2>
+            <Muiltselect data={[{value:'1'},{value:'2'},{value:'3'},{value:'aa'},{value:'bb'},{value:'cc'},{value:'11'},{value:'22'}]} value={['1','3']} />
           </Col>
         </Row>
         <Row gutter={12}>
@@ -157,22 +188,30 @@ export default class SelectswitchDemo extends React.Component {
           </Col>
         </Row>
         <Row gutter={12}>
-          <Col span={4} sm={6} xs={12}>
+          <Col span={6} sm={6} xs={12}>
             <div className="textarea">
               <h4>代码示例</h4>
               <Code title="Select" code={t} />
             </div>
           </Col>
-          <Col span={4} sm={6} xs={12}>
+          <Col span={6} sm={6} xs={12}>
+            <div className="textarea">
+              <h4>代码示例</h4>
+              <Code title="Switch" code={t2} />
+            </div>
+          </Col>
+        </Row>
+        <Row gutter={12}>
+          <Col span={6} sm={6} xs={12}>
             <div className="textarea">
               <h4>代码示例</h4>
               <Code title="Autocomplete" code={t1} />
             </div>
           </Col>
-          <Col span={4} sm={6} xs={12}>
+          <Col span={6} sm={6} xs={12}>
             <div className="textarea">
               <h4>代码示例</h4>
-              <Code title="Switch" code={t2} />
+              <Code title="Muiltselect" code={t3} />
             </div>
           </Col>
         </Row>

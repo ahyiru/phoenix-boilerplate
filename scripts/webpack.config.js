@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(src, '_dist'),
     filename: 'js/[name]_[hash:8].js',
+    publicPath: '/',
     libraryTarget:'umd',
   },
   resolve: {
