@@ -1,12 +1,9 @@
 **/node_modules
-server.js
-webpack.*.js
-
-**/node_modules
-test
-mocks
+__tests__
+builder
+doc
+node
+y_dist
 coverage
-public
-build
 server.js
 webpack.*.js

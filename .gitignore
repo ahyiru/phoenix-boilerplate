@@ -44,19 +44,14 @@ typings
 Thumbs.db
 
 # yiru
-__test__
-__mocks__
-doc
 build
-rest
+__test__
 
 # server
 ecosystem.json
-rest
+yarn.lock
 
 # file
-.happypack
 *.zip
 *.bk
-*.huy
-
+*.d.ts

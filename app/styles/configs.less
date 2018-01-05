@@ -1,0 +1,316 @@
+/**
+@brandBgColor:#af5cc1;
+@brandColor:#ffffff;
+@navBgColor:#7266ba;
+@navColor:#f0f0f0;
+@menuBgColor:#666666;
+@menuColor:#ffffff;
+@standardColor:#0066ff;
+@headerHeight:48px;
+@footerHeight:40px;
+@collapseMenuWidth:52px;
+@menuWidth:220px;
+**/
+@import "./config.less";
+
+.loop-tree(@color,@level:1) when (@level < 10){
+  >li>ul{
+    .loop-tree(darken(@color,8),(@level + 1));
+  }
+  background-color:@color;
+}
+
+body{
+	header{
+		.y-header{
+			height:@headerHeight;
+      line-height:@headerHeight;
+			>.y-brand{
+				width:@menuWidth;
+				background-color:@brandBgColor;
+				>.brand{
+					color:@brandColor;
+				}
+			}
+			>.y-nav{
+				width:calc(~"100% - "@menuWidth);
+				background-color:@navBgColor;
+				>.y-nav-wrap{
+					>ul{
+						>li{
+							height:@headerHeight;
+							>a{
+								color:@navColor;
+								&:hover{
+                  color:exclusion(@standardColor,@navColor);
+                }
+                &.img{
+                	&::after{
+                		background-color:difference(#f0f,@navColor);
+                		border-color:lighten(@navBgColor,10%);
+                	}
+                }
+							}
+							>.y-dropdown{
+								top:calc(@headerHeight + 5px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	aside{
+		.y-sidebar{
+			color:@menuColor;
+			top:@headerHeight;
+			width:@menuWidth;
+			.y-sidebar-wrap{
+				.y-user-logo{
+					background-color:darken(@menuBgColor,5);
+				}
+				.y-sidebar-bgcolor{
+					width:@menuWidth;
+          background-color:@menuBgColor;
+				}
+				.y-sidebar-list{
+					.y-sidebar-title{
+						height:@headerHeight;
+            line-height:@headerHeight;
+						>i{
+							height:@headerHeight;
+              line-height:@headerHeight;
+							&:hover{
+                color:exclusion(@standardColor,@menuColor);
+              }
+						}
+					}
+					ul{
+						&.tree-root{
+							background-color:@menuBgColor;
+							.loop-tree(@menuBgColor);
+						}
+						>li{
+							>a{
+								color:@menuColor;
+								&:hover{
+                  color:exclusion(@standardColor,@menuColor);
+                  >span{
+                  	background-color:exclusion(@standardColor,@menuColor);
+                  }
+                }
+                &.active{
+                  color:difference(@standardColor,@menuColor);
+                  >span{
+                    background-color:difference(@standardColor,@menuColor);
+                  }
+                }
+							}
+						}
+					}
+				}
+			}
+			.navbar-collapse{
+				height:@headerHeight;
+				>a{
+					background-color:@brandBgColor;
+					color:@brandColor;
+					&:hover{
+            background-color:@brandColor;
+            color:@brandBgColor;
+          }
+				}
+				&.open{
+          >a{
+            background-color:@brandColor;
+            color:@brandBgColor;
+            &:hover{
+              background-color:@brandBgColor;
+              color:@brandColor;
+            }
+          }
+        }
+			}
+		}
+		.right-bar{
+			top:@headerHeight;
+		}
+	}
+	main{
+		.y-main{
+			padding-top:@headerHeight;
+			margin-left:@menuWidth;
+			.y-footer{
+				height:@footerHeight;
+        line-height:@footerHeight;
+        &+.y-container{
+          padding-bottom:calc(~"1vw + "@footerHeight);
+        }
+			}
+		}
+	}
+	&.y-collapse{
+		aside{
+			.y-sidebar{
+				.y-sidebar-wrap{
+					.y-sidebar-bgcolor{
+            width:@collapseMenuWidth;
+          }
+          .y-sidebar-list{
+            .y-sidebar-title{
+              width:@collapseMenuWidth;
+            }
+            ul{
+            	&.tree-root{
+            		width:@collapseMenuWidth;
+            		>li{
+	                >a{
+                    >i{
+                      &:first-child{
+                        width:@collapseMenuWidth;
+                      }
+                    }
+	                }
+	                >ul{
+	                  left:@collapseMenuWidth;
+	                }
+	              }
+            	}
+            }
+          }
+				}
+			}
+		}
+		main{
+      .y-main{
+        margin-left:@collapseMenuWidth;
+      }
+    }
+	}
+	&.horizontal{
+    aside{
+    	.y-sidebar{
+    		left:@menuWidth;
+        width:calc(~"100% - "@menuWidth);
+        height:@headerHeight;
+        .y-sidebar-wrap{
+        	.y-sidebar-bgcolor{
+        		left:@menuWidth;
+            width:calc(~"100% - "@menuWidth);
+            height:@headerHeight;
+        	}
+        	.y-sidebar-list{
+        		ul{
+        			&.tree-root{
+        				>li{
+        					>a{
+        						height:@headerHeight;
+        						>i{
+	                    height:@headerHeight;
+	                    line-height:@headerHeight;
+	                  }
+	                  >p{
+	                    line-height:@headerHeight;
+	                  }
+        					}
+        				}
+        			}
+        		}
+        	}
+        }
+    	}
+    }
+    main{
+    	.y-main{
+        padding-top:@headerHeight;
+      }
+    }
+	}
+  // max-width:992px
+  @media screen and (max-width:992px){
+    header{
+      .y-header{
+        .y-nav{
+          width:100%;
+        }
+      }
+    }
+    main{
+      .y-main{
+        margin-left:@collapseMenuWidth;
+      }
+    }
+    &.horizontal{
+      aside{
+        .y-sidebar{
+          left:0;
+          width:100%;
+          .y-sidebar-wrap{
+            .y-sidebar-bgcolor{
+              left:0;
+              width:100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  // max-width:768px
+  @media screen and (max-width:768px){
+    header{
+      .y-header{
+        height:@headerHeight*2;
+      }
+    }
+    aside{
+      .y-sidebar,.right-bar{
+        top:@headerHeight*2;
+      }
+    }
+    main{
+      .y-main{
+        padding-top:@headerHeight*2;
+      }
+    }
+    &.h-collapse{
+      header{
+        .y-header{
+          height:@headerHeight;
+          line-height:@headerHeight;
+        }
+      }
+      aside{
+        .y-sidebar{
+          top:@headerHeight;
+          right:-@menuWidth;
+          width:@menuWidth;
+          .y-sidebar-wrap{
+            .y-sidebar-bgcolor{
+              top:@headerHeight;
+              right:-@menuWidth;
+              width:@menuWidth;
+            }
+          }
+        }
+      }
+      main{
+        .y-main{
+          padding-top:@headerHeight;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

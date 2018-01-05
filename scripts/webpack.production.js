@@ -1,37 +1,43 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 var webpackConfig = require('./webpack.config');
-
-// process.env.NODE_ENV = 'production';
 
 module.exports = merge(webpackConfig, {
   devtool: 'cheap-module-source-map',
   cache: false,
-  entry: {
-    commons:['react','react-dom'],
-  },
   module: {
     rules: [{
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
         fallback:'style-loader',
-        use:'css-loader',
+        use:[{
+          loader:'css-loader',
+          options:{
+            minimize:true,
+          },
+        }],
       }),
-      // exclude: /components/,
     },{
       test: /\.less$/,
       loader: ExtractTextPlugin.extract({
         fallback:'style-loader',
-        use:['css-loader','less-loader'],
-        // publicPath:'',
+        use:[{
+          loader:'css-loader',
+          options:{
+            minimize:true,
+          },
+        },{
+          loader:'less-loader',
+        }],
       }),
     }],
   },
   plugins: [
     new ExtractTextPlugin({
-      filename:'css/[name]_[contenthash].css',
+      filename:'css/[name]_[contenthash:8].css',
       allChunks: true,
       disable:false,
     }),
@@ -41,14 +47,18 @@ module.exports = merge(webpackConfig, {
       },
       compress: {
         warnings: false,
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({ //合并公共代码
-      name:'commons',
-      filename:'js/[name]_[hash:8].js',
+      },
+      sourceMap:true,
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+    }),
+    new SWPrecacheWebpackPlugin({
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      cacheId: 'demo',
+      filename: 'service-worker.js',
+      minify: true,
+      staticFileGlobsIgnorePatterns: [/\.map$/,/\.huy$/,/\.html$/, /asset-manifest\.json$/],
     }),
   ],
 });

@@ -39,7 +39,7 @@ export const chart1={
       type:'category',
       boundaryGap:true,
       data:( ()=>{
-        let now = new Date();
+        let now:any = new Date();
         let res = [];
         let len = 50;
         while (len--) {
@@ -114,7 +114,7 @@ export const chart1={
         let res = [];
         let len = 0;
         while (len < 50) {
-          let r=Math.random()*10 + 5;
+          let r:any=Math.random()*10 + 5;
           res.push(r.toFixed(1)-0);
           len++;
         }

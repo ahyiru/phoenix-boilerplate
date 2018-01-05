@@ -1,15 +1,16 @@
 {
-  "presets": [["es2015",{ "modules":false ,"loose": true }], "react", "stage-0"],
+  "presets": [["env",{"modules":false,"loose":true,"useBuiltIns":true,"targets": {"browsers":["last 2 versions"]}}], "react", "stage-0"],
   "env": {
     "development": {
       "presets": ["react-hmre"],
       "plugins": [
         "transform-runtime",
-        "transform-decorators-legacy"
+        "transform-decorators-legacy",
+        "syntax-dynamic-import","dual-import"
       ]
     },
     "production": {
-      "plugins":[]
+      "plugins":["transform-runtime","syntax-dynamic-import","dual-import"]
     },
     "test": {
       "plugins": ["transform-es2015-modules-commonjs"]
