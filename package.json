@@ -1,6 +1,6 @@
 {
   "name": "phoenix",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "phoenix ui",
   "main": "index.js",
   "scripts": {
