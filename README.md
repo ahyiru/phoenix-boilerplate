@@ -6,35 +6,52 @@
 ## 代码书写规范
 
 	1.引号使用:js代码使用单引号，html里使用双引号。
+	
 	2.使用严格相等号,即===或!==。
+	
 	3.所有语句使用一致的括号风格。
+	
 	4.使用一致的缩进，2个空格。
+	
 	5.变量先定义再使用，尽量避免使用全局变量。
+	
 	6.代码注释保持一致的风格。
+	
 	7.尽量使用const或let定义变量，避免使用var。
+	
 	8.每个语句结尾使用分号。
+	
 	9.条件判断语句必须放入{}中。
+	
 	10.jsx里没有子元素的标签使用反斜杠自闭合。
+	
 	11.对象元素单行时最后一个元素后面不要逗号，多行时最后元素后要加逗号。
+	
 	12.使用一致的命名风格,驼峰式(Camel-Case)。
 
-## Getting start
+### [前端知识点总结](https://github.com/ahyiru/react-ui-demo/blob/master/doc/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9.md)
 
-1. Clone this repo:
 
-		$ git clone https://github.com/ahyiru/phoenix-boilerplate.git
+#### 安装 `$ npm i -S yrui`.
 
-2. Install dependenices:
+## 运行实例
+
+1. 创建项目:
 `
-$ npm i 或 yarn
-`
-
-3. Start the project:
-`
-$ npm start 或 yarn start	//默认端口8080
+$ git clone https://github.com/ahyiru/phoenix-boilerplate.git
 `
 
-5. 打开浏览器，访问: [http://localhost:8080/](http://localhost:8080/)
+2. 安装依赖:
+`
+$ yarn install 或 npm i 或 cnpm i
+`
+
+3. 运行项目:
+`
+$ npm(yarn) start 		//默认端口8080
+`
+
+4. 打开浏览器，访问: [http://localhost:8080/](http://localhost:8080/)
 
 ## 快速创建项目
 
