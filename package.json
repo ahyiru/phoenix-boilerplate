@@ -95,6 +95,6 @@
     "react-loadable": "^5.3.1",
     "socket.io-client": "^2.0.4",
     "uuid": "^3.2.1",
-    "yrui": "^1.7.2"
+    "yrui": "^1.7.6"
   }
 }

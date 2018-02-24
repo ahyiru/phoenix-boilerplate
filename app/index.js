@@ -19,6 +19,7 @@ app.navbar.rightNav[2].drop=<Profile/>;
 
 const {$fetch,observer}=tools;
 
+const localYrui=require('yrui/package.json');
 
 ReactDOM.render(<Router {...app} />, document.getElementById('phoenix'));
 
