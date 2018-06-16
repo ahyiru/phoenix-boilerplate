@@ -46,6 +46,7 @@ Thumbs.db
 # yiru
 build
 __test__
+server
 
 # server
 ecosystem.json
