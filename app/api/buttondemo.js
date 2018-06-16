@@ -138,8 +138,13 @@ const b6=b([],icon,true,false,disabled);
 `;
 
 export default class ButtonDemo extends React.Component{
-  click=()=>{
-    console.log('1');
+  state={
+    a:'1',
+  };
+  test=()=>{
+    this.setState({
+      a:'121',
+    });
   };
   render() {
     const color=['default','info','warning','success','danger'];
@@ -208,7 +213,7 @@ export default class ButtonDemo extends React.Component{
         <Row gutter={8}>
           <Col span={8}>
             <ButtonGroup>
-              <Button color={'default'} text="apple" icon={'apple'} />
+              <Button color={'default'} text="apple" icon={'apple'} click={this.test} />
               <Button color={'info'} text="html5" icon={'html5'}  />
               <Button color={'warning'} text="css3" icon={'css3'}  />
             </ButtonGroup>
@@ -226,7 +231,7 @@ export default class ButtonDemo extends React.Component{
         <Row gutter={8}>
           <Col span={8}>
             <ButtonGroup>
-              <Button color={'default'} icon={'apple'} outline={true} />
+              <Button color={'default'} icon={this.state.a} outline={true} />
               <Button color={'info'} icon={'html5'} outline={true} />
               <Button color={'warning'} icon={'css3'} outline={true} />
             </ButtonGroup>

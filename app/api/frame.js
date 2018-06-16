@@ -27,18 +27,24 @@ let route=[{
   default:'-',
 },{
   key:'component',
-  expr:'页面',
+  expr:'页面组件',
   type:'object|function',
   values:'-',
   default:'-',
 },{
-  key:'title',
+  key:'asyncComponent',
+  expr:'按需加载组件',
+  type:'function',
+  values:'-',
+  default:'-',
+},{
+  key:'name',
   expr:'标题',
   type:'string',
   values:'-',
   default:'-',
 },{
-  key:'leftIcon',
+  key:'icon',
   expr:'路由左侧图标',
   type:'string',
   values:'-',
@@ -50,7 +56,13 @@ let route=[{
   values:'-',
   default:'false',
 },{
-  key:'subMenu',
+  key:'noFrame',
+  expr:'不显框架信息',
+  type:'boolean',
+  values:'-',
+  default:'false',
+},{
+  key:'child',
   expr:'子路由',
   type:'array',
   values:'-',
@@ -139,6 +151,12 @@ let leftNav=[{
   type:'function|string',
   values:'-',
   default:'-',
+},{
+  key:'url',
+  expr:'菜单链接',
+  type:'string',
+  values:'-',
+  default:'javascript:;',
 }];
 //
 let sidebar=[{
@@ -181,11 +199,11 @@ let userinfo=[{
 }];
 //
 let main=[{
-  key:'showPagehead',
-  expr:'是否隐藏头部内容',
+  key:'showBreadcrumb',
+  expr:'是否显示面包屑',
   type:'boolean',
   values:'true/false',
-  default:'false',
+  default:'true',
 },{
   key:'showPagetitle',
   expr:'是否显示面包屑上面标题',
@@ -222,8 +240,8 @@ let routers=[{
   key:'main',
   expr:'主页面头部配置',
   type:'object',
-  values:'showPagehead/showPagetitle',
-  default:'false/false',
+  values:'-',
+  default:'-',
 },{
   key:'sidebar',
   expr:'左侧边栏配置',
@@ -319,7 +337,7 @@ const t=`const app={
     },
     rightbar:'<h2>111</h2>',//右侧边栏component
     main:{
-      showPagehead:true,//显示main头部
+      showBreadcrumb:true,//显示面包屑
       showPagetitle:false,//显示头部标题
     },
     footer:'<p>版权所有 &copy; 2017-2020 Phoenix 团队</p>',//底部栏component
@@ -347,7 +365,7 @@ export default class Frame extends React.Component {
           </Row>
           <Row gutter={8}>
             <Col span={12}>
-              <div className="textarea">
+              <div className="txt-area">
                 <h2>配置</h2>
                 {/*<p>brand navbar sidebar rightbar main</p>*/}
                 <Code title="demo" code={t} />
@@ -394,12 +412,6 @@ export default class Frame extends React.Component {
             <Col span={12}>
               <h2>leftNav、leftNav配置</h2>
               <Table thead={thead} tbody={leftNav} />
-            </Col>
-          </Row>
-          <Row gutter={8}>
-            <Col span={12}>
-              <h2>其它配置</h2>
-              <Table thead={thead} tbody={others} />
             </Col>
           </Row>
         </Item>

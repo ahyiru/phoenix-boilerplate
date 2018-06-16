@@ -45,6 +45,9 @@ export default class AutocompleteDemo extends React.Component{
           <Col span={6} sm={8} xs={12}>
             <Autocomplete data={data} value={this.state.value} getSelectVal={this.getSelectVal} />
           </Col>
+          <Col span={6} sm={8} xs={12}>
+            <Autocomplete data={data} />
+          </Col>
         </Row>
         <Row gutter={8}>
           <Col span={12} sm={12} xs={12}>

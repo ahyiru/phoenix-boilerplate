@@ -51,7 +51,7 @@ export default class PaginationDemo extends React.Component{
           </Row>
         </Item>
         <Item>
-          <div className="textarea">
+          <div className="txt-area">
             <h4>代码示例</h4>
             <Code title="Pagination" code={code} />
           </div>

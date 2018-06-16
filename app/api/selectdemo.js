@@ -53,9 +53,9 @@ export default class SelectDemo extends React.Component{
   };
   change=(val)=>{
     console.log(val);
-    /*this.setState({
+    this.setState({
       value:val,
-    });*/
+    });
   };
   render(){
     return(
@@ -63,6 +63,9 @@ export default class SelectDemo extends React.Component{
         <Row gutter={8}>
           <Col span={6} sm={8} xs={12}>
             <Select opt={data} value={this.state.value} change={this.change} />
+          </Col>
+          <Col span={6} sm={8} xs={12}>
+            <Select opt={data} />
           </Col>
         </Row>
         <Row gutter={8}>

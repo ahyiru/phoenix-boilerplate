@@ -1,7 +1,7 @@
 ## Phoenix UI
 
-#### Phoenix UI是一套用于快速开发web应用的UI框架。
-#### Phoenix UI使用Typescript(ES6)编写，提供一些简单UI组件及函数库。拓展性强，可配合其它一些组件或插件进行开发，如ant design、jquery等。
+#### Phoenix UI是一套快速创建中后台企业应用的UI框架，基于react实现，使用typescript构建。
+#### Phoenix UI提供快速搭建、易于配置的应用框架，开箱即用的react组件，集成一些常用的功能组件，使开发更简单高效。
 
 ## 代码书写规范
 

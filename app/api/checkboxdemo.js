@@ -52,7 +52,7 @@ const data1=[{value:'js'},{value:'css'},{value:'html'}];
 
 export default class CheckboxDemo extends React.Component{
   state={
-    value:['js'],
+    value:['js','css','html'],
     value1:['js'],
   };
   change=(val)=>{
@@ -67,6 +67,14 @@ export default class CheckboxDemo extends React.Component{
         <Row gutter={8}>
           <Col span={6} sm={12} xs={12}>
             <Checkbox opt={data} value={this.state.value} change={this.change} />
+          </Col>
+          <Col span={6} sm={12} xs={12}>
+            <Checkbox opt={data1} value={this.state.value1} block />
+          </Col>
+        </Row>
+        <Row gutter={8}>
+          <Col span={6} sm={12} xs={12}>
+            <Checkbox opt={[1,2,3]} />
           </Col>
           <Col span={6} sm={12} xs={12}>
             <Checkbox opt={data1} value={this.state.value1} block />

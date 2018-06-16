@@ -90,7 +90,7 @@ const code=`
 export default class RowDemo extends React.Component{
 
   render(){
-    const style={
+    const style:any={
       height:'100px',
       lineHeight:'100px',
       textAlign:'center',

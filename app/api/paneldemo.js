@@ -55,7 +55,8 @@ let tbody=[{
   values:'-',
   default:'default',
 },{
-  key:'头部工具栏',
+  key:'plugins',
+  expr:'头部工具栏',
   type:'object',
   values:'checkbox/selTheme/refrash/collapse/fullscreen/close',
   default:'{}',
@@ -129,11 +130,11 @@ const code=`
 export default class PanelDemo extends React.Component{
 
   refrash=(ele)=>{
-    let load=0;
+    let load:any=0;
     clearTimeout(load);
     loading(ele);
     load=setTimeout(()=>{
-      loading(ele);
+      loading.distroy(ele);
     },3000);
   };
 
@@ -144,7 +145,7 @@ export default class PanelDemo extends React.Component{
           <h2>panel</h2>
           <Row gutter={12}>
             <Col span={6}>
-              <Panel canDrag={false} panelTitle={panel.title} headColor={panel.defaultTheme} plugins={panel.plugins} ricon="user" refrash={this.refrash}>
+              <Panel canDrag={false} panelTitle={panel.title} headColor={'panel.defaultTheme'} plugins={panel.plugins} ricon="user" refrash={this.refrash}>
                 <div style={{height:'220px'}} />
               </Panel>
             </Col>

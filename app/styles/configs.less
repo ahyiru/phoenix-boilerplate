@@ -13,9 +13,9 @@
 **/
 @import "./config.less";
 
-.loop-tree(@color,@level:1) when (@level < 10){
+.loop-tree(@color,@level:1) when (@level < 5){
   >li>ul{
-    .loop-tree(darken(@color,8),(@level + 1));
+    .loop-tree(darken(@color,3),(@level + 1));
   }
   background-color:@color;
 }
@@ -37,17 +37,34 @@ body{
 				background-color:@navBgColor;
 				>.y-nav-wrap{
 					>ul{
+            height:@headerHeight;
 						>li{
-							height:@headerHeight;
+              &.vertical{
+                >a{
+                  &:not(.img){
+                    padding:(@headerHeight - 33px) * .5 0;
+                  }
+                }
+              }
 							>a{
 								color:@navColor;
 								&:hover{
                   color:exclusion(@standardColor,@navColor);
                 }
+                &.active{
+                  color:difference(@standardColor,@navColor);
+                }
+                >img{
+                  margin-top:@headerHeight * .15;
+                  width:@headerHeight * .7;
+                  height:@headerHeight * .7;
+                }
                 &.img{
                 	&::after{
                 		background-color:difference(#f0f,@navColor);
                 		border-color:lighten(@navBgColor,10%);
+                    bottom:@headerHeight * .15 + 2px;
+                    right:@headerHeight * .5 - sqrt(pow(@headerHeight * .5,2) - pow(@headerHeight * .35 - 2px,2)) - 5px;
                 	}
                 }
 							}
@@ -67,7 +84,7 @@ body{
 			width:@menuWidth;
 			.y-sidebar-wrap{
 				.y-user-logo{
-					background-color:darken(@menuBgColor,5);
+					background-color:darken(@menuBgColor,3);
 				}
 				.y-sidebar-bgcolor{
 					width:@menuWidth;
@@ -144,9 +161,20 @@ body{
 				height:@footerHeight;
         line-height:@footerHeight;
         &+.y-container{
-          padding-bottom:calc(~"1vw + "@footerHeight);
+          padding-bottom:calc(~"1.2vw + "@footerHeight);
         }
 			}
+      .y-container{
+        min-height:calc(~"100vh - "@headerHeight - @footerHeight);
+        /*.y-pageheader{
+          &+.y-pagecontent{
+            min-height:calc(~"100vh - 2.4vw - 38px - "@headerHeight - @footerHeight);
+          }
+        }
+        .y-pagecontent{
+          min-height:calc(~"100vh - 2.4vw - "@headerHeight - @footerHeight);
+        }*/
+      }
 		}
 	}
 	&.y-collapse{
@@ -191,12 +219,12 @@ body{
     aside{
     	.y-sidebar{
     		left:@menuWidth;
-        width:calc(~"100% - "@menuWidth);
+        width:calc(~"100% - 300px - "@menuWidth);
         height:@headerHeight;
         .y-sidebar-wrap{
         	.y-sidebar-bgcolor{
         		left:@menuWidth;
-            width:calc(~"100% - "@menuWidth);
+            width:calc(~"100% - 300px - "@menuWidth);
             height:@headerHeight;
         	}
         	.y-sidebar-list{

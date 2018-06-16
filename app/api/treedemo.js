@@ -9,10 +9,28 @@ const tbody=[{
   default:'[]',
 },{
   key:'getData',
-  expr:'获取选中的数据',
+  expr:'获取当前节点数据',
   type:'function',
   values:'-',
   default:'-',
+},{
+  key:'selected',
+  expr:'多选模式下获取选中的数据',
+  type:'array',
+  values:'-',
+  default:'-',
+},{
+  key:'selectMode',
+  expr:'是否为多选模式',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
+},{
+  key:'allOpen',
+  expr:'是否全部展开',
+  type:'boolean',
+  values:'false',
+  default:'true/false',
 },{
   key:'hasCheck',
   expr:'是否显示选择框',
@@ -133,16 +151,80 @@ const data=[{
 <Tree data={data} getData={this.getData} />
 `;
 
+const list=[{
+  name:'监控看板',
+  child:[{
+    icon:'',
+    name:'爬虫监控模块',
+    child:[{
+      name:'爬虫运行状态分布',
+      ricon:'check',
+    },{
+      name:'爬取下载耗时趋势',
+      ricon:'check',
+    },{
+      name:'今日爬取下载完成率',
+      ricon:'check',
+    },{
+      name:'爬取数据处理速度',
+      ricon:'check',
+    },{
+      name:'爬取数量状态分布',
+      ricon:'check',
+    },{
+      name:'爬虫状态明细',
+      ricon:'check',
+    },{
+      name:'公告爬取数据量分布',
+      ricon:'check',
+    },{
+      name:'公告全流程数据量监控',
+      ricon:'check',
+    },{
+      name:'公告数据更新时间点明细',
+      ricon:'check',
+    },{
+      name:'公告爬取耗时明细',
+      ricon:'check',
+    }],
+  },{
+    icon:'',
+    name:'解析监控模块',
+    child:[{
+      name:'解析完成率趋势',
+      ricon:'check',
+    },{
+      name:'解析耗时趋势',
+      ricon:'check',
+    },{
+      name:'解析异常明细',
+      ricon:'check',
+    },{
+      name:'各类别公告解析数据量明细',
+      ricon:'check',
+    }],
+  }],
+}];
+
 export default class TreeDemo extends React.Component{
   state={
     selData:'什么也没选',
     id:undefined,
   };
-  getData=(id,data)=>{
+  getData=(id,data,selected)=>{
+    console.log('id',id);
+    console.log('data',data);
+    console.log('selected',selected);
     this.setState({
       selData:JSON.stringify(data),
       id:id,
     });
+  };
+
+  getData1=(id,data,selected)=>{
+    console.log('id',id);
+    console.log('data',data);
+    console.log('selected',selected);
   };
 
   render(){
@@ -151,7 +233,7 @@ export default class TreeDemo extends React.Component{
         <Item>
           <Row gutter={12}>
             <Col span={6}>
-              <Tree data={data} selected={this.state.id} getData={this.getData} />
+              <Tree data={data} collapseIcon selected={this.state.id} getData={this.getData} />
             </Col>
             <Col span={6}>
               <div>
@@ -164,7 +246,14 @@ export default class TreeDemo extends React.Component{
           </Row>
         </Item>
         <Item>
-          <div className="textarea">
+          <Row gutter={12}>
+            <Col span={6}>
+              <Tree data={list} allOpen selectMode selectedIcon getData={this.getData1} />
+            </Col>
+          </Row>
+        </Item>
+        <Item>
+          <div className="txt-area">
             <h4>代码示例</h4>
             <Code title="demo" code={code} />
           </div>

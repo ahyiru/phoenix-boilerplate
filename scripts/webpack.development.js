@@ -1,8 +1,9 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var webpackConfig = require('./webpack.config');
-
+process.env.NODE_ENV = 'development';
 module.exports = merge(webpackConfig, {
+  mode:'development',
   devtool: 'eval',
   // devtool: 'cheap-module-source-map',
   cache: true,
@@ -22,8 +23,5 @@ module.exports = merge(webpackConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-    }),
   ],
 });

@@ -37,137 +37,141 @@ const rightNav=[{
 const routers=[{
   url:'/',
   component:components['Layout'],
-  title:'Home',
-  leftIcon:'home',
+  name:'Home',
+  icon:'home',
 },{
   url:'/tools',
   component:components['Frame'],
-  title:'Tools',
-  leftIcon:'cog',
+  name:'Tools',
+  icon:'cog',
 },{
   url:'javascript:;',
-  title:'Api',
-  leftIcon:'book',
+  name:'Api',
+  icon:'book',
   child:[{
     url:'/api/layout',
     component:components['Layout'],
-    title:'layout布局',
+    name:'layout布局',
   },{
     url:'/api/frame',
     component:components['Frame'],
-    title:'框架配置',
+    name:'框架配置',
   },{
     url:'/api/color',
     component:components['Color'],
-    title:'color颜色',
+    name:'color颜色',
   },{
     url:'/api/tools',
     component:components['Tools'],
-    title:'工具',
+    name:'工具',
   },{
     url:'/api/button',
     component:components['ButtonDemo'],
-    title:'button按钮',
+    name:'button按钮',
   },{
     url:'/api/row',
     component:components['RowDemo'],
-    title:'row栅格',
+    name:'row栅格',
   },{
     url:'/api/form',
     component:components['FormDemo'],
-    title:'表单',
+    name:'表单',
   },{
     url:'/api/input',
     component:components['InputDemo'],
-    title:'input输入框',
+    name:'input输入框',
   },{
     url:'/api/panel',
     component:components['PanelDemo'],
-    title:'面板',
+    name:'面板',
   },{
     url:'/api/items',
     component:components['ItemDemo'],
-    title:'items列表',
+    name:'items列表',
   },{
     url:'/api/icon',
     component:components['IconDemo'],
-    title:'图标',
+    name:'图标',
   },{
     url:'/api/echarts',
     component:components['EchartsDemo'],
-    title:'图表',
+    name:'图表',
   },{
     url:'/api/table',
     component:components['TableDemo'],
-    title:'表格',
+    name:'表格',
   },{
     url:'/api/tabs',
     component:components['TabsDemo'],
-    title:'tabs页签',
+    name:'tabs页签',
   },{
     url:'/api/list',
     component:components['ListDemo'],
-    title:'list列表',
+    name:'list列表',
   },{
     url:'/api/ul',
     component:components['UlDemo'],
-    title:'ul列表',
+    name:'ul列表',
   },{
     url:'/api/progress',
     component:components['ProgressDemo'],
-    title:'进度条',
+    name:'进度条',
   },{
     url:'/api/code',
     component:components['CodeDemo'],
-    title:'代码文本',
+    name:'代码文本',
   },{
     url:'/api/tree',
     component:components['TreeDemo'],
-    title:'树',
+    name:'树',
   },{
     url:'/api/pagination',
     component:components['PaginationDemo'],
-    title:'分页',
+    name:'分页',
   },{
     url:'/api/textarea',
     component:components['TextareaDemo'],
-    title:'文本区域',
+    name:'文本区域',
   },{
     url:'/api/radio',
     component:components['RadioDemo'],
-    title:'单选',
+    name:'单选',
   },{
     url:'/api/checkbox',
     component:components['CheckboxDemo'],
-    title:'多选',
+    name:'多选',
   },{
     url:'/api/select',
     component:components['SelectDemo'],
-    title:'下拉选择',
+    name:'下拉选择',
   },{
     url:'/api/autocomplete',
     component:components['AutocompleteDemo'],
-    title:'自动补齐',
+    name:'自动补齐',
   },{
     url:'/api/muiltselect',
     component:components['MuiltselectDemo'],
-    title:'下拉多选',
+    name:'下拉多选',
   },{
     url:'/api/switch',
     component:components['SwitchDemo'],
-    title:'切换',
+    name:'切换',
   },{
     url:'/api/badge',
     component:components['BadgeDemo'],
-    title:'标记',
+    name:'标记',
   },{
     url:'/api/modal',
     component:components['ModalDemo'],
-    title:'模态窗',
+    name:'模态窗',
+  },{
+    url:'/api/drawer',
+    component:components['DrawerDemo'],
+    name:'抽屉柜',
   },{
     url:'/api/date',
     component:components['DateDemo'],
-    title:'日期',
+    name:'日期',
   }],
 }];
 
@@ -185,7 +189,7 @@ export const app={
       if(v.name==='清缓'){
         // $storage.rm('token');
         $storage.clear();
-        location.href='#/user/login';
+        location.href='/user/login';
       }
     },
     collapse:()=>{
@@ -199,12 +203,12 @@ export const app={
   },
   rightbar:'<h2>111</h2>',
   main:{
-    showPagehead:false,
+    showBreadcrumb:false,
     showPagetitle:false
   },
   footer:'<p>版权所有 &copy; 2017-2020 Phoenix 团队</p>',
   routers:routers,
   routeAnimate:'scale',
-  browserRouter:false,
+  browserRouter:true,
   horizontal:false
 };

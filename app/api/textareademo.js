@@ -48,15 +48,21 @@ const tbody=[{
 const code=`<Textarea placeholder="测试页面" change={this.change} />`;
 
 export default class TextareaDemo extends React.Component{
+  state={
+    val:'',
+  };
   change=(e)=>{
     console.log(e.target.value);
+    this.setState({
+      val:e.target.value,
+    });
   };
   render(){
     return(
       <Items>
         <Item>
           <h4>Textarea</h4>
-          <Textarea placeholder="测试页面" change={this.change} />
+          <Textarea placeholder="测试页面" value={this.state.val} change={this.change} />
         </Item>
         <Item>
           <h4>代码示例</h4>

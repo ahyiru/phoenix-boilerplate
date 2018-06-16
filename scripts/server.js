@@ -1,34 +1,16 @@
 var express = require('express');
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.development');
+
 var colors=require('colors');
 
 var path=require('path');
 var fs=require('fs');
 
-var webpackDevMiddleware=require('webpack-dev-middleware');
-var webpackHotMiddleware=require('webpack-hot-middleware');
-
 var app = express();
-var compiler = webpack(webpackConfig);
 
 var config=require('../configs');
 
-app.use(webpackDevMiddleware(compiler, {
-	publicPath: webpackConfig.output.publicPath,
-  hot: true,
-  historyApiFallback: true,
-  compress: true, 
-  noInfo: true,
-  stats: {
-    colors: true,
-  },
-}));
-
-app.use(webpackHotMiddleware(compiler));
-
 app.set('host', process.env.IP || config.HOST);
-app.set('port', process.env.PORT || config.PORT);
+app.set('port', process.env.PORT || config.PRO_PORT);
 
 var cors=require('cors');
 var logger=require('morgan');
@@ -44,16 +26,9 @@ if(app.get('env')==='production'){
     protocol=='https'?next():res.redirect('https://'+req.hostname+req.url);
   });
 }
-app.use('*',function(req,res,next){
-  var filename=path.join(compiler.outputPath,'index.html');
-  compiler.outputFileSystem.readFile(filename,function(err,result){
-    if(err){
-      return next(err);
-    }
-    res.set('content-type','text/html');
-    res.send(result);
-    res.end();
-  });
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('*',function(request,response){
+  response.sendFile(path.resolve(__dirname,'../build','index.html'));
 });
 
 const server=app.listen(app.get('port'),(err)=>{

@@ -112,6 +112,20 @@ export default class TabsDemo extends React.Component{
               </Tabpage>
             </Tabs>
           </Col>
+          <Col span={6}>
+            <h2>tabs配置</h2>
+            <Tabs activeKey={0}>
+              <Tabpage name="t1111111111111" icon="user">
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p1</div>
+              </Tabpage>
+              <Tabpage name="t2" disabled>
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p2</div>
+              </Tabpage>
+              <Tabpage name="t3">
+                <div style={{height:'200px',padding:'15px',border:'1px solid #aaa'}}>p3</div>
+              </Tabpage>
+            </Tabs>
+          </Col>
         </Row>
         <Row gutter={8}>
           <Col span={12} sm={12} xs={12}>

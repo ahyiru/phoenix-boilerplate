@@ -3,7 +3,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var appName=require('../package').description;
-var rootDir=require('../configs').rootDir;
+var rootDir=require('../configs').DEV_ROOT_DIR;
 
 const src = path.resolve(__dirname, '../');
 const app = path.resolve(src,'app');
@@ -28,7 +28,7 @@ module.exports = {
       app,
       nodeModules,
     ],
-    extensions: ['.js','.jsx','.ts','.tsx','.json','.css','.less','.vue','.vuex'],
+    extensions: ['.js','.mjs','.jsx','.ts','.tsx','.json','.css','.less','.vue','.vuex'],
   },
   module: {
     rules: [{
@@ -39,15 +39,19 @@ module.exports = {
       test: /\.tsx?$/,
       use:[
         {loader:'babel-loader'},
-        {loader:'ts-loader',options:{entryFileCannotBeJs:true}},
+        {loader:'ts-loader',options:{transpileOnly:true}},
       ],
       exclude:[nodeModules],
     },{
-      test: /\.(jpe?g|png|gif|psd|ico)/i,
+      test: /\.(jpe?g|png|gif|psd|bmp|ico)/i,
       loader: 'file-loader?name=img/img_[hash:8].[ext]',
     },{
       test: /\.(ttf|eot|svg|woff|woff2|otf)/,
-      loader: 'file-loader?name=font/[hash:8].[ext]',
+      loader: 'file-loader',
+      options:{
+        name:'css/fonts/[hash:8].[ext]',
+        publicPath:'../',
+      },
     }, {
       test: /\.(pdf)/,
       loader: 'file-loader?name=pdf/[hash].[ext]',
@@ -55,6 +59,33 @@ module.exports = {
       test: /\.(swf|xap)/,
       loader: 'file-loader?name=video/[hash].[ext]',
     }],
+  },
+  mode:process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  optimization:{
+    minimize:true,
+    concatenateModules:true,
+    occurrenceOrder:true,
+    splitChunks:{
+      chunks:'all',
+      minSize:0,
+      minChunks:2,
+      maxInitialRequests:5,
+      cacheGroups:{
+        commons:{
+          chunks:'initial',
+          name:'commons',
+          reuseExistingChunk:true,
+        },
+        vendors:{
+          chunks:'initial',
+          name:'vendors',
+          test:/[\\/]node_modules[\\/]/,
+          enforce:true,
+          priority:-10,
+        },
+      },
+    },
+    runtimeChunk:true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -84,11 +115,5 @@ module.exports = {
       // debug: true
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name:'commons',
-      filename:'js/[name]_[hash:8].js',
-      chunks:['commons','app'],
-      // minChunks:Infinity,
-    }),
   ],
 };

@@ -324,7 +324,7 @@ export default class TableDemo extends React.Component{
         <h2>表格工具栏</h2>
         <Row gutter={12}>
           <Col span={12}>
-            <Table thead={thead} tbody={tbody7} noBorder={false} showHeadbar={true} showFootbar={true} showToolbar={true} more={()=>{}} updateRow={()=>{}} deleteRow={()=>{}}/>
+            <Table thead={thead} tbody={tbody7} noBorder={false} showHeadbar={true} showFootbar={true} showToolbar={true} more={()=>{}} updateRow={(v)=>{console.log(v);}} deleteRow={()=>{}}/>
           </Col>
         </Row>
       </div>

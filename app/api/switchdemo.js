@@ -41,15 +41,25 @@ const code=`
 `;
 
 export default class CheckboxDemo extends React.Component{
+  state={
+    val:false,
+  };
   change=(val)=>{
     console.log(val);
+    this.setState({
+      val:val,
+    });
   };
   render(){
     return(
       <Items>
         <Item>
           <h4>Switch</h4>
-          <Switch onText="开" offText="关" change={this.change} />
+          <Switch onText="开" offText="关" value={this.state.val} change={this.change} />
+        </Item>
+        <Item>
+          <h4>Switch1</h4>
+          <Switch onText="开" offText="关" value={true} />
         </Item>
         <Item>
           <h4>代码示例</h4>

@@ -1,3 +1,4 @@
+//demo
 import Layout from './layout';
 import Tools from './tools';
 import Color from './color';
@@ -33,6 +34,7 @@ import ModalDemo from './modaldemo';
 import DateDemo from './datedemo';
 
 export {
+
   Layout,Tools,Color,Frame,
 
   ButtonDemo,RowDemo,FormDemo,InputDemo,PanelDemo,ItemDemo,
@@ -40,4 +42,5 @@ export {
   IconDemo,EchartsDemo,TableDemo,TabsDemo,ListDemo,UlDemo,ProgressDemo,CodeDemo,TreeDemo,PaginationDemo,
 
   TextareaDemo,RadioDemo,CheckboxDemo,SelectDemo,AutocompleteDemo,MuiltselectDemo,SwitchDemo,BadgeDemo,ModalDemo,DateDemo,
+
 };

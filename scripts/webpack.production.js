@@ -1,57 +1,59 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 var webpackConfig = require('./webpack.config');
 
+process.env.NODE_ENV = 'production';
+var rootDir=require('../configs').PRD_ROOT_DIR;
+
 module.exports = merge(webpackConfig, {
+  mode:'production',
   devtool: 'cheap-module-source-map',
   cache: false,
+  output:{
+    publicPath:rootDir,
+  },
   module: {
     rules: [{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        fallback:'style-loader',
-        use:[{
+      use:[{
+        loader:MiniCssExtractPlugin.loader,
+        options:{
+          publicPath: '../',
+        },
+      },{
           loader:'css-loader',
           options:{
             minimize:true,
           },
-        }],
-      }),
+        },
+      ],
     },{
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract({
-        fallback:'style-loader',
-        use:[{
+      use:[{
+        loader:MiniCssExtractPlugin.loader,
+        options:{
+          publicPath: '../',
+        },
+      },{
           loader:'css-loader',
           options:{
             minimize:true,
           },
         },{
           loader:'less-loader',
-        }],
-      }),
+        },
+      ],
     }],
   },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename:'css/[name]_[contenthash:8].css',
-      allChunks: true,
-      disable:false,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false,
-      },
-      compress: {
-        warnings: false,
-      },
-      sourceMap:true,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+      chunkFilename:'css/[id]_[name]_[contenthash:8].css',
+      publicPath:'../',
     }),
     new SWPrecacheWebpackPlugin({
       dontCacheBustUrlsMatching: /\.\w{8}\./,

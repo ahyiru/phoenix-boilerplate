@@ -28,10 +28,24 @@ const code=`
 `;
 
 export default class AutocompleteDemo extends React.Component{
+  state={
+    text:2,
+  };
+  test=()=>{
+    this.setState({
+      text:this.state.text+1,
+    });
+  };
   render(){
+    const {text}=this.state;
     return(
       <div>
         <Row gutter={8}>
+          <Col span={6} sm={8} xs={12}>
+            <Badge text={text}>
+              <Button color="info" text="测试" click={this.test} />
+            </Badge>
+          </Col>
           <Col span={6} sm={8} xs={12}>
             <Badge text="6">
               <Button color="info" text="测试" />

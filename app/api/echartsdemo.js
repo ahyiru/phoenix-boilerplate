@@ -1,5 +1,5 @@
 import * as React from 'react';
-import echarts from 'echarts';
+import * as echarts from 'echarts';
 
 import {chart1,chart2} from '../models/echarts';
 
@@ -84,7 +84,7 @@ const code=`
 `;
 
 export default class EchartDemo extends React.Component{
-  timeTicket:number=0;
+  timeTicket:any=0;
   count:number=51;
   echarts=null;
   state={
@@ -109,10 +109,10 @@ export default class EchartDemo extends React.Component{
     this.setState({option:option});
   };
   componentWillMount() {
-    /*import('echarts').then(echarts => {
+    import('echarts').then(echarts => {
       // console.log(echarts);
       this.setState({ echarts:echarts });
-    });*/
+    });
   }
   componentDidMount(){
     if (this.timeTicket) {

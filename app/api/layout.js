@@ -149,14 +149,16 @@ export default class Layout extends React.Component{
     return(
       <Items>
         <Item>
-          <div className="textarea">
+          <div className="txt-area">
             <h2>Phoenix UI</h2>
-            <p>Phoenix UI是一套用于快速开发web应用的UI框架。</p>
-            <p>Phoenix UI使用Typescript编写，提供一些简单UI组件及函数库。拓展性强，可配合其它一些组件或插件进行开发，如ant design、jquery等。</p>
+            {/*<p>Phoenix UI是一套用于快速开发web应用的UI框架。</p>
+                        <p>Phoenix UI使用Typescript编写，提供一些简单UI组件及函数库。拓展性强，可配合其它一些组件或插件进行开发，如ant design、jquery等。</p>*/}
+            <p>Phoenix UI是一套快速创建中后台企业应用的UI框架，基于react实现，使用typescript构建。</p>
+            <p>Phoenix UI提供快速搭建、易于配置的应用框架，开箱即用的高质量react组件，集成一些常用的功能组件，使开发更简单高效。</p>
           </div>
         </Item>
         <Item>
-          <div className="textarea">
+          <div className="txt-area">
             <h2>代码书写规范</h2>
             <h4>团队协作中代码规范非常重要，希望大家严格遵守代码约束，避免不必要的bug。</h4>
             <h3><Code title="代码规范" code={standard} /></h3>

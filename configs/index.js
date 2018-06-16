@@ -3,9 +3,8 @@ module.exports={
 	SALT:process.env.SALT||'yiru-20170116',
 	URI:process.env.URL||'mongodb://localhost:27017/test',
 	HOST:process.env.IP||'localhost',
-	PORT:process.env.PORT||8080,
-	PROJECT_PORT:process.env.PROJECT_PORT||8085,
-	TEMP_PORT:process.env.TEMP_PORT||8086,
-	PRO_PORT:process.env.PRO_PORT||8081,
-	rootDir:'/',
+	PORT:process.env.PORT||8000,
+	PRO_PORT:process.env.PRO_PORT||8001,
+	DEV_ROOT_DIR:'/',
+	PRD_ROOT_DIR:'/',
 }

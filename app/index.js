@@ -17,9 +17,7 @@ app.footer=<Footer />;
 app.navbar.leftNav[0].drop=<Theme/>;
 app.navbar.rightNav[2].drop=<Profile/>;
 
-const {$fetch,observer}=tools;
-
-const localYrui=require('yrui/package.json');
+// const {$fetch,observer}=tools;
 
 ReactDOM.render(<Router {...app} />, document.getElementById('phoenix'));
 
