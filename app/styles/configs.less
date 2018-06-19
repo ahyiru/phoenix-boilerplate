@@ -84,6 +84,7 @@ body{
 			width:@menuWidth;
 			.y-sidebar-wrap{
 				.y-user-logo{
+          width:@menuWidth;
 					background-color:darken(@menuBgColor,3);
 				}
 				.y-sidebar-bgcolor{
@@ -91,6 +92,7 @@ body{
           background-color:@menuBgColor;
 				}
 				.y-sidebar-list{
+          width:@menuWidth;
 					.y-sidebar-title{
 						height:@headerHeight;
             line-height:@headerHeight;
@@ -180,17 +182,16 @@ body{
 	&.y-collapse{
 		aside{
 			.y-sidebar{
+        width:@collapseMenuWidth;
 				.y-sidebar-wrap{
 					.y-sidebar-bgcolor{
             width:@collapseMenuWidth;
           }
           .y-sidebar-list{
-            .y-sidebar-title{
-              width:@collapseMenuWidth;
-            }
+            width:@collapseMenuWidth;
             ul{
             	&.tree-root{
-            		width:@collapseMenuWidth;
+            		// width:@collapseMenuWidth;
             		>li{
 	                >a{
                     >i{
