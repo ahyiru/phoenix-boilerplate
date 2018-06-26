@@ -29,6 +29,33 @@
 	
 	12.使用一致的命名风格,驼峰式(Camel-Case)。
 
+### 主题配置
+
+	// app/styles/config.less
+	
+	@brandBgColor:#334;  //brand背景颜色
+	
+	@brandColor:#ffffff;  //brand字体颜色
+	
+	@navBgColor:#445;  //nav背景颜色
+	
+	@navColor:#f0f0f0;  //nav字体颜色
+	
+	@menuBgColor:#fff;  //menu背景颜色
+	
+	@menuColor:#333;  //menu字体颜色
+	
+	@standardColor:#ff3e38;  //标准对比颜色。菜单栏和头部栏的hover颜色根据这个颜色确定
+	
+	@headerHeight:45px;  //header高度
+	
+	@footerHeight:40px;  //footer高度
+	
+	@collapseMenuWidth:52px;  //收缩菜单宽度
+	
+	@menuWidth:220px;  //菜单宽度
+
+
 ### [前端知识点总结](https://github.com/ahyiru/react-ui-demo/blob/master/doc/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9.md)
 
 

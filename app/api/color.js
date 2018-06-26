@@ -17,6 +17,32 @@ let uls=[{
   right:'22',
 }];
 
+const config=`
+// app/styles/config.less
+
+@brandBgColor:#334;  //brand背景颜色
+
+@brandColor:#ffffff;  //brand字体颜色
+
+@navBgColor:#445;  //nav背景颜色
+
+@navColor:#f0f0f0;  //nav字体颜色
+
+@menuBgColor:#fff;  //menu背景颜色
+
+@menuColor:#333;  //menu字体颜色
+
+@standardColor:#ff3e38;  //标准对比颜色。菜单栏和头部栏的hover颜色根据这个颜色确定
+
+@headerHeight:45px;  //header高度
+
+@footerHeight:40px;  //footer高度
+
+@collapseMenuWidth:52px;  //收缩菜单宽度
+
+@menuWidth:220px;  //菜单宽度
+`;
+
 export default class Color extends React.Component{
   ulclick=(v)=>{
     console.log(v);
@@ -47,8 +73,13 @@ export default class Color extends React.Component{
     return(
       <div ref="colors" className="colors">
         <Row gutter={8}>
+          <Col span={12}>
+            <Code title="主题配置" code={config} />
+          </Col>
+        </Row>
+        <Row gutter={8}>
           <Col span={3}>
-          <div className="c-block bg-purple">purple,<b>#af5cc1</b></div>
+            <div className="c-block bg-purple">purple,<b>#af5cc1</b></div>
           </Col>
           <Col span={3}>
             <div className="c-block bg-green">green,<b>#27c24c</b></div>
@@ -162,26 +193,25 @@ export default class Color extends React.Component{
             <div className="c-block" style={{backgroundColor:'#f6f6f6'}}><b>#f6f6f6</b></div>
           </Col>
         </Row>
-        <Ul uls={uls} click={this.ulclick} />
-        <div className="mb mt">
-          <div className="progress">
-            <div className="progress-line">
-              <div className="percent">
-              <span>100%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Col span={6}>
-          <h1>h1:Phoenix UI是一套用于快速开发web应用的UI框架。</h1>
-          <h2>h2:Phoenix UI是一套用于快速开发web应用的UI框架。</h2>
-          <h3>h3:Phoenix UI是一套用于快速开发web应用的UI框架。</h3>
-          <h4>h4:Phoenix UI是一套用于快速开发web应用的UI框架。</h4>
-          <h5>h5:Phoenix UI是一套用于快速开发web应用的UI框架。</h5>
-          <h6>h6:Phoenix UI是一套用于快速开发web应用的UI框架。</h6>
-          <p>p:Phoenix UI是一套用于快速开发web应用的UI框架。</p>
-        </Col>
-        <Progress percent="40.11111" size="" color="danger" bgColor="#333" fbgColor="#f60" txtColor="#fff" bit={2} />
+        <Row gutter={12}>
+          <Col span={12}>
+            <h1>h1:Phoenix UI是一套用于快速开发web应用的UI框架。</h1>
+            <h2>h2:Phoenix UI是一套用于快速开发web应用的UI框架。</h2>
+            <h3>h3:Phoenix UI是一套用于快速开发web应用的UI框架。</h3>
+            <h4>h4:Phoenix UI是一套用于快速开发web应用的UI框架。</h4>
+            <h5>h5:Phoenix UI是一套用于快速开发web应用的UI框架。</h5>
+            <h6>h6:Phoenix UI是一套用于快速开发web应用的UI框架。</h6>
+            <p>p:Phoenix UI是一套用于快速开发web应用的UI框架。</p>
+          </Col>
+        </Row>
+        <Row gutter={12}>
+          <Col span={6}>
+            <Ul uls={uls} click={this.ulclick} />
+          </Col>
+          <Col span={6}>
+            <Progress percent="40.11111" size="" color="danger" bgColor="#333" fbgColor="#f60" txtColor="#fff" bit={2} />
+          </Col>
+        </Row>
       </div>
     );
   }

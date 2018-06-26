@@ -128,6 +128,34 @@ const standard=`
 
 `;
 
+const config=`
+
+// app/styles/config.less
+
+@brandBgColor:#334;  //brand背景颜色
+
+@brandColor:#ffffff;  //brand字体颜色
+
+@navBgColor:#445;  //nav背景颜色
+
+@navColor:#f0f0f0;  //nav字体颜色
+
+@menuBgColor:#fff;  //menu背景颜色
+
+@menuColor:#333;  //menu字体颜色
+
+@standardColor:#ff3e38;  //标准对比颜色。菜单栏和头部栏的hover颜色根据这个颜色确定
+
+@headerHeight:45px;  //header高度
+
+@footerHeight:40px;  //footer高度
+
+@collapseMenuWidth:52px;  //收缩菜单宽度
+
+@menuWidth:220px;  //菜单宽度
+
+`;
+
 export default class Layout extends React.Component{
   componentDidMount(){
     const c:any=this.refs.colors;
@@ -162,6 +190,13 @@ export default class Layout extends React.Component{
             <h2>代码书写规范</h2>
             <h4>团队协作中代码规范非常重要，希望大家严格遵守代码约束，避免不必要的bug。</h4>
             <h3><Code title="代码规范" code={standard} /></h3>
+          </div>
+        </Item>
+        <Item>
+          <div className="txt-area">
+            <h2>主题配置</h2>
+            <h4>用户可自定义配置主题颜色、布局大小。</h4>
+            <h3><Code title="主题配置" code={config} /></h3>
           </div>
         </Item>
         <Item>
