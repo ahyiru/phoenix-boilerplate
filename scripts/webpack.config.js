@@ -43,6 +43,22 @@ module.exports = {
       ],
       exclude:[nodeModules],
     },{
+      test: /\.vue$/,
+      loader:'vue-loader',
+      /*options:{
+        loaders:{
+          js:'coffee-loader',
+        },
+        preLoaders: {
+          js:'/path/to/custom/loader',
+        },
+        postLoaders: {
+          html:'babel-loader',
+        },
+        excludedPreLoaders:/(eslint-loader)/,
+      },*/
+      exclude:[nodeModules],
+    },{
       test: /\.(jpe?g|png|gif|psd|bmp|ico)/i,
       loader: 'file-loader?name=img/img_[hash:8].[ext]',
     },{
