@@ -2,11 +2,21 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 var appName=require('../package').description;
-var rootDir=require('../configs').DEV_ROOT_DIR;
+var config=require('../configs');
+
+var rootDir=config.DEV_ROOT_DIR;
+var startDist=config.START_DIST;
+
+let commons=['react','react-dom'];
+if(startDist==='vue'){
+  commons=['vue','vue-router'];
+}
 
 const src = path.resolve(__dirname, '../');
-const app = path.resolve(src,'app');
+const app = path.resolve(src,startDist);
 const nodeModules = path.resolve(src,'node_modules');
 
 module.exports = {
@@ -14,7 +24,7 @@ module.exports = {
 
   entry: {
     app: [ path.resolve(app, 'index.js')],
-    commons:['react','react-dom'],
+    commons:commons,
   },
   output: {
     path: path.resolve(src, '_dist'),
@@ -29,6 +39,10 @@ module.exports = {
       nodeModules,
     ],
     extensions: ['.js','.mjs','.jsx','.ts','.tsx','.json','.css','.less','.vue','.vuex'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      // '@': resolve('src'),
+    },
   },
   module: {
     rules: [{
@@ -131,5 +145,6 @@ module.exports = {
       // debug: true
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new VueLoaderPlugin(),
   ],
 };
