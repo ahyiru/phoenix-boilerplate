@@ -5,7 +5,7 @@
     HTML-CSS-JS Prettify,
 
     vue高亮
-    babel,Vue Syntax Highlight,Stylus,
+    babel,Vue Syntax Highlight,Stylus,sass,postcss
 
     preference->setting user
     "tab_size": 2,
@@ -44,3 +44,41 @@
     ### orientationChange事件
 
     移动端旋转设备触发
+
+### webpack
+
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+          'vue$': 'vue/dist/vue.esm.js',
+          '@': resolve('src'),
+          'assets': resolve('src/assets')
+        }
+      },
+
+### babel
+
+    {
+        "presets": [
+            "env"
+        ],
+        "plugins": [
+            "transform-vue-jsx"
+        ]
+    }
+
+### gitbook
+
+    npm i -g gitbook-cli
+
+
+### git
+
+    问题
+    warning: CRLF will be replaced by LF.
+
+    原因
+    windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示
+
+    解决
+    git config --global core.autocrlf false //禁用自动转换 

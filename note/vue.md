@@ -273,6 +273,64 @@ dep1
 
 ### 模板
 
+Vue.js 使用了基于 HTML 的模板语法。
+
+在底层的实现上，Vue 将模板编译成虚拟 DOM 渲染函数。结合响应系统，Vue 能够智能地计算出最少需要重新渲染多少组件，并把 DOM 操作次数减到最少。
+
+如果你熟悉虚拟 DOM 并且偏爱 JavaScript 的原始力量，你也可以不用模板，直接写渲染 (render) 函数，使用可选的 JSX 语法。
+
+vue template:
+
+    <template>
+      <div class="demo">
+        <h1>{{name}}</h1>
+      </div>
+    </template>
+    <script>
+      import {tools} from 'yrui';
+      export default {
+        data(){
+          return{
+            name:'Hello World',
+          };
+        }
+      }
+    </script>
+    <style lang="less" scoped>
+      .demo{
+        h1{
+          font-size:22px;
+          color:#444;
+        }
+      }
+    </style>
+
+js render:
+
+    import {tools} from 'yrui';
+    import './app.less';
+    export default{
+      data(){
+        return{
+          name:'Hello World',
+        };
+      },
+      render(){
+        return <div class="demo">
+          <h1>{{nmae}}</h1>
+        </div>
+      }
+    }
+
+#### 语法
+
+表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式。
+
+    <!-- 这是语句，不是表达式 -->
+    {{ var a = 1 }}
+    <!-- 流控制也不会生效，请使用三元表达式 -->
+    {{ if (ok) { return message } }}
+
 #### 指令
 
 指令 (Directives) 是带有 v- 前缀的特殊特性。指令有修饰符、缩写属性。
@@ -285,11 +343,20 @@ dep1
     v-else-if
     v-for
     v-on
-    v-bind
+    v-bind 缩写:
     v-model
     v-pre
-    v-clock
+    v-clock 缩写@
     v-once
+
+#### class与style绑定
+
+    <div :class="{ active: isActive }"></div>
+    <div class="static" :class="{ active: isActive, 'text-danger': hasError }"></div>
+    <div :class="classObject"></div>
+    <div :class="[activeClass, errorClass]"></div>
+    <div :class="[isActive ? activeClass : '', errorClass]"></div>
+    <div :class="[{ active: isActive }, errorClass]"></div>
 
 ### 数据监听
 
