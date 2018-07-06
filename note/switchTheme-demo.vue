@@ -6,6 +6,7 @@
 				<span v-for="(item,index) in themes" :data-index="item.key" :class="[item.key,isActive==item.key?'active':'']"></span>
 			</div>
     </Modal>
+    <div v-show="!switchModal">Hello World</div>
   </div>
 </template>
 <script>
@@ -57,12 +58,22 @@
     background: #0064b1;
     color: #ffffff;
     &.blue{
-    	background: #0064b1;
-    	color: #ffffff;
+      background: #0064b1;
+      color: #ffffff;
+      &+div{
+        .nav,.tree-header{
+          background: #044a8b;
+        }
+      }
     }
     &.green{
-    	background: #00843e;
-    	color: #ffffff;
+      background: #00843e;
+      color: #ffffff;
+      &+div{
+        .nav,.tree-header{
+          background: #047238;
+        }
+      }
     }
     // 主题切换
     .switch-theme{

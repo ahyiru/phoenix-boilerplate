@@ -67,6 +67,45 @@
         ]
     }
 
+    {
+      "presets": [["es2015", { "modules": false }]],
+      "plugins": [
+        [
+          "component",
+          {
+            "libraryName": "element-ui",
+            "styleLibraryName": "theme-chalk"
+          }
+        ]
+      ]
+    }
+
+    { "presets": [
+        ["env", {
+         "modules": false,
+         "targets": {"browsers": ["> 1%", "last 2 versions", "not ie <= 8"]}
+        }],
+        "stage-2"
+      ],
+      "plugins": [
+         "transform-runtime",
+         ["component",[{
+            "libraryName":"element-ui",
+            "styleLibraryName":"theme-chalk"
+         }]
+         ]
+      ],
+      "comments":false,   
+      "env": {
+          "test": {
+            "presets": ["env", "stage-2"],
+            "plugins": ["istanbul"]
+          }
+       }
+    }
+
+
+
 ### gitbook
 
     npm i -g gitbook-cli
@@ -82,3 +121,12 @@
 
     解决
     git config --global core.autocrlf false //禁用自动转换 
+
+### scroll 优化思路
+
+    overflow: scroll;
+    margin-bottom: -17px;
+    margin-right: -17px;
+
+
+> return typeof data === 'function' ? data.call(this) : data
