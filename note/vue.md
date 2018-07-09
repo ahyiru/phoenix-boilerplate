@@ -271,6 +271,24 @@ dep1
       }
     }
 
+
+    function defineComputed (obj, key, computeFunc, updateCallback) {
+     var onDependencyUpdated = function () {
+      // TODO
+     }
+     Object.defineProperty (obj, key, {
+      get: function () {
+       // 将onDependencyUpdated 这个函数传给Dep.target
+       Dep.target = onDependencyUpdated;
+       var value = computeFunc ();
+       Dep.target = null;
+      },
+      set: function () {
+       // 什么也不做，不需要设定计算属性的值
+      }
+     })
+    }
+
 ### 模板
 
 Vue.js 使用了基于 HTML 的模板语法。
@@ -544,6 +562,22 @@ js render:
     https://github.com/ElementUI/theme-chalk.git
     https://github.com/ElementUI/element-starter.git
 
+### jsx
+
+    https://juejin.im/post/5a001f886fb9a0450908e508
+
+    https://github.com/cristovao-trevisan/vue-with-jsx.git
+    https://github.com/foolishchow/vue-typescript.git
+    https://github.com/JaxBBLL/vue-jsx.git
+    https://github.com/rolldone/vue_jsx_boilerplate.git
+    https://github.com/darwinsalinas/jsx-in-vue.git
+
+    // vue demo
+    https://github.com/qingely/vue-webpack.git
+    https://github.com/littlematch0123/blog-client.git
+    https://github.com/cherie-xf/vue-ui-demo.git
+    https://github.com/Twitchboy/Vue-SSR-Demo.git
+    https://github.com/gaollard/vue-mall.git
 
 
 
