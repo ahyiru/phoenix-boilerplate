@@ -1,15 +1,39 @@
+### nodejs
+	
+	// csrutil enable
+	
+	sudo chown -R zero:admin /usr/local/*
+	
+	npm i -g typescript
+
+### brew
+
+	
+
+### macDown
+
 ### sublime 
 
+    Emmet,
     Ctags,
     Markdown Extended,Markdown Editing,Markdown Preview,
     HTML-CSS-JS Prettify,
+    ConvertToUTF8,
+    SublimeLinter,
+    typescript,
+    less,
+    ColorPicker,
+    FileDiffs,
+    DocBlockr,
 
     vue高亮
     babel,Vue Syntax Highlight,Stylus,sass,postcss
 
     preference->setting user
+    "font_size": 13,
     "tab_size": 2,
     "word_wrap":true,
+    "open_files_in_new_window": false,
 
 
 ### vue
@@ -130,3 +154,86 @@
 
 
 > return typeof data === 'function' ? data.call(this) : data
+
+
+### angular
+
+	npm install -g @angular/cli
+	
+	ng new my-app
+	cd my-app
+	ng serve --open
+
+	npm install -g @angular-devkit/schematics-cli
+	
+	schematics blank --name=my-component
+	
+	git clone https://github.com/angular/quickstart ng4-quickstart
+	
+	git clone https://github.com/NG-ZORRO/ng-zorro-antd.git
+	
+
+[Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
+
+
+### 前端体系建设
+
+[漫谈前端体系建设](https://zhuanlan.zhihu.com/p/28299873)
+
+[如何评判一个前端框架的好坏？做取舍？](https://www.zhihu.com/question/286029255)
+
+#### 组建的可控与不可控
+
+#### 沉淀组件体系标准
+
+#### 数据模型
+
+#### 多端适配
+
+#### 模版管理
+
+#### 流程标准化
+
+- 可扩展性
+- 去中心化
+- 数据监控
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
