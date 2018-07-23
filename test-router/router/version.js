@@ -14,7 +14,7 @@ export const getVer=async ()=>{
 
   let shouldUp=0;
   try{
-    let data:any=await fetch(cnpmUrl).then(res=>res.json());
+    const data:any=await fetch(cnpmUrl).then(res=>res.json());
     const tips=data.tips||yruiTips;
     const serverVer=data.version||'100.0.0';
     const local_v=localVer.split('.');
