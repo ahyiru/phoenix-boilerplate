@@ -1,16 +1,20 @@
 import {tools} from 'yrui';
-import './app.less';
+import './demo.less';
 
-export default{
+const jsxDemo={
+  name:'hhhhhh',
   data(){
     return{
       name:'Hello World',
     };
   },
-  render(){
+  render(h){
+    console.log(h)
     return <div class="demo">
-      <h1>{{nmae}}</h1>
+      <h1>{this.name}</h1>
     </div>
   }
 }
+
+export default jsxDemo;
 

@@ -7,5 +7,5 @@ module.exports={
 	PRO_PORT:process.env.PRO_PORT||8001,
 	DEV_ROOT_DIR:'/',
 	PRD_ROOT_DIR:'/',
-	START_DIST:'react',//app,react
+	START_DIST:'vue',//app,react
 }

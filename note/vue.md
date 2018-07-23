@@ -413,6 +413,38 @@ js render:
 在动态组件上使用 keep-alive
 
 > 缓存动态切换组建的状态 keep-alive的实现
+> 
+> VNode节点。Virtual Dom。
+> 
+> 从Virtual Dom 到 Real Dom
+
+	function render( vnode ){
+	//如果是字符，直接创建文本返回
+	if(vnode.split){
+	return document.createTextNode( vnode )
+	}
+	//node是一个真实DOM
+	let node = document.createElement( vnode.nodeName );
+	//获取属性
+	let attrs = vnode.attrbutes || {} ;
+	//给这个node节点遍历加上属性
+	Object.keys( attrs ).forEach( item => node.setAttribute( item , attrs[item] ) );
+	//如果有子元素，递归处理子元素并且给属性赋值，没有就结束
+	( vnode.children || [] ).forEach( item => node.appendChild( render(item) ) );
+	//返回node 
+	return node;
+	}
+
+	created () {
+	    /* 缓存对象 */
+	    this.cache = Object.create(null)
+	},
+	/* destroyed钩子中销毁所有cache中的组件实例 */
+	destroyed () {
+	    for (const key in this.cache) {
+	        pruneCacheEntry(this.cache[key])
+	    }
+	},
 
 ### 组件注册
 
@@ -497,8 +529,7 @@ js render:
 
 ### 兼容性、适配性、通用性、拓展性、高效性
 
-
-    流程图实现
+流程图实现
 
     export const sessionStorageSet = (name, obj) => {
       if (typeof obj === 'undefined') {

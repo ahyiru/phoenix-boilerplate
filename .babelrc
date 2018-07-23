@@ -7,14 +7,16 @@
         "transform-runtime",
         "transform-decorators-legacy",
         "syntax-dynamic-import",
-        "dual-import"
+        "dual-import",
+        "transform-vue-jsx"
       ]
     },
     "production": {
       "plugins":[
         "transform-runtime",
         "syntax-dynamic-import",
-        "dual-import"
+        "dual-import",
+        "transform-vue-jsx"
       ]
     },
     "test": {

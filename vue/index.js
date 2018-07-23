@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+console.log(App)
+console.log(router)
+
+// const ele=<h1></h1>
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
