@@ -34,6 +34,19 @@
     "tab_size": 2,
     "word_wrap":true,
     "open_files_in_new_window": false,
+    
+    Alignment,
+    All Autocomplete,
+    Angular,
+    Codecs33,
+    ColorPicker,
+    ESlint,
+    FileDiffs,
+    JsFormat,
+    JSONLint,
+    JsPrettier,
+    Tag,
+    TypescriptCompletion,
 
 
 ### vue
