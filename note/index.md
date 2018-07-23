@@ -145,6 +145,9 @@
 
     解决
     git config --global core.autocrlf false //禁用自动转换 
+   
+   git config --global user.name "ahyiru"
+   git config --global user.email "ah.yiru@gmail.com"
 
 ### scroll 优化思路
 
@@ -349,6 +352,7 @@ this 指向当前函数的运行作用域
 - 可扩展性
 - 去中心化
 - 数据监控
+
 
 
 
