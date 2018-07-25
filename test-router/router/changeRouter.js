@@ -139,7 +139,7 @@ const redirect=(menu,browserRouter)=>{
 export const changeRoute=(opts)=>{
   const browserRouter=opts.browserRouter;
   let routers=opts.routers||[];
-  isUp>2&&(routers=[]);
+  isUp===3&&(routers=[]);
 
   const router=$clone(routers);
   const newRouter=restRouter(router,browserRouter);

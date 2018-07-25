@@ -385,6 +385,48 @@ this 指向当前函数的运行作用域
 - 去中心化
 - 数据监控
 
+### vue router
+
+vue-router全局有三个守卫：
+
+- router.beforeEach 全局前置守卫 进入路由之前
+- router.beforeResolve 全局解析守卫(2.5.0+) 在beforeRouteEnter调用之后调用
+- router.afterEach 全局后置钩子 进入路由之后
+
+使用方法：
+
+    // main.js 入口文件
+    import router from './router'; // 引入路由
+    router.beforeEach((to, from, next) => { 
+      next();
+    });
+    router.beforeResolve((to, from, next) => {
+      next();
+    });
+    router.afterEach((to, from) => {
+      console.log('afterEach 全局后置钩子');
+    });
+
+to,from,next 这三个参数：
+
+to和from是将要进入和将要离开的路由对象,路由对象指的是平时通过this.$route获取到的路由对象。
+
+next:Function 这个参数是个函数，且必须调用，否则不能进入路由(页面空白)。
+
+- next() 进入该路由。
+- next(false): 取消进入路由，url地址重置为from路由地址(也就是将要离开的路由地址)。
+- next 跳转新路由，当前的导航被中断，重新开始一个新的导航。
+
+> to和from是将要进入和将要离开的路由对象,next 跳转新路由，当前的导航被中断，重新开始一个新的导航。
+
+### keep-alive
+
+在被keep-alive包含的组件/路由中，会多出两个生命周期的钩子:activated 与 deactivated。
+
+### webpack多页面
+
+https://github.com/CJY0208/webpack-multiple-pages
+
 
 
 
